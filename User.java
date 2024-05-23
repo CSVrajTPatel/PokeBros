@@ -19,9 +19,13 @@ public class User {
     private double currency;
 
     private ArrayList<Card> ownedCards;
+    
+    private int timeLastCurrency;
 
 
     public void createAccount(String firstName, String lastName, String email, String userName, String password) {
+        // for time last currency intialization, use Package java.time
+        // 
         return;
     }
 
@@ -65,6 +69,14 @@ public class User {
         return true;
     }
 
+    public ArrayList<Card> getCollection() {
+        return ownedCards;
+    }
+
+    public ArrayList<Card> getFavorites() {
+        return favoriteCards;
+    }
+
     public boolean addFavroiteCard() {
         return true;
     }
@@ -82,15 +94,15 @@ public class User {
     }
 
     public boolean claimDailyCurrency() {
-
+        return true;
     }
 
     public ArrayList<Trade> viewTradeOffers() {
-        return new ArrayList<Trade>;
+        return new ArrayList<Trade>();
     }
 
     public ArrayList<Trade> viewPendingTradeRequests() {
-        return new ArrayList<Trade>;
+        return new ArrayList<Trade>();
     }
 
     public boolean initiateTrade(User user, Card card) {
@@ -98,7 +110,7 @@ public class User {
     }
 
     public ArrayList<Card> searchCards(String criteria) {
-        return new ArrayList<Card>;
+        return new ArrayList<Card>();
     }
 
     public boolean viewCardDetails(Card card) {
@@ -106,7 +118,7 @@ public class User {
     }
 
     public ArrayList<User> findUsersWithCard(Card card) {
-        return new ArrayList<User>;
+        return new ArrayList<User>();
     }
 
     public void addCurrencyAmount(double amount) {
@@ -119,5 +131,8 @@ public class User {
 
     public double getCurrencyAmount() {
         return currency;
+    }
+    public int getTimeLastCurrency(){
+        return 0;
     }
 }
