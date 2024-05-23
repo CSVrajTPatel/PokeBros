@@ -7,7 +7,7 @@ public class UserList {
 
     }
 
-    public boolean addUsertoList(User user) {
+    public boolean addUserToList(User user) {
         return false;
     }
 
