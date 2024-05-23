@@ -19,9 +19,13 @@ public class User {
     private double currency;
 
     private ArrayList<Card> ownedCards;
+    
+    private int timeLastCurrency;
 
 
     public void createAccount(String firstName, String lastName, String email, String userName, String password) {
+        // for time last currency intialization, use Package java.time
+        // 
         return;
     }
 
@@ -127,5 +131,8 @@ public class User {
 
     public double getCurrencyAmount() {
         return currency;
+    }
+    public int getTimeLastCurrency(){
+        return 0;
     }
 }
