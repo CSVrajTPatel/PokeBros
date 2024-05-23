@@ -49,24 +49,42 @@ public class User {
         return lastName;
     }
 
-    public boolean editEmail() {
-        return true;
+    public boolean editEmail(String newEmail) {
+        if (newEmail != email) {
+            email = newEmail;
+            return true;
+        }
+        return false;
+        
     }
 
-    public boolean editFirstName() {
-        return true;
+    public boolean editFirstName(Strine newName) {
+        if (newName != firstName) {
+            firstName = newName;
+            return true;
+        }
+        return false;
     }
 
-    public boolean editLastName() {
-        return true;
+    public boolean editLastName(String newName) {
+        if (newName != lastName) {
+            lastName = newName;
+            return true;
+        }
+        return false;
     }
 
-    public boolean editPassword() {
-        return true;
+    public boolean editPassword(String newPass) {
+        if (newPass != password) {
+            newPass = password;
+            return true;
+        }
+        return false;
     }
 
-    public boolean addCard(Card card) {
-        return true;
+    public void addCard(Card card) {
+        ownedCards.add(card);
+        return;
     }
 
     public ArrayList<Card> getCollection() {
@@ -77,12 +95,23 @@ public class User {
         return favoriteCards;
     }
 
-    public boolean addFavroiteCard() {
+    public boolean addFavroiteCard(Card favCard) {
+        for (Card card : favoriteCards){
+            if (favCard == card)
+                return false;
+        }
+        favoriteCards.add(favCard);
         return true;
     }
 
-    public boolean removeFavoriteCard() {
-        return true;
+    public boolean removeFavoriteCard(Card badCard) {
+        for (Card card : favoriteCards){
+            if (badCard == card) {
+                favoriteCards.remove(badCard);
+                return true;
+            }
+        }
+        return false;
     }
 
     public boolean tradeCards(Trade tradeDetails) {
