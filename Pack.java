@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Pack {
     
     private String name;
@@ -5,14 +7,15 @@ public class Pack {
     private ArrayList<Card> cards;
     private int numberOfRares;
     
-    public String openPack(String cards){
+    public ArrayList<String> openPack(String cards) {
 
     }
 
-    public String getCardList(){
-
+    public ArrayList<Card> getCardList() {
+        return cards;
     }
-    public boolean buyPack(int bPack){
+
+    public boolean buyPack(int bPack) {
 
     }
 }
