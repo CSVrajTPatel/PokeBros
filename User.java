@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class User {
+public class User extends UserList{
 
     private String userName;
 
@@ -23,9 +23,18 @@ public class User {
     private int timeLastCurrency;
 
 
-    public void createAccount(String firstName, String lastName, String email, String userName, String password) {
+    public User(String firstName, String lastName, String email, String userName, String password) {
         // for time last currency intialization, use Package java.time
         // 
+
+        uuid = UUID.randomUUID(); 
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.userName = userName;
+        this.password = password;
+        currency = 0;
+        timeLastCurrency = 0;
         return;
     }
 
@@ -55,10 +64,9 @@ public class User {
             return true;
         }
         return false;
-        
     }
 
-    public boolean editFirstName(Strine newName) {
+    public boolean editFirstName(String newName) {
         if (newName != firstName) {
             firstName = newName;
             return true;
@@ -114,53 +122,61 @@ public class User {
         return false;
     }
 
-    public boolean tradeCards(Trade tradeDetails) {
+    public boolean tradeCards(Trade tradeDetails){ // need json access
         return true;
     }
 
-    public boolean purchasePack() {
+    public boolean purchasePack() { // doing soon
         return true;
     }
 
-    public boolean claimDailyCurrency() {
+    public boolean claimDailyCurrency() { 
+        if (timeLastCurrency != 0)
+            return false;
+        currency += 20;
         return true;
     }
 
-    public ArrayList<Trade> viewTradeOffers() {
+    public ArrayList<Trade> viewTradeOffers() { // need json access
         return new ArrayList<Trade>();
     }
 
-    public ArrayList<Trade> viewPendingTradeRequests() {
+    public ArrayList<Trade> viewPendingTradeRequests() { // need json access
         return new ArrayList<Trade>();
     }
 
-    public boolean initiateTrade(User user, Card card) {
+    public boolean initiateTrade(User tradee, ArrayList<Card> offers, Card want) {
+
         return true;
     }
 
-    public ArrayList<Card> searchCards(String criteria) {
+    public ArrayList<Card> searchCards(String criteria) { // I don't think we need this either
         return new ArrayList<Card>();
     }
 
-    public boolean viewCardDetails(Card card) {
-        return true;
+    public void getCardDetails(Card card) { // I don't think we need this
+        
+        return;
     }
 
-    public ArrayList<User> findUsersWithCard(Card card) {
+    public ArrayList<User> findUsersWithCard(Card card) { // need json access
         return new ArrayList<User>();
     }
 
     public void addCurrencyAmount(double amount) {
+        currency = currency + amount;
         return;
     }
 
     public void subCurrencyAmount(double amount) {
+        currency = currency - amount;
         return;
     }
 
     public double getCurrencyAmount() {
         return currency;
     }
+
     public int getTimeLastCurrency(){
         return 0;
     }
