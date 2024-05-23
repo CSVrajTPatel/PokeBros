@@ -15,7 +15,11 @@ public class Pack {
         return cards;
     }
 
-    public boolean buyPack(int bPack) {
+    public boolean buyPack(int packType) {
+        return true;
 
+    }
+    public double getPackPrice(){
+        return price;
     }
 }
