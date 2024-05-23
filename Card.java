@@ -34,8 +34,7 @@ public class Card {
         return name;
     }
 
-    public String getCardFamily() {
-//Error Below
+    public ArrayList<Card> getCardFamily() {
         return Family;
     }
 
