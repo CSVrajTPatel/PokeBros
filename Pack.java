@@ -8,7 +8,7 @@ public class Pack {
     private int numberOfRares;
     
     public ArrayList<String> openPack(String cards) {
-
+        return new ArrayList<String>();
     }
 
     public ArrayList<Card> getCardList() {
