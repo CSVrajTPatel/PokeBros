@@ -20,7 +20,7 @@ public class Facade{
  }  
 
  public Card getCard(Card card){
-  return null;
+  return card;
  } 
 
  public double getCurrency(){
