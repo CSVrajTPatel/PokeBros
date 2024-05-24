@@ -3,9 +3,24 @@ import java.util.ArrayList;
 public class CardList {
     public ArrayList<Card> cardList;
 
+    /* 
     public CardList() {
-        this.cardList = new ArrayList<>();
+        cardList = new ArrayList<Card>();
+        for (int i = 0; i < 151; i++) {
+            int id = ;
+            String name = ;
+            String type = ;
+            String rarity = ;
+            int pack = ;
+            int hp = ;
+            double value = ;
+            int evoStage = ;
+            ArrayList<Integer> family = new ArrayList<Integer>();
+            ArrayList<String> attacks = new ArrayList<String>();
+            cardList.set(1, new Card(id, name, type, rarity, pack, hp, value, evoStage, family, attacks));
+        }
     }
+    */
 
     public ArrayList<Card> getCardList() {
         return cardList;

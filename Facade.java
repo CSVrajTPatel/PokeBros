@@ -4,6 +4,10 @@ public class Facade {
 
   private User user;
 
+  //public Facade() {
+  //  user = new User();
+  //}
+
   public ArrayList<Card> searchByName(String name) {
     return null;
   }

@@ -153,7 +153,7 @@ public class DataLoader {
     }
 
     public static void main(String[] args) {
-        try (BufferedReader reader = new BufferedReader(new FileReader(CARDS_FILE_PATH))) {
+       /*  try (BufferedReader reader = new BufferedReader(new FileReader(CARDS_FILE_PATH))) {
             String line;
             int lineCount = 0;
             while ((line = reader.readLine()) != null && lineCount < 10) {
@@ -164,4 +164,10 @@ public class DataLoader {
             e.printStackTrace();
         }
     }
+    */
+    ArrayList<Card> testing = new ArrayList<Card>();
+    testing = loadCards();
+    System.out.println(testing.get(0).getRarity());
+}
+
 }
