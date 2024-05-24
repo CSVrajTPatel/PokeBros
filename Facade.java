@@ -57,7 +57,7 @@ public class Facade {
   }
 
   public ArrayList<Trade> getPastTradeHistory() {
-    return null;
+    return user.getTradeHistory();
   }
 
   public ArrayList<Trade> getPendingTrades() {
