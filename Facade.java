@@ -61,7 +61,7 @@ public class Facade {
   }
 
   public ArrayList<Trade> getPendingTrades() {
-    return null;
+    return user.viewPendingTradeRequests();
   }
 
   public boolean setFavoriteCard(Card targetCard) {
