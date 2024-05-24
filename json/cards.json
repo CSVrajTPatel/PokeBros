@@ -1703,6 +1703,7 @@
         "family": "Aerodactyl",
         "attacks": ["Wing Attack", "Hyper Beam"]
     },
+
     {
         "id": 143,
         "name": "Snorlax",
@@ -1724,7 +1725,7 @@
         "hp": 160,
         "value": 30,
         "evoStage": 1,
-	    "family": ,
+	    "family": " ",
         "attacks": ["", ""]
     },
     {
@@ -1736,7 +1737,7 @@
         "hp": 160,
         "value": 30,
         "evoStage": 1,
-	    "family": ,
+	    "family": " ",
         "attacks": ["", ""]
     },
     {
@@ -1748,7 +1749,7 @@
         "hp": 160,
         "value": 30,
         "evoStage": 1,
-	    "family": ,
+	    "family": " ",
         "attacks": ["", ""]
     },
     {
@@ -1760,7 +1761,7 @@
         "hp": 160,
         "value": 30,
         "evoStage": 1,
-        "family": ,
+        "family": " ",
         "attacks": ["", ""]
     },
     {
@@ -1772,7 +1773,7 @@
         "hp": 160,
         "value": 30,
         "evoStage": 1,
-    	"family": ,
+    	"family": " ",
         "attacks": ["", ""]
     },
     {
@@ -1784,7 +1785,7 @@
         "hp": 160,
         "value": 30,
         "evoStage": 1,
-	    "family": ,
+	    "family": " ",
         "attacks": ["", ""]
     },
     {
@@ -1796,7 +1797,7 @@
         "hp": 160,
         "value": 30,
         "evoStage": 1,
-	    "family": ,
+	    "family": " ",
         "attacks": ["", ""]
     },
     {
@@ -1808,8 +1809,8 @@
         "hp": 160,
         "value": 30,
         "evoStage": 1,
-	    "family": ,
+	    "family": " ",
         "attacks": ["", ""]
-    },
+    }
 ]
 

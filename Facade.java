@@ -56,7 +56,7 @@ public class Facade {
     return true;
   }
 
-  public ArrayList<Trade> getPastTradeHistory() {
+ /* public ArrayList<Trade> getPastTradeHistory() {
     return user.getTradeHistory();
   }
 
@@ -70,6 +70,8 @@ public class Facade {
     }
     return false;
   }
+   */
+  
 
   public boolean purchasePack(int num) {
     return true;

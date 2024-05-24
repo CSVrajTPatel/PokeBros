@@ -1,195 +1,99 @@
-import java.util.*;
+import java.util.List;
 
-public class User extends UserList{
-
+public class User {
     private String userName;
-
-    private UUID uuid; 
-
+    private String uniqueIdentifier;
     private String password;
-
     private String firstName;
-
     private String lastName;
-
     private String email;
-    
-    private ArrayList<Card> favoriteCards;
-
+    private List<Integer> favoriteCards;
     private double currency;
+    private List<Integer> ownedCards;
 
-    private ArrayList<Card> ownedCards;
-    
-    private int timeLastCurrency;
-    
-    //trade array lists will need to be initialzied from arraylist
-
-    private ArrayList<Trade> pendingTradeRequests;
-    private ArrayList<Trade> pendingTradeOffers;
-    private ArrayList<Trade> tradeHistory;
-
-
-    public User(String firstName, String lastName, String email, String userName, String password) {
-        // for time last currency intialization, use Package java.time
-        // 
-
-        uuid = UUID.randomUUID(); 
+    public User(String userName, String uniqueIdentifier, String password, String firstName, String lastName, String email, List<Integer> favoriteCards, double currency, List<Integer> ownedCards) {
+        // VP Constructor to initialize User object
+        this.userName = userName;
+        this.uniqueIdentifier = uniqueIdentifier;
+        this.password = password;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
-        this.userName = userName;
-        this.password = password;
-        currency = 0;
-        timeLastCurrency = 0;
-        return;
+        this.favoriteCards = favoriteCards;
+        this.currency = currency;
+        this.ownedCards = ownedCards;
     }
 
-    public UUID getUUID() {
-        return uuid;
-    }
-
+    // VP Getters and setters for User attributes
     public String getUserName() {
         return userName;
     }
 
-    public String getEmail() {
-        return email;
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getUniqueIdentifier() {
+        return uniqueIdentifier;
+    }
+
+    public void setUniqueIdentifier(String uniqueIdentifier) {
+        this.uniqueIdentifier = uniqueIdentifier;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getFirstName() {
         return firstName;
     }
 
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
     public String getLastName() {
         return lastName;
     }
 
-    public boolean editEmail(String newEmail) {
-        if (newEmail != email) {
-            email = newEmail;
-            return true;
-        }
-        return false;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
-    public boolean editFirstName(String newName) {
-        if (newName != firstName) {
-            firstName = newName;
-            return true;
-        }
-        return false;
+    public String getEmail() {
+        return email;
     }
 
-    public boolean editLastName(String newName) {
-        if (newName != lastName) {
-            lastName = newName;
-            return true;
-        }
-        return false;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public boolean editPassword(String newPass) {
-        if (newPass != password) {
-            newPass = password;
-            return true;
-        }
-        return false;
-    }
-
-    public void addCard(Card card) {
-        ownedCards.add(card);
-        return;
-    }
-
-    public ArrayList<Card> getCollection() {
-        return ownedCards;
-    }
-
-    public ArrayList<Card> getFavorites() {
+    public List<Integer> getFavoriteCards() {
         return favoriteCards;
     }
 
-    public boolean addFavoriteCard(Card favCard) {
-        for (Card card : favoriteCards){
-            if (favCard == card)
-                return false;
-        }
-        favoriteCards.add(favCard);
-        return true;
+    public void setFavoriteCards(List<Integer> favoriteCards) {
+        this.favoriteCards = favoriteCards;
     }
 
-    public boolean removeFavoriteCard(Card badCard) {
-        for (Card card : favoriteCards){
-            if (badCard == card) {
-                favoriteCards.remove(badCard);
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public boolean tradeCards(Trade tradeDetails){ // need json access
-        return true;
-    }
-
-    public boolean purchasePack() { // doing soon
-        return true;
-    }
-
-    public boolean claimDailyCurrency() { 
-        if (timeLastCurrency != 0)
-            return false;
-        currency += 20;
-        return true;
-    }
-
-    public ArrayList<Trade> viewTradeOffers() { // need json access
-        return new ArrayList<Trade>();
-    }
-
-    public ArrayList<Trade> viewPendingTradeRequests() { // need json access
-        return new ArrayList<Trade>();
-    }
-
-    public boolean initiateTrade(User tradee, ArrayList<Card> offers, Card want) {
-
-        return true;
-    }
-
-    public ArrayList<Trade> getTradeHistory(){
-        return tradeHistory;
-    }
-
-    public ArrayList<Card> searchCards(String criteria) { // I don't think we need this either
-        return new ArrayList<Card>();
-    }
-
-    public void getCardDetails(Card card) { // I don't think we need this
-        
-        return;
-    }
-
-    public ArrayList<User> findUsersWithCard(Card card) { // need json access
-        return new ArrayList<User>();
-    }
-
-    public void addCurrencyAmount(double amount) {
-        currency = currency + amount;
-        return;
-    }
-
-    public void subCurrencyAmount(double amount) {
-        currency = currency - amount;
-        return;
-    }
-
-    public double getCurrencyAmount() {
+    public double getCurrency() {
         return currency;
     }
 
-    public int getTimeLastCurrency(){
-        return 0;
+    public void setCurrency(double currency) {
+        this.currency = currency;
     }
 
+    public List<Integer> getOwnedCards() {
+        return ownedCards;
+    }
 
+    public void setOwnedCards(List<Integer> ownedCards) {
+        this.ownedCards = ownedCards;
+    }
 }

@@ -1,99 +1,89 @@
-import java.util.Scanner;
+import java.util.List;
 
-import java.util.*;
 public class Trade {
-    
-    private User seller;
-    private User buyer;
-    private ArrayList <Card> cardsRequested;
+    private String buyerUserName;
+    private String sellerUserName;
+    private List<Integer> cardsOffered;
+    private List<Integer> cardsRequested;
     private boolean isFairTrade;
     private boolean awaitingResponse;
     private boolean wasAccepted;
-    private String comments;
+    private String comment;
 
-
-    public Trade(){
-        this.tradee = seller;
-        this.trader = buyer;
+    public Trade(String buyerUserName, String sellerUserName, List<Integer> cardsOffered, List<Integer> cardsRequested, boolean isFairTrade, boolean awaitingResponse, boolean wasAccepted, String comment) {
+        // VP Constructor to initialize Trade object
+        this.buyerUserName = buyerUserName;
+        this.sellerUserName = sellerUserName;
+        this.cardsOffered = cardsOffered;
+        this.cardsRequested = cardsRequested;
         this.isFairTrade = isFairTrade;
-        this.awaitingRespones = awaitingResponse;
+        this.awaitingResponse = awaitingResponse;
         this.wasAccepted = wasAccepted;
-        this.comments = comment;
-    }
-
-    public Trade(User buyer, User seller, Card Wanted){
-    
-    }
-
-    public void getisFairTrade(){
-
-    }
-
-    public boolean getisAwaitingResponse(){
-       return this.isAwaitingResponse;
-    }
-
-    public boolean getWasAccepted(){
-        return wasAccepted;
-    }
-
-    public User getTrader(){
-        this.user = seller;
-    }
-    public User getTradee(){
-        this.user = buyer;
-     
-    }
-
-    public boolean acceptTrade(){
-        this.awatingingResponse = false;
-        this.wasAccepted = true;
-    }
-
-    public boolean rejectTrade(){
-        this.awatingRespone = false;
-        this.wasAccepted = false;
-    }
-
-    public boolean makeOffer(){
-
-        return true;
-    }
-
-    public String getComment(){
-        Scanner scanner = new Scanner(System.in);
-        String comment = scanner.nextLine();
-        return comment;
-    }
-
-    public String setComment(String comment){
         this.comment = comment;
     }
 
-    public boolean proposeTrade(){
-
-        return true;
+    // VP Getters and setters for Trade attributes
+    public String getBuyerUserName() {
+        return buyerUserName;
     }
 
-    public boolean addCardToTrade(){
-        return true;
+    public void setBuyerUserName(String buyerUserName) {
+        this.buyerUserName = buyerUserName;
     }
 
-    public boolean removeCardFromeTrade(){
-
-        return true;
-    }
-    public boolean setBuyer(User target){
-
-        return true;
+    public String getSellerUserName() {
+        return sellerUserName;
     }
 
-    public boolean setSeller(User){
-
-        return true;
+    public void setSellerUserName(String sellerUserName) {
+        this.sellerUserName = sellerUserName;
     }
-    public boolean removeTradee(){
-        this.seller = null;
-        return true;
+
+    public List<Integer> getCardsOffered() {
+        return cardsOffered;
+    }
+
+    public void setCardsOffered(List<Integer> cardsOffered) {
+        this.cardsOffered = cardsOffered;
+    }
+
+    public List<Integer> getCardsRequested() {
+        return cardsRequested;
+    }
+
+    public void setCardsRequested(List<Integer> cardsRequested) {
+        this.cardsRequested = cardsRequested;
+    }
+
+    public boolean isFairTrade() {
+        return isFairTrade;
+    }
+
+    public void setFairTrade(boolean fairTrade) {
+        isFairTrade = fairTrade;
+    }
+
+    public boolean isAwaitingResponse() {
+        return awaitingResponse;
+    }
+
+    public void setAwaitingResponse(boolean awaitingResponse) {
+        this.awaitingResponse = awaitingResponse;
+    }
+
+    public boolean wasAccepted() {
+        return wasAccepted;
+    }
+
+    public void setWasAccepted(boolean wasAccepted) {
+        this.wasAccepted = wasAccepted;
+    }
+
+    public String getComment() {
+        return comment;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment;
     }
 }

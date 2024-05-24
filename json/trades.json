@@ -1,4 +1,5 @@
-{
+[
+    {
     "buyerUserName": "buyerUserName",
     "sellerUserName": "sellerUserName",
     "cardsOffered": [1, 2, 3],
@@ -7,4 +8,5 @@
     "awaitingResponse": true,
     "wasAccepted": false,
     "comment": "Looking forward to this trade!"
-}
+    }
+]
