@@ -103,7 +103,7 @@ public class User extends UserList{
         return favoriteCards;
     }
 
-    public boolean addFavroiteCard(Card favCard) {
+    public boolean addFavoriteCard(Card favCard) {
         for (Card card : favoriteCards){
             if (favCard == card)
                 return false;
