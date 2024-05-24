@@ -6,14 +6,15 @@ import org.json.simple.parser.ParseException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
+
 
 public class DataWriter {
     private static final String USERS_FILE_PATH = "json/users.json";
     private static final String TRADES_FILE_PATH = "json/trades.json";
 
-    public static void updateUsers(List<User> users) {
+    public static void updateUsers(ArrayList<User> users) {
         try {
             // Read existing users
             JSONParser parser = new JSONParser();
@@ -42,7 +43,7 @@ public class DataWriter {
         }
     }
 
-    public static void updateTrades(List<Trade> trades) {
+    public static void updateTrades(ArrayList<Trade> trades) {
         try {
             // Read existing trades
             JSONParser parser = new JSONParser();
@@ -123,8 +124,8 @@ public class DataWriter {
 
     public static void main(String[] args) {
         // Hardcoded addition of a new user
-        User newUser = new User("Brock", "password", "Brock", "Harrison", "brock@example.com", Arrays.asList(1, 4, 7), 300.0, Arrays.asList(7, 8, 9));
-        updateUsers(Arrays.asList(newUser));
+       // User newUser = new User("Brock", "password", "Brock", "Harrison", "brock@example.com", Arrays.asList(1, 4, 7), 300.0, Arrays.asList(7, 8, 9));
+        //updateUsers(Arrays.asList(newUser));
 
         // Hardcoded addition of a new trade
         //Trade newTrade = new Trade("Brock", "Misty", Arrays.asList(7, 8, 9), Arrays.asList(8,9,10), true, false, true, "Smooth trade!");

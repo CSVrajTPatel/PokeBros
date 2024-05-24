@@ -1,4 +1,4 @@
-import java.util.List;
+import java.util.ArrayList;
 import java.util.UUID;
 
 public class User {
@@ -8,11 +8,11 @@ public class User {
     private String firstName;
     private String lastName;
     private String email;
-    private List<Integer> favoriteCards;
+    private ArrayList<Integer> favoriteCards;
     private double currency;
-    private List<Integer> ownedCards;
+    private ArrayList<Integer> ownedCards;
 
-    public User(String userName, String password, String firstName, String lastName, String email, List<Integer> favoriteCards, double currency, List<Integer> ownedCards) {
+    public User(String userName, String password, String firstName, String lastName, String email, ArrayList<Integer> favoriteCards, double currency, ArrayList<Integer> ownedCards) {
         // VP Constructor to initialize User object
         this.userName = userName;
         uniqueIdentifier = UUID.randomUUID(); 
@@ -70,11 +70,11 @@ public class User {
         this.email = email;
     }
 
-    public List<Integer> getFavoriteCards() {
+    public ArrayList<Integer> getFavoriteCards() {
         return favoriteCards;
     }
 
-    public void setFavoriteCards(List<Integer> favoriteCards) {
+    public void setFavoriteCards(ArrayList<Integer> favoriteCards) {
         this.favoriteCards = favoriteCards;
     }
 
@@ -86,11 +86,11 @@ public class User {
         this.currency = currency;
     }
 
-    public List<Integer> getOwnedCards() {
+    public ArrayList<Integer> getOwnedCards() {
         return ownedCards;
     }
 
-    public void setOwnedCards(List<Integer> ownedCards) {
+    public void setOwnedCards(ArrayList<Integer> ownedCards) {
         this.ownedCards = ownedCards;
     }
 }

@@ -7,15 +7,14 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
 
 public class DataLoader {
     private static final String CARDS_FILE_PATH = "json/cards.json";
     private static final String USERS_FILE_PATH = "json/users.json";
     private static final String TRADES_FILE_PATH = "json/trades.json";
 
-    public static List<Card> loadCards() {
-        List<Card> cards = new ArrayList<>();
+    public static ArrayList<Card> loadCards() {
+        ArrayList<Card> cards = new ArrayList<>();
         JSONParser parser = new JSONParser();
 
         try (FileReader reader = new FileReader(CARDS_FILE_PATH)) {
@@ -30,8 +29,8 @@ public class DataLoader {
         return cards;
     }
 
-    public static List<User> loadUsers() {
-        List<User> users = new ArrayList<>();
+    public static ArrayList<User> loadUsers() {
+        ArrayList<User> users = new ArrayList<>();
         JSONParser parser = new JSONParser();
 
         try (FileReader reader = new FileReader(USERS_FILE_PATH)) {
@@ -46,8 +45,8 @@ public class DataLoader {
         return users;
     }
 
-    public static List<Trade> loadTrades() {
-        List<Trade> trades = new ArrayList<>();
+    public static ArrayList<Trade> loadTrades() {
+        ArrayList<Trade> trades = new ArrayList<>();
         JSONParser parser = new JSONParser();
 
         try (FileReader reader = new FileReader(TRADES_FILE_PATH)) {
@@ -114,7 +113,7 @@ public class DataLoader {
         String email = (String) userObject.get("email");
         double currency = parseDouble(userObject.get("currency"));
 
-        List<Integer> favoriteCards = new ArrayList<>();
+        ArrayList<Integer> favoriteCards = new ArrayList<>();
         JSONArray favoriteCardsArray = (JSONArray) userObject.get("favoriteCards");
         for (Object cardId : favoriteCardsArray) {
             favoriteCards.add(((Long) cardId).intValue());
