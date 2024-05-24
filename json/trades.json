@@ -1,12 +1,1 @@
-[
-    {
-    "buyerUserName": "buyerUserName",
-    "sellerUserName": "sellerUserName",
-    "cardsOffered": [1, 2, 3],
-    "cardsRequested": [4, 5, 6],
-    "isFairTrade": true,
-    "awaitingResponse": true,
-    "wasAccepted": false,
-    "comment": "Looking forward to this trade!"
-    }
-]
+[{"buyerUserName":"buyerUserName","cardsOffered":[1,2,3],"awaitingResponse":true,"cardsRequested":[4,5,6],"isFairTrade":true,"wasAccepted":false,"comment":"Looking forward to this trade!","sellerUserName":"sellerUserName"},{"buyerUserName":"Brock","cardsOffered":[7,8,9],"awaitingResponse":false,"cardsRequested":[10,11,12],"isFairTrade":true,"wasAccepted":true,"comment":"Smooth trade!","sellerUserName":"Misty"}]

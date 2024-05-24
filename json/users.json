@@ -1,17 +1,1 @@
-[
-    {
-    "userName": "exampleUserName",
-    "uniqueIdentifier": "123e4567-e89b-12d3-a456-426614174000",
-    "password": "examplePassword",
-    "firstName": "John",
-    "lastName": "Doe",
-    "email": "john.doe@example.com",
-    "favoriteCards": [1, 4, 7],
-    "currency": 1000.0,
-    "ownedCards": [1, 2, 3],
-    "userCollection": {
-        "collectionName": "My Collection",
-        "cardIds": [1, 4, 7, 9, 12]
-    }
-}
-]
+[{"firstName":"John","lastName":"Doe","password":"examplePassword","favoriteCards":[1,4,7],"userCollection":{"cardIds":[1,4,7,9,12],"collectionName":"My Collection"},"currency":1000.0,"userName":"exampleUserName","email":"john.doe@example.com","ownedCards":[1,2,3],"uniqueIdentifier":"123e4567-e89b-12d3-a456-426614174000"},{"firstName":"Brock","lastName":"Harrison","password":"password","favoriteCards":[1,4,7],"currency":300.0,"userName":"Brock","email":"brock@example.com","ownedCards":[7,8,9],"uniqueIdentifier":"3"}]
