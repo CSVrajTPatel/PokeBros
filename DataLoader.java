@@ -126,7 +126,7 @@ public class DataLoader {
             ownedCards.add(((Long) cardId).intValue());
         }
 
-        return new User(userName, uniqueIdentifier, password, firstName, lastName, email, favoriteCards, currency, ownedCards);
+        return new User(userName, password, firstName, lastName, email, favoriteCards, currency, ownedCards);
     }
 
     private static Trade parseTrade(JSONObject tradeObject) {

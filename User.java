@@ -1,8 +1,9 @@
 import java.util.List;
+import java.util.UUID;
 
 public class User {
     private String userName;
-    private String uniqueIdentifier;
+    private UUID uniqueIdentifier;
     private String password;
     private String firstName;
     private String lastName;
@@ -11,10 +12,10 @@ public class User {
     private double currency;
     private List<Integer> ownedCards;
 
-    public User(String userName, String uniqueIdentifier, String password, String firstName, String lastName, String email, List<Integer> favoriteCards, double currency, List<Integer> ownedCards) {
+    public User(String userName, String password, String firstName, String lastName, String email, List<Integer> favoriteCards, double currency, List<Integer> ownedCards) {
         // VP Constructor to initialize User object
         this.userName = userName;
-        this.uniqueIdentifier = uniqueIdentifier;
+        uniqueIdentifier = UUID.randomUUID(); 
         this.password = password;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -33,12 +34,8 @@ public class User {
         this.userName = userName;
     }
 
-    public String getUniqueIdentifier() {
+    public UUID getUniqueIdentifier() {
         return uniqueIdentifier;
-    }
-
-    public void setUniqueIdentifier(String uniqueIdentifier) {
-        this.uniqueIdentifier = uniqueIdentifier;
     }
 
     public String getPassword() {

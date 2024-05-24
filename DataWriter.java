@@ -123,7 +123,7 @@ public class DataWriter {
 
     public static void main(String[] args) {
         // Hardcoded addition of a new user
-        User newUser = new User("Brock", "3", "password", "Brock", "Harrison", "brock@example.com", Arrays.asList(1, 4, 7), 300.0, Arrays.asList(7, 8, 9));
+        User newUser = new User("Brock", "password", "Brock", "Harrison", "brock@example.com", Arrays.asList(1, 4, 7), 300.0, Arrays.asList(7, 8, 9));
         updateUsers(Arrays.asList(newUser));
 
         // Hardcoded addition of a new trade
