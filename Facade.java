@@ -64,8 +64,11 @@ public class Facade {
     return null;
   }
 
-  public boolean setFavoriiteCard(Card targetCard) {
-    return true;
+  public boolean setFavoriteCard(Card targetCard) {
+    if(user.addFavoriteCard(targetCard)){
+      return true;
+    }
+    return false;
   }
 
   public boolean purchasePack(int num) {
