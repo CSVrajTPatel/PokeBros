@@ -21,6 +21,12 @@ public class User extends UserList{
     private ArrayList<Card> ownedCards;
     
     private int timeLastCurrency;
+    
+    //trade array lists will need to be initialzied from arraylist
+
+    private ArrayList<Trade> pendingTradeRequests;
+    private ArrayList<Trade> pendingTradeOffers;
+    private ArrayList<Trade> tradeHistory;
 
 
     public User(String firstName, String lastName, String email, String userName, String password) {
@@ -150,6 +156,10 @@ public class User extends UserList{
         return true;
     }
 
+    public ArrayList<Trade> getTradeHistory(){
+        return tradeHistory;
+    }
+
     public ArrayList<Card> searchCards(String criteria) { // I don't think we need this either
         return new ArrayList<Card>();
     }
@@ -180,4 +190,6 @@ public class User extends UserList{
     public int getTimeLastCurrency(){
         return 0;
     }
+
+
 }
