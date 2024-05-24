@@ -1,16 +1,17 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class Trade {
     private String buyerUserName;
     private String sellerUserName;
-    private List<Integer> cardsOffered;
-    private List<Integer> cardsRequested;
+    private ArrayList<Integer> cardsOffered;
+    private ArrayList<Integer> cardsRequested;
     private boolean isFairTrade;
     private boolean awaitingResponse;
     private boolean wasAccepted;
     private String comment;
 
-    public Trade(String buyerUserName, String sellerUserName, List<Integer> cardsOffered, List<Integer> cardsRequested, boolean isFairTrade, boolean awaitingResponse, boolean wasAccepted, String comment) {
+    public Trade(String buyerUserName, String sellerUserName, ArrayList<Integer> cardsOffered, ArrayList<Integer> cardsRequested, boolean isFairTrade, boolean awaitingResponse, boolean wasAccepted, String comment) {
         // VP Constructor to initialize Trade object
         this.buyerUserName = buyerUserName;
         this.sellerUserName = sellerUserName;
@@ -39,11 +40,11 @@ public class Trade {
         this.sellerUserName = sellerUserName;
     }
 
-    public List<Integer> getCardsOffered() {
+    public ArrayList<Integer> getCardsOffered() {
         return cardsOffered;
     }
 
-    public void setCardsOffered(List<Integer> cardsOffered) {
+    public void setCardsOffered(ArrayList<Integer> cardsOffered) {
         this.cardsOffered = cardsOffered;
     }
 
@@ -51,7 +52,7 @@ public class Trade {
         return cardsRequested;
     }
 
-    public void setCardsRequested(List<Integer> cardsRequested) {
+    public void setCardsRequested(ArrayList<Integer> cardsRequested) {
         this.cardsRequested = cardsRequested;
     }
 

@@ -72,7 +72,7 @@ public class DataLoader {
         double value = parseDouble(cardObject.get("value"));
         int evoStage = ((Long) cardObject.get("evoStage")).intValue();
 
-        List<Integer> family = new ArrayList<>();
+        ArrayList<Integer> family = new ArrayList<>();
         if (cardObject.get("family") instanceof JSONArray) {
             JSONArray familyArray = (JSONArray) cardObject.get("family");
             for (Object familyId : familyArray) {
@@ -82,7 +82,7 @@ public class DataLoader {
             family.add(((Long) cardObject.get("family")).intValue());
         }
 
-        List<String> attacks = new ArrayList<>();
+        ArrayList<String> attacks = new ArrayList<>();
         if (cardObject.get("attacks") instanceof JSONArray) {
             JSONArray attacksArray = (JSONArray) cardObject.get("attacks");
             for (Object attack : attacksArray) {
@@ -120,7 +120,7 @@ public class DataLoader {
             favoriteCards.add(((Long) cardId).intValue());
         }
 
-        List<Integer> ownedCards = new ArrayList<>();
+        ArrayList<Integer> ownedCards = new ArrayList<Integer>();
         JSONArray ownedCardsArray = (JSONArray) userObject.get("ownedCards");
         for (Object cardId : ownedCardsArray) {
             ownedCards.add(((Long) cardId).intValue());
@@ -133,13 +133,13 @@ public class DataLoader {
         String buyerUserName = (String) tradeObject.get("buyerUserName");
         String sellerUserName = (String) tradeObject.get("sellerUserName");
 
-        List<Integer> cardsOffered = new ArrayList<>();
+        ArrayList<Integer> cardsOffered = new ArrayList<Integer>();
         JSONArray cardsOfferedArray = (JSONArray) tradeObject.get("cardsOffered");
         for (Object cardId : cardsOfferedArray) {
             cardsOffered.add(((Long) cardId).intValue());
         }
 
-        List<Integer> cardsRequested = new ArrayList<>();
+        ArrayList<Integer> cardsRequested = new ArrayList<>();
         JSONArray cardsRequestedArray = (JSONArray) tradeObject.get("cardsRequested");
         for (Object cardId : cardsRequestedArray) {
             cardsRequested.add(((Long) cardId).intValue());

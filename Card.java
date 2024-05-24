@@ -1,4 +1,4 @@
-import java.util.List;
+import java.util.ArrayList;
 
 public class Card {
     private int id;
@@ -9,10 +9,23 @@ public class Card {
     private int hp;
     private double value;
     private int evoStage;
-    private List<Integer> family;
-    private List<String> attacks;
+    private ArrayList<Integer> family;
+    private ArrayList<String> attacks;
 
-    public Card(int id, String name, String type, String rarity, int pack, int hp, double value, int evoStage, List<Integer> family, List<String> attacks) {
+    public Card() { 
+        id = 0;
+        name = "wow";
+        type = "dang";
+        rarity = "super";
+        pack = 3;
+        hp = 100;
+        value = 10.4;
+        evoStage = 1;
+        family = new ArrayList<Integer>();
+        attacks = new ArrayList<String>();
+    }
+
+    public Card(int id, String name, String type, String rarity, int pack, int hp, double value, int evoStage, ArrayList<Integer> family, ArrayList<String> attacks) {
         //VP initialize Card objects 
         this.id = id;
         this.name = name;

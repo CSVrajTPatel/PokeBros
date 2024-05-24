@@ -127,8 +127,8 @@ public class DataWriter {
         updateUsers(Arrays.asList(newUser));
 
         // Hardcoded addition of a new trade
-        Trade newTrade = new Trade("Brock", "Misty", Arrays.asList(7, 8, 9), Arrays.asList(10, 11, 12), true, false, true, "Smooth trade!");
-        updateTrades(Arrays.asList(newTrade));
+        //Trade newTrade = new Trade("Brock", "Misty", Arrays.asList(7, 8, 9), Arrays.asList(8,9,10), true, false, true, "Smooth trade!");
+      //  updateTrades(Arrays.asList(newTrade));
 
         System.out.println("Data written to files.");
     }

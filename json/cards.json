@@ -1,5 +1,17 @@
 [
     {
+        "id": 0,
+        "name": "Alolan Exeggutor",
+        "type": "Grass",
+        "rarity": "Special",
+        "pack": " ",
+        "hp": 1000,
+        "value": 1000.00,
+        "evoStage": 2,
+        "family": " ",
+        "attacks": ["Steal yo Girl", "Intimidation"]
+    },
+    {
         "id": 1,
         "name": "Bulbasaur",
         "type": "Grass",
