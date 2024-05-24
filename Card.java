@@ -104,19 +104,19 @@ public class Card {
         this.evoStage = evoStage;
     }
 
-    public List<Integer> getFamily() {
+    public ArrayList<Integer> getFamily() {
         return family;
     }
 
-    public void setFamily(List<Integer> family) {
+    public void setFamily(ArrayList<Integer> family) {
         this.family = family;
     }
 
-    public List<String> getAttacks() {
+    public ArrayList<String> getAttacks() {
         return attacks;
     }
 
-    public void setAttacks(List<String> attacks) {
+    public void setAttacks(ArrayList<String> attacks) {
         this.attacks = attacks;
     }
 }
