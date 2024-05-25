@@ -326,26 +326,26 @@
     {
         "id": 27,
         "name": "Sandshrew",
-        "type": "Ground",
+        "type": "Fighting",
         "rarity": "Common",
-        "pack": "Base Set",
-        "hp": 50,
-        "value": 10,
-        "evoStage": "Basic",
-        "family": "Sandshrew",
+        "pack": 2,
+        "hp": 60,
+        "value": 0.25,
+        "evoStage": 1,
+        "family": 28,
         "attacks": ["Scratch", "Sand Attack"]
     },
     {
         "id": 28,
         "name": "Sandslash",
-        "type": "Ground",
+        "type": "Fighting",
         "rarity": "Uncommon",
-        "pack": "Base Set",
-        "hp": 75,
-        "value": 20,
-        "evoStage": "Stage 1",
-        "family": "Sandshrew",
-        "attacks": ["Slash", "Fury Swipes"]
+        "pack": 2,
+        "hp": 120,
+        "value": 0.40,
+        "evoStage": 2,
+        "family": 27,
+        "attacks": ["Rumble", "Spike Rend"]
     },
     {
         "id": 29,
@@ -355,7 +355,7 @@
         "pack": "Base Set",
         "hp": 55,
         "value": 10,
-        "evoStage": "Basic",
+        "evoStage": 1,
         "family": "Nidoran",
         "attacks": ["Scratch", "Poison Sting"]
     },
@@ -367,7 +367,7 @@
         "pack": "Base Set",
         "hp": 70,
         "value": 20,
-        "evoStage": "Stage 1",
+        "evoStage": 2,
         "family": "Nidoran",
         "attacks": ["Double Kick", "Poison Sting"]
     },
@@ -379,7 +379,7 @@
         "pack": "Base Set",
         "hp": 90,
         "value": 30,
-        "evoStage": "Stage 2",
+        "evoStage": 3,
         "family": "Nidoran",
         "attacks": ["Body Slam", "Earthquake"]
     },
