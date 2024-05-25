@@ -3,7 +3,6 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -62,112 +61,113 @@ public class DataLoader {
     }
 
     private static Card parseCard(JSONObject cardObject) {
-        int id = ((Long) cardObject.get("id")).intValue();
-        String name = (String) cardObject.get("name");
-        String type = (String) cardObject.get("type");
-        String rarity = (String) cardObject.get("rarity");
-        int pack = ((Long) cardObject.get("pack")).intValue();
-        int hp = ((Long) cardObject.get("hp")).intValue();
-        double value = parseDouble(cardObject.get("value"));
-        int evoStage = ((Long) cardObject.get("evoStage")).intValue();
+        int id = getIntValue(cardObject, "id");
+        String name = getStringValue(cardObject, "name");
+        String type = getStringValue(cardObject, "type");
+        String rarity = getStringValue(cardObject, "rarity");
+        int pack = getIntValue(cardObject, "pack");
+        int hp = getIntValue(cardObject, "hp");
+        double value = getDoubleValue(cardObject, "value");
+        int evoStage = getIntValue(cardObject, "evoStage");
 
-        ArrayList<Integer> family = new ArrayList<>();
-        if (cardObject.get("family") instanceof JSONArray) {
-            JSONArray familyArray = (JSONArray) cardObject.get("family");
-            for (Object familyId : familyArray) {
-                family.add(((Long) familyId).intValue());
-            }
-        } else if (cardObject.get("family") instanceof Long) {
-            family.add(((Long) cardObject.get("family")).intValue());
-        }
-
-        ArrayList<String> attacks = new ArrayList<>();
-        if (cardObject.get("attacks") instanceof JSONArray) {
-            JSONArray attacksArray = (JSONArray) cardObject.get("attacks");
-            for (Object attack : attacksArray) {
-                attacks.add((String) attack);
-            }
-        } else if (cardObject.get("attacks") instanceof String) {
-            attacks.add((String) cardObject.get("attacks"));
-        }
+        ArrayList<Integer> family = getIntegerList(cardObject, "family");
+        ArrayList<String> attacks = getStringList(cardObject, "attacks");
 
         return new Card(id, name, type, rarity, pack, hp, value, evoStage, family, attacks);
     }
 
-    private static double parseDouble(Object value) {
+    private static int getIntValue(JSONObject jsonObject, String key) {
+        Object value = jsonObject.get(key);
+        if (value instanceof Long) {
+            return ((Long) value).intValue();
+        }
+        return 0;
+    }
+
+    private static double getDoubleValue(JSONObject jsonObject, String key) {
+        Object value = jsonObject.get(key);
         if (value instanceof Long) {
             return ((Long) value).doubleValue();
         } else if (value instanceof Double) {
             return (Double) value;
-        } else {
-            throw new IllegalArgumentException("Unexpected value type: " + value.getClass());
         }
+        return 0.0;
+    }
+
+    private static String getStringValue(JSONObject jsonObject, String key) {
+        Object value = jsonObject.get(key);
+        return value != null ? value.toString() : "";
+    }
+
+    private static ArrayList<Integer> getIntegerList(JSONObject jsonObject, String key) {
+        ArrayList<Integer> list = new ArrayList<>();
+        Object value = jsonObject.get(key);
+        if (value instanceof JSONArray) {
+            JSONArray jsonArray = (JSONArray) value;
+            for (Object obj : jsonArray) {
+                if (obj instanceof Long) {
+                    list.add(((Long) obj).intValue());
+                }
+            }
+        } else if (value instanceof Long) {
+            list.add(((Long) value).intValue());
+        }
+        return list;
+    }
+
+    private static ArrayList<String> getStringList(JSONObject jsonObject, String key) {
+        ArrayList<String> list = new ArrayList<>();
+        Object value = jsonObject.get(key);
+        if (value instanceof JSONArray) {
+            JSONArray jsonArray = (JSONArray) value;
+            for (Object obj : jsonArray) {
+                if (obj instanceof String) {
+                    list.add((String) obj);
+                }
+            }
+        } else if (value instanceof String) {
+            list.add((String) value);
+        }
+        return list;
     }
 
     private static User parseUser(JSONObject userObject) {
-        String userName = (String) userObject.get("userName");
-        String uniqueIdentifier = (String) userObject.get("uniqueIdentifier");
-        String password = (String) userObject.get("password");
-        String firstName = (String) userObject.get("firstName");
-        String lastName = (String) userObject.get("lastName");
-        String email = (String) userObject.get("email");
-        double currency = parseDouble(userObject.get("currency"));
+        String userName = getStringValue(userObject, "userName");
+        String uniqueIdentifier = getStringValue(userObject, "uniqueIdentifier");
+        String password = getStringValue(userObject, "password");
+        String firstName = getStringValue(userObject, "firstName");
+        String lastName = getStringValue(userObject, "lastName");
+        String email = getStringValue(userObject, "email");
+        double currency = getDoubleValue(userObject, "currency");
 
-        ArrayList<Integer> favoriteCards = new ArrayList<>();
-        JSONArray favoriteCardsArray = (JSONArray) userObject.get("favoriteCards");
-        for (Object cardId : favoriteCardsArray) {
-            favoriteCards.add(((Long) cardId).intValue());
-        }
-
-        ArrayList<Integer> ownedCards = new ArrayList<Integer>();
-        JSONArray ownedCardsArray = (JSONArray) userObject.get("ownedCards");
-        for (Object cardId : ownedCardsArray) {
-            ownedCards.add(((Long) cardId).intValue());
-        }
+        ArrayList<Integer> favoriteCards = getIntegerList(userObject, "favoriteCards");
+        ArrayList<Integer> ownedCards = getIntegerList(userObject, "ownedCards");
 
         return new User(userName, password, firstName, lastName, email, favoriteCards, currency, ownedCards);
     }
 
     private static Trade parseTrade(JSONObject tradeObject) {
-        String buyerUserName = (String) tradeObject.get("buyerUserName");
-        String sellerUserName = (String) tradeObject.get("sellerUserName");
+        String buyerUserName = getStringValue(tradeObject, "buyerUserName");
+        String sellerUserName = getStringValue(tradeObject, "sellerUserName");
 
-        ArrayList<Integer> cardsOffered = new ArrayList<Integer>();
-        JSONArray cardsOfferedArray = (JSONArray) tradeObject.get("cardsOffered");
-        for (Object cardId : cardsOfferedArray) {
-            cardsOffered.add(((Long) cardId).intValue());
-        }
-
-        ArrayList<Integer> cardsRequested = new ArrayList<>();
-        JSONArray cardsRequestedArray = (JSONArray) tradeObject.get("cardsRequested");
-        for (Object cardId : cardsRequestedArray) {
-            cardsRequested.add(((Long) cardId).intValue());
-        }
+        ArrayList<Integer> cardsOffered = getIntegerList(tradeObject, "cardsOffered");
+        ArrayList<Integer> cardsRequested = getIntegerList(tradeObject, "cardsRequested");
 
         boolean isFairTrade = (Boolean) tradeObject.get("isFairTrade");
         boolean awaitingResponse = (Boolean) tradeObject.get("awaitingResponse");
         boolean wasAccepted = (Boolean) tradeObject.get("wasAccepted");
-        String comment = (String) tradeObject.get("comment");
+        String comment = getStringValue(tradeObject, "comment");
 
         return new Trade(buyerUserName, sellerUserName, cardsOffered, cardsRequested, isFairTrade, awaitingResponse, wasAccepted, comment);
     }
 
     public static void main(String[] args) {
-       /*  try (BufferedReader reader = new BufferedReader(new FileReader(CARDS_FILE_PATH))) {
-            String line;
-            int lineCount = 0;
-            while ((line = reader.readLine()) != null && lineCount < 10) {
-                System.out.println(line);
-                lineCount++;
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
+        ArrayList<Card> testing = new ArrayList<>();
+        testing = loadCards();
+        if (!testing.isEmpty()) {
+            System.out.println(testing.get(1).getPack());
+        } else {
+            System.out.println("No cards loaded.");
         }
     }
-    */
-    ArrayList<Card> testing = new ArrayList<Card>();
-    testing = loadCards();
-    System.out.println(testing.get(0).getRarity());
-}
-
 }
