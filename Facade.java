@@ -31,7 +31,7 @@ public class Facade {
   }
 
   public double getCurrency() {
-    return 0.0;
+    return user.getCurrency();
   }
 
   public ArrayList<Card> getCollection() {
