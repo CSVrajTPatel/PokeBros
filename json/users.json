@@ -12,6 +12,7 @@
     "userCollection": {
         "collectionName": "My Collection",
         "cardIds": [1, 4, 7, 9, 12]
-    }
+    },
+    "lastClaimedCurrencyTime":"2023-05-25T10:00:00Z"
 }
 ]
