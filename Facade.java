@@ -29,6 +29,7 @@ public class Facade {
   }
 
   public Card getCard(Card card) {
+    // confused why this method is needed
     return card;
   }
 
@@ -41,7 +42,7 @@ public class Facade {
   }
 
   public ArrayList<Card> getCardList() {
-    return null;
+    return masterCardList.getCardList();
   }
 
   public ArrayList<Card> viewFamily(Card card) {
