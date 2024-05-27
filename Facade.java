@@ -17,7 +17,7 @@ public class Facade {
   }
 
   public ArrayList<Card> searchByType(String filter) {
-    return null;
+    return masterCardList.searchByType(filter);
   }
 
   public ArrayList<Card> searchByRarity(String filter) {
