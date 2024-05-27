@@ -21,11 +21,11 @@ public class Facade {
   }
 
   public ArrayList<Card> searchByRarity(String filter) {
-    return null;
+    return masterCardList.searchByRarity(filter);
   }
 
   public Card searchById(int filter) {
-    return null;
+    return masterCardList.searchById(filter);
   }
 
   public Card getCard(Card card) {
