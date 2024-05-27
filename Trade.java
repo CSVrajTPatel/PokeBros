@@ -48,7 +48,7 @@ public class Trade {
         this.cardsOffered = cardsOffered;
     }
 
-    public List<Integer> getCardsRequested() {
+    public ArrayList<Integer> getCardsRequested() {
         return cardsRequested;
     }
 
