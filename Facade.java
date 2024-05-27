@@ -5,13 +5,15 @@ import java.time.Duration;
 public class Facade {
 
   private User user;
+  private CardList masterCardList;
+  //masterCardList = new CardList();
 
   //public Facade() {
   //  user = new User();
   //}
 
   public ArrayList<Card> searchByName(String name) {
-    return null;
+    return masterCardList.searchByName(name);
   }
 
   public ArrayList<Card> searchByType(String filter) {
@@ -39,6 +41,7 @@ public class Facade {
   }
 
   public ArrayList<Card> getCardList() {
+i
     return null;
   }
 
