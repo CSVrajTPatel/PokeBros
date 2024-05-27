@@ -36,12 +36,11 @@ public class Facade {
     return user.getCurrency();
   }
 
-  public ArrayList<Card> getCollection() {
-    return null;
+  public ArrayList<Integer> getCollection() {
+     return user.getOwnedCards();
   }
 
   public ArrayList<Card> getCardList() {
-i
     return null;
   }
 
