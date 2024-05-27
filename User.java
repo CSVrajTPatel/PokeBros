@@ -105,4 +105,8 @@ public class User {
     public void addCardToList(Card card) {
         ownedCards.add(card.getId());
     }
+
+    public void removeCardFromList(Card card){
+      
+    }
 }
