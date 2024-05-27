@@ -9,14 +9,15 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-
 public class DataWriter {
+    // Paths to the JSON files for users and trades
     private static final String USERS_FILE_PATH = "json/users.json";
     private static final String TRADES_FILE_PATH = "json/trades.json";
 
+    // Method to update the users in the JSON file
     public static void updateUsers(ArrayList<User> users) {
         try {
-            // Read existing users
+            // Read existing users from the JSON file
             JSONParser parser = new JSONParser();
             JSONArray usersArray;
 
@@ -26,13 +27,13 @@ public class DataWriter {
                 usersArray = new JSONArray();
             }
 
-            // Add new users
+            // Add new users to the JSON array
             for (User user : users) {
                 JSONObject userJson = userToJson(user);
                 usersArray.add(userJson);
             }
 
-            // Write updated users to file
+            // Write the updated JSON array to the file
             try (FileWriter file = new FileWriter(USERS_FILE_PATH)) {
                 file.write(usersArray.toJSONString());
                 file.flush();
@@ -43,9 +44,10 @@ public class DataWriter {
         }
     }
 
+    // Method to update the trades in the JSON file
     public static void updateTrades(ArrayList<Trade> trades) {
         try {
-            // Read existing trades
+            // Read existing trades from the JSON file
             JSONParser parser = new JSONParser();
             JSONArray tradesArray;
 
@@ -55,13 +57,13 @@ public class DataWriter {
                 tradesArray = new JSONArray();
             }
 
-            // Add new trades
+            // Add new trades to the JSON array
             for (Trade trade : trades) {
                 JSONObject tradeJson = tradeToJson(trade);
                 tradesArray.add(tradeJson);
             }
 
-            // Write updated trades to file
+            // Write the updated JSON array to the file
             try (FileWriter file = new FileWriter(TRADES_FILE_PATH)) {
                 file.write(tradesArray.toJSONString());
                 file.flush();
@@ -72,22 +74,25 @@ public class DataWriter {
         }
     }
 
+    // Helper method to convert a User object to a JSONObject
     private static JSONObject userToJson(User user) {
         JSONObject userObject = new JSONObject();
         userObject.put("userName", user.getUserName());
-        userObject.put("uniqueIdentifier", user.getUniqueIdentifier());
+        userObject.put("uniqueIdentifier", user.getUniqueIdentifier().toString());
         userObject.put("password", user.getPassword());
         userObject.put("firstName", user.getFirstName());
         userObject.put("lastName", user.getLastName());
         userObject.put("email", user.getEmail());
         userObject.put("currency", user.getCurrency());
 
+        // Convert favorite cards list to a JSON array
         JSONArray favoriteCardsArray = new JSONArray();
         for (Integer cardId : user.getFavoriteCards()) {
             favoriteCardsArray.add(cardId);
         }
         userObject.put("favoriteCards", favoriteCardsArray);
 
+        // Convert owned cards list to a JSON array
         JSONArray ownedCardsArray = new JSONArray();
         for (Integer cardId : user.getOwnedCards()) {
             ownedCardsArray.add(cardId);
@@ -97,17 +102,20 @@ public class DataWriter {
         return userObject;
     }
 
+    // Helper method to convert a Trade object to a JSONObject
     private static JSONObject tradeToJson(Trade trade) {
         JSONObject tradeObject = new JSONObject();
         tradeObject.put("buyerUserName", trade.getBuyerUserName());
         tradeObject.put("sellerUserName", trade.getSellerUserName());
 
+        // Convert cards offered list to a JSON array
         JSONArray cardsOfferedArray = new JSONArray();
         for (Integer cardId : trade.getCardsOffered()) {
             cardsOfferedArray.add(cardId);
         }
         tradeObject.put("cardsOffered", cardsOfferedArray);
 
+        // Convert cards requested list to a JSON array
         JSONArray cardsRequestedArray = new JSONArray();
         for (Integer cardId : trade.getCardsRequested()) {
             cardsRequestedArray.add(cardId);
@@ -123,14 +131,17 @@ public class DataWriter {
     }
 
     public static void main(String[] args) {
-        // Hardcoded addition of a new user
-       // User newUser = new User("Brock", "password", "Brock", "Harrison", "brock@example.com", Arrays.asList(1, 4, 7), 300.0, Arrays.asList(7, 8, 9));
-        //updateUsers(Arrays.asList(newUser));
+        // Example usage of updating users
+        ArrayList<User> users = new ArrayList<>();
+        users.add(new User("exampleUserName", "examplePassword", "John", "Doe", "john.doe@example.com", new ArrayList<>(Arrays.asList(1, 4, 7)), 1000.0, new ArrayList<>(Arrays.asList(1, 2, 3))));
+        updateUsers(users);
 
-        // Hardcoded addition of a new trade
-        //Trade newTrade = new Trade("Brock", "Misty", Arrays.asList(7, 8, 9), Arrays.asList(8,9,10), true, false, true, "Smooth trade!");
-      //  updateTrades(Arrays.asList(newTrade));
+        // Example usage of updating trades
+        ArrayList<Trade> trades = new ArrayList<>();
+        trades.add(new Trade("buyerUserName", "sellerUserName", new ArrayList<>(Arrays.asList(1, 2, 3)), new ArrayList<>(Arrays.asList(4, 5, 6)), true, true, false, "Looking forward to this trade!"));
+        updateTrades(trades);
 
         System.out.println("Data written to files.");
     }
 }
+
