@@ -55,6 +55,19 @@ public class Facade {
   }
 
   public void acceptTrade(Trade trade) {
+    /*
+     * get the cards offered for, add them to collection of buyer
+     * remove listed cards from collection of the seller
+     * add the cards which were offered to the seller to the seller's collection
+     * use trade.getBuyerUserName()
+     * use trade.getCardsOffered()
+     * use trade.getSellerUserName()
+     * use trade.getCardsRequested()
+     *
+     * use a for loop to iterate over each array and do user.addCardToList()
+     * also do  user.removeCardFromList()
+     * update JSON file
+     */
 
   }
 
