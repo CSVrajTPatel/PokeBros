@@ -45,8 +45,8 @@ public class Facade {
     return masterCardList.getCardList();
   }
 
-  public ArrayList<Card> viewFamily(Card card) {
-    return null;
+  public ArrayList<Integer> viewFamily(Card card) {
+    return card.getFamily();
   }
 
   public Boolean initiateTrade(ArrayList<Card> userCards, ArrayList<Card> traderCards, User user, double userCoin, double traderCoin) {
