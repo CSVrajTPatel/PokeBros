@@ -9,10 +9,6 @@
     "favoriteCards": [1, 4, 7],
     "currency": 1000.0,
     "ownedCards": [1, 2, 3],
-    "userCollection": {
-        "collectionName": "My Collection",
-        "cardIds": [1, 4, 7, 9, 12]
-    },
     "lastClaimedCurrencyTime":"2023-05-25T10:00:00Z"
 }
 ]
