@@ -83,7 +83,7 @@ public class User {
     }
 
     public void setCurrency(double currency) {
-        this.currency = currency;
+        this.currency += currency;
     }
 
     public ArrayList<Integer> getOwnedCards() {
