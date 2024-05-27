@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.time.Instant;
+import java.time.Duration;
 
 public class Facade {
 
@@ -99,7 +101,15 @@ public class Facade {
   }
 
   public boolean ClaimDailyCurrency() {
-    return true;
+    Instant currentTime = Instant.now();
+    Duration timeBetween = Duration.between(user.getLastClaimedCurrencyTime(), currentTime);
+    if(timeBetween.toDays() >= 1){
+      user.setCurrency(25);
+      user.setLastClaimedCurrencyTime(currentTime);
+      return true;
+    }
+    // need to add reading and writing from JSON file
+    return false;  
   }
 
   public static void main(String[] args) {
