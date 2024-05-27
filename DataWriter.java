@@ -131,15 +131,17 @@ public class DataWriter {
     }
 
     public static void main(String[] args) {
+        //Hardcoded addition of a new user
+        //User newUser = new User("Brock", "password", "Brock", "Harrison", "brock@example.com", Arrays.asList(1, 4, 7), 300.0, Arrays.asList(7, 8, 9));
+        //updateUsers(Arrays.asList(newUser));
         // Example usage of updating users
         ArrayList<User> users = new ArrayList<>();
         users.add(new User("exampleUserName", "examplePassword", "John", "Doe", "john.doe@example.com", new ArrayList<>(Arrays.asList(1, 4, 7)), 1000.0, new ArrayList<>(Arrays.asList(1, 2, 3))));
         updateUsers(users);
 
-        // Example usage of updating trades
-        ArrayList<Trade> trades = new ArrayList<>();
-        trades.add(new Trade("buyerUserName", "sellerUserName", new ArrayList<>(Arrays.asList(1, 2, 3)), new ArrayList<>(Arrays.asList(4, 5, 6)), true, true, false, "Looking forward to this trade!"));
-        updateTrades(trades);
+        // Hardcoded addition of a new trade
+        //Trade newTrade = new Trade("Brock", "Misty", Arrays.asList(7, 8, 9), Arrays.asList(8,9,10), true, false, true, "Smooth trade!");
+      //  updateTrades(Arrays.asList(newTrade));
 
         System.out.println("Data written to files.");
     }

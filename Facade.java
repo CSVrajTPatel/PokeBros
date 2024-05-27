@@ -85,4 +85,12 @@ public class Facade {
     return true;
   }
 
+  public static void main(String[] args) {
+      CardList list = new CardList();
+      ArrayList<Card> cards = list.searchByRarity("common");
+      ArrayList<Card> newCards = list.searchByPack(1, cards);
+      for (int i = 0; i < newCards.size(); i++)
+        System.out.println(newCards.get(i).getName());
+  }
+
 }

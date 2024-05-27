@@ -90,7 +90,7 @@ public class User {
         return ownedCards;
     }
 
-    public void setOwnedCards(ArrayList<Integer> ownedCards) {
-        this.ownedCards = ownedCards;
+    public void addCardToList(Card card) {
+        ownedCards.add(card.getId());
     }
 }

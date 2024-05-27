@@ -162,10 +162,10 @@ public class DataLoader {
     }
 
     public static void main(String[] args) {
-        ArrayList<Card> testing = new ArrayList<>();
-        testing = loadCards();
+        ArrayList<User> testing = new ArrayList<>();
+        testing = loadUsers();
         if (!testing.isEmpty()) {
-            System.out.println(testing.get(1).getPack());
+            System.out.println(testing.get(0).getFirstName());
         } else {
             System.out.println("No cards loaded.");
         }
