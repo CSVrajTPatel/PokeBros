@@ -1,3 +1,4 @@
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.UUID;
 
@@ -11,6 +12,7 @@ public class User {
     private ArrayList<Integer> favoriteCards;
     private double currency;
     private ArrayList<Integer> ownedCards;
+    private Instant lastClaimedCurrencyTime;
 
     public User(String userName, String password, String firstName, String lastName, String email, ArrayList<Integer> favoriteCards, double currency, ArrayList<Integer> ownedCards) {
         // VP Constructor to initialize User object
@@ -23,6 +25,7 @@ public class User {
         this.favoriteCards = favoriteCards;
         this.currency = currency;
         this.ownedCards = ownedCards;
+        this.lastClaimedCurrencyTime = Instant.now();
     }
 
     // VP Getters and setters for User attributes
@@ -88,6 +91,15 @@ public class User {
 
     public ArrayList<Integer> getOwnedCards() {
         return ownedCards;
+    }
+
+    public Instant getLastClaimedCurrencyTime(){
+      return lastClaimedCurrencyTime;
+    }
+
+    public void setLastClaimedCurrencyTime(Instant inst){
+      // need to write to the user file
+      lastClaimedCurrencyTime = inst;
     }
 
     public void addCardToList(Card card) {
