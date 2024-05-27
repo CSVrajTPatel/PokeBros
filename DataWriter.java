@@ -136,7 +136,7 @@ public class DataWriter {
         //updateUsers(Arrays.asList(newUser));
         // Example usage of updating users
         ArrayList<User> users = new ArrayList<>();
-        users.add(new User("exampleUserName", "examplePassword", "John", "Doe", "john.doe@example.com", new ArrayList<>(Arrays.asList(1, 4, 7)), 1000.0, new ArrayList<>(Arrays.asList(1, 2, 3))));
+        users.add(new User("exampleUserName", "examplePassword", "Vraj", "Patel", "john.doe@example.com", new ArrayList<>(Arrays.asList(1, 4, 7)), 1000.0, new ArrayList<>(Arrays.asList(1, 2, 3))));
         updateUsers(users);
 
         // Hardcoded addition of a new trade
