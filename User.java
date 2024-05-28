@@ -113,7 +113,11 @@ public class User {
     public ArrayList<Card> openPack(int pack) {
         if (currency >= 10) {
             Pack newPack = new Pack(pack);
-            return newPack.openPack();
+            ArrayList<Card> packList = newPack.openPack();
+            for (Card card : packList) {
+                ownedCards.add(card.getId());
+            }
+            return packList;
         }
         return null;
     }
