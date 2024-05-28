@@ -1,14 +1,1 @@
-[
-    {
-    "userName": "1stexampleUserName",
-    "uniqueIdentifier": "123e4567-e89b-12d3-a456-426614174000",
-    "password": "examplePassword",
-    "firstName": "John",
-    "lastName": "Doe",
-    "email": "john.doe@example.com",
-    "favoriteCards": [1, 4, 7],
-    "currency": 1000.0,
-    "ownedCards": [1, 2, 3],
-    "lastClaimedCurrencyTime":"2023-05-25T10:00:00Z"
-}
-]
+[{"firstName":"John","lastName":"Doe","password":"examplePassword","favoriteCards":[1,4,7],"currency":1000.0,"lastClaimedCurrencyTime":"2023-05-25T10:00:00Z","userName":"1stexampleUserName","email":"john.doe@example.com","ownedCards":[1,2,3],"uniqueIdentifier":"123e4567-e89b-12d3-a456-426614174000"},{"firstName":"Vraj","lastName":"Patel","password":"PSSS","favoriteCards":[1,4,7],"currency":1000.0,"lastClaimedCurrencyTime":"2024-05-27T23:51:22.131300Z","userName":"Tofu","email":"john.LOLOLOLOL@example.com","ownedCards":[1,2,3],"uniqueIdentifier":"6e09443b-149a-4265-a10e-edae772c4d05"}]
