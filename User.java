@@ -107,7 +107,7 @@ public class User {
     }
 
     public void removeCardFromList(Card card){
-      
+        ownedCards.remove(card);
     }
 
     public ArrayList<Card> openPack(int pack) {
