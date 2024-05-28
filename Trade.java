@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-
+import java.lang.Math;
 
 public class Trade {
     private String buyerUserName;
@@ -57,7 +57,22 @@ public class Trade {
     }
 
     public boolean isFairTrade() {
-        return isFairTrade;
+      CardList masterCardList = new CardList();
+      double buyerCardValue = 0;
+      double sellerCardValue = 0;
+      for(int i = 0; i < cardsOffered.size(); i++){
+        buyerCardValue += masterCardList.searchById(cardsOffered.get(i)).getValue();
+      }
+      for(int i = 0; i < cardsRequested.size(); i++){
+        sellerCardValue += masterCardList.searchById(cardsRequested.get(i)).getValue();
+      }
+      // if the cumulative value of the cards is within 50, the trade is fair
+      // otherwise the trade is false
+      if ((Math.abs((sellerCardValue - buyerCardValue)) <=50 )){
+        return true;
+      }
+      return false;
+      
     }
 
     public void setFairTrade(boolean fairTrade) {
