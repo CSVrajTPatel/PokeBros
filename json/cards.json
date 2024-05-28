@@ -352,11 +352,11 @@
         "name": "Nidoran♀",
         "type": "Poison",
         "rarity": "Common",
-        "pack": "Base Set",
+        "pack": 3,
         "hp": 55,
         "value": 10,
         "evoStage": 1,
-        "family": "Nidoran",
+        "family": [30,31],
         "attacks": ["Scratch", "Poison Sting"]
     },
     {
@@ -364,11 +364,11 @@
         "name": "Nidorina",
         "type": "Poison",
         "rarity": "Uncommon",
-        "pack": "Base Set",
+        "pack": 3,
         "hp": 70,
         "value": 20,
         "evoStage": 2,
-        "family": "Nidoran",
+        "family": [29,31],
         "attacks": ["Double Kick", "Poison Sting"]
     },
     {
@@ -376,11 +376,11 @@
         "name": "Nidoqueen",
         "type": "Poison/Ground",
         "rarity": "Rare",
-        "pack": "Base Set",
+        "pack": 3,
         "hp": 90,
         "value": 30,
         "evoStage": 3,
-        "family": "Nidoran",
+        "family": [29,30],
         "attacks": ["Body Slam", "Earthquake"]
     },
     {
@@ -388,11 +388,11 @@
         "name": "Nidoran♂",
         "type": "Poison",
         "rarity": "Common",
-        "pack": "Base Set",
+        "pack": 1,
         "hp": 46,
         "value": 10,
-        "evoStage": "Basic",
-        "family": "Nidoran",
+        "evoStage": 1,
+        "family": [33,34],
         "attacks": ["Peck", "Poison Sting"]
     },
     {
@@ -400,11 +400,11 @@
         "name": "Nidorino",
         "type": "Poison",
         "rarity": "Uncommon",
-        "pack": "Base Set",
+        "pack": 1,
         "hp": 61,
         "value": 20,
-        "evoStage": "Stage 1",
-        "family": "Nidoran",
+        "evoStage": 2,
+        "family": [32,34],
         "attacks": ["Horn Attack", "Poison Sting"]
     },
     {
@@ -412,11 +412,11 @@
         "name": "Nidoking",
         "type": "Poison/Ground",
         "rarity": "Rare",
-        "pack": "Base Set",
+        "pack": 1,
         "hp": 81,
         "value": 30,
-        "evoStage": "Stage 2",
-        "family": "Nidoran",
+        "evoStage": 3,
+        "family": [32,33],
         "attacks": ["Thrash", "Earthquake"]
     },
     {
@@ -424,11 +424,11 @@
         "name": "Clefairy",
         "type": "Fairy",
         "rarity": "Uncommon",
-        "pack": "Base Set",
+        "pack": 2,
         "hp": 70,
         "value": 20,
-        "evoStage": "Basic",
-        "family": "Clefairy",
+        "evoStage": 1,
+        "family": 36,
         "attacks": ["Pound", "Sing"]
     },
     {
@@ -436,11 +436,11 @@
         "name": "Clefable",
         "type": "Fairy",
         "rarity": "Rare",
-        "pack": "Base Set",
+        "pack": 2,
         "hp": 95,
         "value": 30,
-        "evoStage": "Stage 1",
-        "family": "Clefairy",
+        "evoStage": 2,
+        "family": 35,
         "attacks": ["Double Slap", "Meteor Mash"]
     },
     {
@@ -448,11 +448,11 @@
         "name": "Vulpix",
         "type": "Fire",
         "rarity": "Common",
-        "pack": "Base Set",
+        "pack": 3,
         "hp": 38,
         "value": 10,
-        "evoStage": "Basic",
-        "family": "Vulpix",
+        "evoStage": 1,
+        "family": 38,
         "attacks": ["Ember", "Quick Attack"]
     },
     {
@@ -460,11 +460,11 @@
         "name": "Ninetales",
         "type": "Fire",
         "rarity": "Rare",
-        "pack": "Base Set",
+        "pack": 3,
         "hp": 73,
         "value": 30,
-        "evoStage": "Stage 1",
-        "family": "Vulpix",
+        "evoStage": 2,
+        "family": 37,
         "attacks": ["Flamethrower", "Quick Attack"]
     },
     {
@@ -472,11 +472,11 @@
         "name": "Jigglypuff",
         "type": "Normal/Fairy",
         "rarity": "Common",
-        "pack": "Base Set",
+        "pack": 1,
         "hp": 115,
         "value": 10,
-        "evoStage": "Basic",
-        "family": "Jigglypuff",
+        "evoStage": 1,
+        "family": 40,
         "attacks": ["Sing", "Pound"]
     },
     {
@@ -484,11 +484,11 @@
         "name": "Wigglytuff",
         "type": "Normal/Fairy",
         "rarity": "Rare",
-        "pack": "Base Set",
+        "pack": 1,
         "hp": 140,
         "value": 30,
-        "evoStage": "Stage 1",
-        "family": "Jigglypuff",
+        "evoStage": 2,
+        "family": 39,
         "attacks": ["Double Slap", "Hyper Voice"]
     },
     {
@@ -496,11 +496,11 @@
         "name": "Zubat",
         "type": "Poison/Flying",
         "rarity": "Common",
-        "pack": "Base Set",
+        "pack": 2,
         "hp": 40,
         "value": 10,
-        "evoStage": "Basic",
-        "family": "Zubat",
+        "evoStage": 1,
+        "family": 42,
         "attacks": ["Leech Life", "Astonish"]
     },
     {
@@ -508,11 +508,11 @@
         "name": "Golbat",
         "type": "Poison/Flying",
         "rarity": "Uncommon",
-        "pack": "Base Set",
+        "pack": 2,
         "hp": 75,
         "value": 20,
-        "evoStage": "Stage 1",
-        "family": "Zubat",
+        "evoStage": 2,
+        "family": 41,
         "attacks": ["Wing Attack", "Bite"]
     },
     {
@@ -520,11 +520,11 @@
         "name": "Oddish",
         "type": "Grass/Poison",
         "rarity": "Common",
-        "pack": "Base Set",
+        "pack": 3,
         "hp": 45,
         "value": 10,
-        "evoStage": "Basic",
-        "family": "Oddish",
+        "evoStage": 1,
+        "family": [44,45],
         "attacks": ["Absorb", "Poison Powder"]
     },
     {
@@ -532,11 +532,11 @@
         "name": "Gloom",
         "type": "Grass/Poison",
         "rarity": "Uncommon",
-        "pack": "Base Set",
+        "pack": 3,
         "hp": 60,
         "value": 20,
-        "evoStage": "Stage 1",
-        "family": "Oddish",
+        "evoStage": 2,
+        "family": [43,45],
         "attacks": ["Mega Drain", "Poison Powder"]
     },
     {
@@ -544,11 +544,11 @@
         "name": "Vileplume",
         "type": "Grass/Poison",
         "rarity": "Rare",
-        "pack": "Base Set",
+        "pack": 3,
         "hp": 75,
         "value": 30,
-        "evoStage": "Stage 2",
-        "family": "Oddish",
+        "evoStage": 3,
+        "family": [43,44],
         "attacks": ["Petal Dance", "Solar Beam"]
     },
     {
@@ -556,11 +556,11 @@
         "name": "Paras",
         "type": "Bug/Grass",
         "rarity": "Common",
-        "pack": "Base Set",
+        "pack": 1,
         "hp": 35,
         "value": 10,
-        "evoStage": "Basic",
-        "family": "Paras",
+        "evoStage": 1,
+        "family": 47,
         "attacks": ["Scratch", "Stun Spore"]
     },
     {
@@ -568,11 +568,11 @@
         "name": "Parasect",
         "type": "Bug/Grass",
         "rarity": "Uncommon",
-        "pack": "Base Set",
+        "pack": 1,
         "hp": 60,
         "value": 20,
-        "evoStage": "Stage 1",
-        "family": "Paras",
+        "evoStage": 2,
+        "family": 46,
         "attacks": ["Spore", "Slash"]
     },
     {
@@ -580,11 +580,11 @@
         "name": "Venonat",
         "type": "Bug/Poison",
         "rarity": "Common",
-        "pack": "Base Set",
+        "pack": 2,
         "hp": 60,
         "value": 10,
-        "evoStage": "Basic",
-        "family": "Venonat",
+        "evoStage": 1,
+        "family": 49,
         "attacks": ["Tackle", "Confusion"]
     },
     {
@@ -592,11 +592,11 @@
         "name": "Venomoth",
         "type": "Bug/Poison",
         "rarity": "Rare",
-        "pack": "Base Set",
+        "pack": 2,
         "hp": 70,
         "value": 30,
-        "evoStage": "Stage 1",
-        "family": "Venonat",
+        "evoStage": 2,
+        "family": 48,
         "attacks": ["Psybeam", "Poison Powder"]
     },
     {
@@ -604,11 +604,11 @@
         "name": "Diglett",
         "type": "Ground",
         "rarity": "Common",
-        "pack": "Base Set",
+        "pack": 3,
         "hp": 10,
         "value": 10,
-        "evoStage": "Basic",
-        "family": "Diglett",
+        "evoStage": 1,
+        "family": 51,
         "attacks": ["Scratch", "Mud-Slap"]
     },
     {
@@ -616,11 +616,11 @@
         "name": "Dugtrio",
         "type": "Ground",
         "rarity": "Rare",
-        "pack": "Base Set",
+        "pack": 3,
         "hp": 35,
         "value": 30,
-        "evoStage": "Stage 1",
-        "family": "Diglett",
+        "evoStage": 2,
+        "family": 50,
         "attacks": ["Earthquake", "Slash"]
     },
     {
@@ -628,11 +628,11 @@
         "name": "Meowth",
         "type": "Normal",
         "rarity": "Common",
-        "pack": "Base Set",
+        "pack": 1,
         "hp": 40,
         "value": 10,
-        "evoStage": "Basic",
-        "family": "Meowth",
+        "evoStage": 1,
+        "family": 53,
         "attacks": ["Scratch", "Bite"]
     },
     {
@@ -640,11 +640,11 @@
         "name": "Persian",
         "type": "Normal",
         "rarity": "Uncommon",
-        "pack": "Base Set",
+        "pack": 1,
         "hp": 65,
         "value": 20,
-        "evoStage": "Stage 1",
-        "family": "Meowth",
+        "evoStage": 2,
+        "family": 52,
         "attacks": ["Scratch", "Slash"]
     },
     {
@@ -652,11 +652,11 @@
         "name": "Psyduck",
         "type": "Water",
         "rarity": "Common",
-        "pack": "Base Set",
+        "pack": 2,
         "hp": 50,
         "value": 10,
-        "evoStage": "Basic",
-        "family": "Psyduck",
+        "evoStage": 1,
+        "family": 55,
         "attacks": ["Scratch", "Water Gun"]
     },
     {
@@ -664,11 +664,11 @@
         "name": "Golduck",
         "type": "Water",
         "rarity": "Uncommon",
-        "pack": "Base Set",
+        "pack": 2,
         "hp": 80,
         "value": 20,
-        "evoStage": "Stage 1",
-        "family": "Psyduck",
+        "evoStage": 2,
+        "family": 54,
         "attacks": ["Hydro Pump", "Confusion"]
     },
     {
@@ -676,11 +676,11 @@
         "name": "Mankey",
         "type": "Fighting",
         "rarity": "Common",
-        "pack": "Base Set",
+        "pack": 3,
         "hp": 40,
         "value": 10,
-        "evoStage": "Basic",
-        "family": "Mankey",
+        "evoStage": 1,
+        "family": 57,
         "attacks": ["Karate Chop", "Fury Swipes"]
     },
     {
@@ -688,11 +688,11 @@
         "name": "Primeape",
         "type": "Fighting",
         "rarity": "Uncommon",
-        "pack": "Base Set",
+        "pack": 3,
         "hp": 65,
         "value": 20,
-        "evoStage": "Stage 1",
-        "family": "Mankey",
+        "evoStage": 2,
+        "family": 56,
         "attacks": ["Cross Chop", "Thrash"]
     },
     {
@@ -700,11 +700,11 @@
         "name": "Growlithe",
         "type": "Fire",
         "rarity": "Common",
-        "pack": "Base Set",
+        "pack": 1,
         "hp": 55,
         "value": 10,
-        "evoStage": "Basic",
-        "family": "Growlithe",
+        "evoStage": 1,
+        "family": 59,
         "attacks": ["Ember", "Bite"]
     },
     {
@@ -712,11 +712,11 @@
         "name": "Arcanine",
         "type": "Fire",
         "rarity": "Rare",
-        "pack": "Base Set",
+        "pack": 1,
         "hp": 90,
         "value": 30,
-        "evoStage": "Stage 1",
-        "family": "Growlithe",
+        "evoStage": 2,
+        "family": 58,
         "attacks": ["Flamethrower", "Bite"]
     },
     {
@@ -724,11 +724,11 @@
         "name": "Poliwag",
         "type": "Water",
         "rarity": "Common",
-        "pack": "Base Set",
+        "pack": 2,
         "hp": 40,
         "value": 10,
-        "evoStage": "Basic",
-        "family": "Poliwag",
+        "evoStage": 1,
+        "family": [61,62],
         "attacks": ["Bubble", "Hypnosis"]
     },
     {
@@ -736,11 +736,11 @@
         "name": "Poliwhirl",
         "type": "Water",
         "rarity": "Uncommon",
-        "pack": "Base Set",
+        "pack": 2,
         "hp": 65,
         "value": 20,
-        "evoStage": "Stage 1",
-        "family": "Poliwag",
+        "evoStage": 2,
+        "family": [60,62],
         "attacks": ["Water Gun", "Bubble Beam"]
     },
     {
@@ -748,11 +748,11 @@
         "name": "Poliwrath",
         "type": "Water/Fighting",
         "rarity": "Rare",
-        "pack": "Base Set",
+        "pack": 2,
         "hp": 90,
         "value": 30,
-        "evoStage": "Stage 2",
-        "family": "Poliwag",
+        "evoStage": 3,
+        "family": [60,61],
         "attacks": ["Submission", "Hydro Pump"]
     },
     {
