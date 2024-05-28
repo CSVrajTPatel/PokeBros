@@ -109,4 +109,12 @@ public class User {
     public void removeCardFromList(Card card){
       
     }
+
+    public ArrayList<Card> openPack(int pack) {
+        if (currency >= 10) {
+            Pack newPack = new Pack(pack);
+            return newPack.openPack();
+        }
+        return null;
+    }
 }
