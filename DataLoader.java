@@ -5,6 +5,7 @@ import org.json.simple.parser.ParseException;
 
 import java.io.FileReader;
 import java.io.IOException;
+import java.time.Instant;
 import java.util.ArrayList;
 
 public class DataLoader {
@@ -139,9 +140,10 @@ public class DataLoader {
         String lastName = getStringValue(userObject, "lastName");
         String email = getStringValue(userObject, "email");
         double currency = getDoubleValue(userObject, "currency");
-
         ArrayList<Integer> favoriteCards = getIntegerList(userObject, "favoriteCards");
         ArrayList<Integer> ownedCards = getIntegerList(userObject, "ownedCards");
+        Instant lastClaimedCurrencyTime = Instant.parse(getStringValue(userObject, "lastClaimedCurrencyTime"));
+
 
         return new User(userName, password, firstName, lastName, email, favoriteCards, currency, ownedCards);
     }
