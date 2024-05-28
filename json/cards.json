@@ -428,7 +428,7 @@
         "hp": 60,
         "value": 0.30,
         "evoStage": 1,
-        "family":  ,
+        "family": [ ] ,
         "attacks": ["Moon-Viewing Invitation", "Smack"]
     },
     {
@@ -452,7 +452,7 @@
         "hp": 70,
         "value": 0.30,
         "evoStage": 1,
-        "family": ,
+        "family":[ ] ,
         "attacks": ["Super Singe"]
     },
     {
@@ -464,7 +464,7 @@
         "hp": 260,
         "value": 1.30,
         "evoStage": 2,
-        "family": ,
+        "family":[ ] ,
         "attacks": ["Heat Wave", "Mirrored Flames"]
     },
     {
@@ -476,7 +476,7 @@
         "hp": 70,
         "value": 0.25,
         "evoStage": 1,
-        "family": ,
+        "family":[ ] ,
         "attacks": ["Lead", "Stompy Stomp"]
     },
     {
@@ -488,7 +488,7 @@
         "hp": 250,
         "value": 2.00,
         "evoStage": 2,
-        "family": ,
+        "family":[ ] ,
         "attacks": ["Friend Tackle"]
     },
     {
@@ -500,7 +500,7 @@
         "hp": 40,
         "value": 0.20,
         "evoStage": 1,
-        "family": ,
+        "family":[ ] ,
         "attacks": ["bite"]
     },
     {
@@ -512,7 +512,7 @@
         "hp": 80,
         "value": 0.30,
         "evoStage": 2,
-        "family": ,
+        "family":[ ] ,
         "attacks": ["Skill Dive"]
     },
     {
@@ -560,7 +560,7 @@
         "hp": 70,
         "value":0.30,
         "evoStage": 1,
-        "family": ,
+        "family":[ ] ,
         "attacks": ["Stampede", "Spore Ball"]
     },
     {
@@ -572,7 +572,7 @@
         "hp": 120,
         "value": 0.15,
         "evoStage": 2,
-        "family": ,
+        "family": [ ] ,
         "attacks": ["Spread Filaments", "Claw Slash"]
     },
     {
@@ -584,7 +584,7 @@
         "hp": 70,
         "value": 0.20,
         "evoStage": 1,
-        "family": ,
+        "family": [ ] ,
         "attacks": ["Gnaw", "Beam"]
     },
     {
@@ -596,7 +596,7 @@
         "hp": 90,
         "value": 0.30,
         "evoStage": 2,
-        "family": ,
+        "family":[] ,
         "attacks": ["Perplexing Powder", "Speed Wing"]
     },
     {
@@ -608,7 +608,7 @@
         "hp": 50,
         "value": 0.15,
         "evoStage": 1,
-        "family": ,
+        "family": [ ],
         "attacks": ["Headbutt Bounce", "Mud-Slap"]
     },
     {
@@ -620,7 +620,7 @@
         "hp": 90,
         "value": 0.30,
         "evoStage": 2,
-        "family": ,
+        "family": [ ],
         "attacks": ["Headbutt Bounce", "Mud-Bomb"]
     },
     {
@@ -632,7 +632,7 @@
         "hp": 70,
         "value": 0.15,
         "evoStage": 1,
-        "family": ,
+        "family":[ ] ,
         "attacks": ["Come Here Right Meow", "Dig Claws"]
     },
     {
@@ -656,7 +656,7 @@
         "hp": 110,
         "value": 0.20,
         "evoStage": 1,
-        "family": ,
+        "family":[ ] ,
         "attacks": ["Rocket Call", "Slash"]
     },
     {
@@ -668,7 +668,7 @@
         "hp": 110,
         "value": 0.20,
         "evoStage": 2,
-        "family": ,
+        "family":[ ] ,
         "attacks": ["Aquatic Rescue", "Super Splash"]
     },
     {
@@ -680,7 +680,7 @@
         "hp": 60,
         "value": 0.15,
         "evoStage": 1,
-        "family": ,
+        "family":[ ] ,
         "attacks": ["Thrash"]
     },
     {
@@ -692,7 +692,7 @@
         "hp": 120,
         "value": 0.30,
         "evoStage": 2,
-        "family": ,
+        "family":[ ] ,
         "attacks": ["Rant and Rave", "Raging Smash"]
     },
     {
@@ -704,7 +704,7 @@
         "hp": 80,
         "value": 0.20,
         "evoStage": 1,
-        "family": ,
+        "family":[ ] ,
         "attacks": ["Vaporize"]
     },
     {
@@ -716,7 +716,7 @@
         "hp": 150,
         "value": 0.40,
         "evoStage": 2,
-        "family": ,
+        "family":[ ] ,
         "attacks": ["Torrid Torrent", "Dynamite Fang"]
     },
     {
