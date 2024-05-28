@@ -13,7 +13,7 @@ public class Facade {
   //  user = new User();
   //}
 
-  public ArrayList<Card> searchByName(String name) {
+  public Card searchByName(String name) {
     return masterCardList.searchByName(name);
   }
 
