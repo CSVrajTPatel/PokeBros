@@ -68,14 +68,14 @@ public class DataWriter {
         userObject.put("lastClaimedCurrencyTime", user.getLastClaimedCurrencyTime().toString());
 
         JSONArray favoriteCardsArray = new JSONArray();
-        for (Integer cardId : user.getFavoriteCards()) {
-            favoriteCardsArray.add(cardId);
+        for (Card card : user.getFavoriteCards()) {
+            favoriteCardsArray.add(card.getId());
         }
         userObject.put("favoriteCards", favoriteCardsArray);
 
         JSONArray ownedCardsArray = new JSONArray();
-        for (Integer cardId : user.getOwnedCards()) {
-            ownedCardsArray.add(cardId);
+        for (Card card : user.getOwnedCards()) {
+            ownedCardsArray.add(card.getId());
         }
         userObject.put("ownedCards", ownedCardsArray);
 
@@ -150,19 +150,6 @@ public class DataWriter {
     }
 
     public static void main(String[] args) {
-        ArrayList<User> users = new ArrayList<>();
-        users.add(new User("Tofu", "PSSS", "Vraj", "Patel", "john.LOLOLOLOL@example.com", new ArrayList<>(Arrays.asList(1, 4, 7)), 1000.0, new ArrayList<>(Arrays.asList(1, 2, 3))));
-        User testforDeletion = new User("Tofu2", "PSSS", "Vraj", "Patel", "john.LOLOLOLOL@example.com", new ArrayList<>(Arrays.asList(1, 4, 7)), 1000.0, new ArrayList<>(Arrays.asList(1, 2, 3)));
-        users.add(testforDeletion);
-        updateUsers(users);
-       //updateUsers(users);
-        removeUser("Tofu2");
-       
 
-        ArrayList<Trade> trades = new ArrayList<>();
-        trades.add(new Trade("Vraj", "Ash", new ArrayList<>(Arrays.asList(1, 2)), new ArrayList<>(Arrays.asList(3, 4)), true, false, true, "Scammer Gets Scammed"));
-        updateTrades(trades);
-
-        System.out.println("Data written to files.");
     }
 }
