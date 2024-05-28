@@ -2,6 +2,7 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+import java.util.Iterator;
 
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -10,8 +11,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class DataWriter {
-    private static final String USERS_FILE_PATH = "json/users.json";
-    private static final String TRADES_FILE_PATH = "json/trades.json";
+    private static final String USERS_FILE_PATH = "./json/users.json";
+    private static final String TRADES_FILE_PATH = "./json/trades.json";
 
     /**
      * Update the users.json file with the given list of users.
@@ -90,6 +91,30 @@ public class DataWriter {
         return userObject;
     }
 
+    private static String getStringValue(JSONObject jsonObject, String key) {
+      Object value = jsonObject.get(key);
+      return value != null ? value.toString() : "";
+  }
+    
+    private static void removeUser(String targetUserName) {
+      JSONArray existingUsersArray = readJsonArrayFromFile(USERS_FILE_PATH);
+      Iterator<JSONObject> iterator = existingUsersArray.iterator();
+      while (iterator.hasNext()) {
+          JSONObject userJson = iterator.next();
+          if (getStringValue(userJson, "userName").equals(targetUserName)) {
+            System.out.println("found the target and removed it \n");
+              iterator.remove();
+  
+          }
+  }
+    try (FileWriter file = new FileWriter(USERS_FILE_PATH)) {
+      file.write(existingUsersArray.toJSONString());
+      file.flush();
+    } catch (IOException e) {
+        e.printStackTrace();
+      }
+    }
+
     /**
      * Convert a Trade object to a JSONObject.
      * @param trade Trade object to convert.
@@ -142,7 +167,12 @@ public class DataWriter {
         // Example usage of updating users
         ArrayList<User> users = new ArrayList<>();
         users.add(new User("Tofu", "PSSS", "Vraj", "Patel", "john.LOLOLOLOL@example.com", new ArrayList<>(Arrays.asList(1, 4, 7)), 1000.0, new ArrayList<>(Arrays.asList(1, 2, 3))));
+        User testforDeletion = new User("Tofu2", "PSSS", "Vraj", "Patel", "john.LOLOLOLOL@example.com", new ArrayList<>(Arrays.asList(1, 4, 7)), 1000.0, new ArrayList<>(Arrays.asList(1, 2, 3)));
+        users.add(testforDeletion);
         updateUsers(users);
+       //updateUsers(users);
+        removeUser("Tofu2");
+       
 
         // Example usage of updating trades
         ArrayList<Trade> trades = new ArrayList<>();
