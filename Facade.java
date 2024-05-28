@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.time.Instant;
 import java.time.Duration;
+import java.util.Scanner;
 
 public class Facade {
 
@@ -37,7 +38,7 @@ public class Facade {
     return user.getCurrency();
   }
 
-  public ArrayList<Integer> getCollection() {
+  public ArrayList<Card> getCollection() {
      return user.getOwnedCards();
   }
 
@@ -121,11 +122,20 @@ public class Facade {
   }
 
   public static void main(String[] args) {
-      Pack newPack = new Pack(3);
+      Pack newPack = new Pack(1);
       ArrayList<Card> packList = newPack.openPack();
       for (Card card : packList) {
         System.out.println(card.getName());
       }
+      Scanner scanner = new Scanner(System.in);
+      scanner.nextLine();
+
+      CardList masterList = new CardList();
+      packList = masterList.searchByRarity("uncommon");
+      for (Card card : packList) {
+        System.out.println(card.getName());
+    }
+
   }
 
 }

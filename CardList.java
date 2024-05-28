@@ -12,14 +12,13 @@ public class CardList {
         return cardList;
     }
 
-    public ArrayList<Card> searchByName(String name) {
-        ArrayList<Card> result = new ArrayList<>();
+    public Card searchByName(String name) {
         for (Card card : cardList) {
             if (card.getName().equalsIgnoreCase(name)) {
-                result.add(card);
+                return card;
             }
         }
-        return result;
+        return null;
     }
 
     public ArrayList<Card> searchByName(String name, ArrayList<Card> cards) {
