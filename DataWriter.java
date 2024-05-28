@@ -1,3 +1,5 @@
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -13,10 +15,8 @@ public class DataWriter {
     private static final String USERS_FILE_PATH = "json/users.json";
     private static final String TRADES_FILE_PATH = "json/trades.json";
 
-    /**
-     * Update the users.json file with the given list of users.
-     * @param users List of users to write to the file.
-     */
+    private static final Gson gson = new GsonBuilder().setPrettyPrinting().create();
+
     public static void updateUsers(ArrayList<User> users) {
         JSONArray existingUsersArray = readJsonArrayFromFile(USERS_FILE_PATH);
         if (existingUsersArray == null) {
@@ -29,17 +29,13 @@ public class DataWriter {
         }
 
         try (FileWriter file = new FileWriter(USERS_FILE_PATH)) {
-            file.write(existingUsersArray.toJSONString());
+            file.write(gson.toJson(existingUsersArray));
             file.flush();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    /**
-     * Update the trades.json file with the given list of trades.
-     * @param trades List of trades to write to the file.
-     */
     public static void updateTrades(ArrayList<Trade> trades) {
         JSONArray existingTradesArray = readJsonArrayFromFile(TRADES_FILE_PATH);
         if (existingTradesArray == null) {
@@ -52,18 +48,13 @@ public class DataWriter {
         }
 
         try (FileWriter file = new FileWriter(TRADES_FILE_PATH)) {
-            file.write(existingTradesArray.toJSONString());
+            file.write(gson.toJson(existingTradesArray));
             file.flush();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    /**
-     * Convert a User object to a JSONObject.
-     * @param user User object to convert.
-     * @return JSONObject representation of the user.
-     */
     private static JSONObject userToJson(User user) {
         JSONObject userObject = new JSONObject();
         userObject.put("userName", user.getUserName());
@@ -90,11 +81,6 @@ public class DataWriter {
         return userObject;
     }
 
-    /**
-     * Convert a Trade object to a JSONObject.
-     * @param trade Trade object to convert.
-     * @return JSONObject representation of the trade.
-     */
     private static JSONObject tradeToJson(Trade trade) {
         JSONObject tradeObject = new JSONObject();
         tradeObject.put("buyerUserName", trade.getBuyerUserName());
@@ -120,11 +106,6 @@ public class DataWriter {
         return tradeObject;
     }
 
-    /**
-     * Read a JSONArray from a file.
-     * @param filePath The path to the file.
-     * @return The JSONArray read from the file.
-     */
     private static JSONArray readJsonArrayFromFile(String filePath) {
         JSONParser jsonParser = new JSONParser();
 
@@ -139,12 +120,10 @@ public class DataWriter {
     }
 
     public static void main(String[] args) {
-        // Example usage of updating users
         ArrayList<User> users = new ArrayList<>();
         users.add(new User("Tofu", "PSSS", "Vraj", "Patel", "john.LOLOLOLOL@example.com", new ArrayList<>(Arrays.asList(1, 4, 7)), 1000.0, new ArrayList<>(Arrays.asList(1, 2, 3))));
         updateUsers(users);
 
-        // Example usage of updating trades
         ArrayList<Trade> trades = new ArrayList<>();
         trades.add(new Trade("Vraj", "Ash", new ArrayList<>(Arrays.asList(1, 2)), new ArrayList<>(Arrays.asList(3, 4)), true, false, true, "Scammer Gets Scammed"));
         updateTrades(trades);
