@@ -4,31 +4,70 @@ import java.util.Random;
 public class Pack {
     
     private String name;
-    private int price;
     private ArrayList<Card> cards;
-    private int numberOfRares;
     private int packNumber;
 
-    public Pack(String name, int price, int numberOfRares, int packNum){
-      this.name = name;
-      this.price = price;
-      this.numberOfRares = numberOfRares;
-      this.packNumber = packNum;
+    public Pack(int num){
+      packNumber = num;
+      if (num == 1) {
+        CardList masterCardList = new CardList();
+        name = "Bulbasaur Pack";
+        cards = masterCardList.searchByPack(packNumber);
     }
+      else if (num == 2) {
+        CardList masterCardList = new CardList();
+        name = "Charmander Pack";
+        cards = masterCardList.searchByPack(packNumber);
+    }
+      else if (num == 3) {
+        CardList masterCardList = new CardList();
+        cards = masterCardList.searchByPack(packNumber);
+        name = "Squirtle Pack";
+    }
+
+    }
+
     
-    public ArrayList<Card> openPack(int pack) {
-      // somehow these need to be added to user collection json file
-      // unsure if pack type should be specified as parameter or gotten from somwhere else
-    int numCardsInPack = 5 - numberOfRares;
-    Random rand = new Random();  // needed to randomly select carcardseds
-    CardList masterCardList = new CardList();
-      while(numCardsInPack < 5-numberOfRares){
-        cards.add(masterCardList.searchByPack(pack).get(rand.nextInt(masterCardList.searchByPack(packType).size())));
-        //  generate enough cards of the given pack type needed 
-        //  to fill the pack and adds to the pack card list
+    public ArrayList<Card> openPack() {
+      ArrayList<Card> newPack = new ArrayList<Card>();
+      CardList masterCardList = new CardList();
+      Random rand = new Random();
+      int numRares = rand.nextInt(10);
+      int listNum = 7;
+      if (numRares == 9) {
+        numRares = 2;
+      }
+
+      else  {
+        numRares = 1;
+      }
+
+      int num;
+      int num2;
+
+      for (Rarity rarity : Rarity.values()) {
+
+        num = rand.nextInt(cards.size());
+
+        if (rarity.toString().equalsIgnoreCase("common") || 
+            rarity.toString().equalsIgnoreCase("uncommon" )) {
+
+              num2 = rand.nextInt(1, listNum);
+               // for (int i = 0; )
+              
+
+          }
+        else if (numRares != 0 && 
+          cards.get(num).getRarity().equalsIgnoreCase(rarity.toString())) {
+
+            newPack.add(cards.get(num));
+            listNum -= 1;
+
+      }
     }
-        return cards;
-    }
+  }
+
+    
 
     public ArrayList<Card> getCardList() {
       // i think this method is redundant but leaving for now
@@ -40,8 +79,5 @@ public class Pack {
       // which cannot be done if pack is its own object as it is right now
         return true;
 
-    }
-    public int getPackPrice(){
-        return price;
     }
 }

@@ -62,6 +62,16 @@ public class CardList {
         return result;
     }
 
+    public ArrayList<Card> searchByRarity(String type, ArrayList<Card> cards) {
+        ArrayList<Card> result = new ArrayList<>();
+        for (Card card : cards) {
+            if (card.getRarity().equalsIgnoreCase(type)) {
+                result.add(card);
+            }
+        }
+        return result;
+    }
+
     public Card searchById(int id) {
         for (Card card : cardList) {
             if (card.getId() == id) {
