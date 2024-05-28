@@ -140,8 +140,18 @@ public class DataLoader {
         String lastName = getStringValue(userObject, "lastName");
         String email = getStringValue(userObject, "email");
         double currency = getDoubleValue(userObject, "currency");
-        ArrayList<Integer> favoriteCards = getIntegerList(userObject, "favoriteCards");
-        ArrayList<Integer> ownedCards = getIntegerList(userObject, "ownedCards");
+        ArrayList<Integer> favoriteCardsTemp = getIntegerList(userObject, "favoriteCards");
+        ArrayList<Card> favoriteCards = new ArrayList<Card>();
+        CardList masterList = new CardList();
+            for (Integer temp : favoriteCardsTemp) {
+                favoriteCards.add(masterList.searchById(temp));
+            }
+        ArrayList<Integer> ownedCardsTemp = getIntegerList(userObject, "ownedCards");
+        ArrayList<Card> ownedCards = new ArrayList<Card>();
+            for (Integer temp : ownedCardsTemp) {
+                ownedCards.add(masterList.searchById(temp));
+            }
+
         Instant lastClaimedCurrencyTime = Instant.parse(getStringValue(userObject, "lastClaimedCurrencyTime"));
 
 
@@ -166,10 +176,8 @@ public class DataLoader {
     public static void main(String[] args) {
         ArrayList<User> testing = new ArrayList<>();
         testing = loadUsers();
-        if (!testing.isEmpty()) {
-            System.out.println(testing.get(0).getFirstName());
-        } else {
-            System.out.println("No cards loaded.");
-        }
+        ArrayList<Card> userCards = testing.get(0).getOwnedCards();
+        for (Card card : userCards)
+            System.out.println(card.getName());
     }
 }

@@ -9,12 +9,12 @@ public class User {
     private String firstName;
     private String lastName;
     private String email;
-    private ArrayList<Integer> favoriteCards;
+    private ArrayList<Card> favoriteCards;
     private double currency;
-    private ArrayList<Integer> ownedCards;
+    private ArrayList<Card> ownedCards;
     private Instant lastClaimedCurrencyTime;
 
-    public User(String userName, String password, String firstName, String lastName, String email, ArrayList<Integer> favoriteCards, double currency, ArrayList<Integer> ownedCards) {
+    public User(String userName, String password, String firstName, String lastName, String email, ArrayList<Card> favoriteCards, double currency, ArrayList<Card> ownedCards) {
         // VP Constructor to initialize User object
         this.userName = userName;
         uniqueIdentifier = UUID.randomUUID(); 
@@ -73,11 +73,11 @@ public class User {
         this.email = email;
     }
 
-    public ArrayList<Integer> getFavoriteCards() {
+    public ArrayList<Card> getFavoriteCards() {
         return favoriteCards;
     }
 
-    public void setFavoriteCards(ArrayList<Integer> favoriteCards) {
+    public void setFavoriteCards(ArrayList<Card> favoriteCards) {
         this.favoriteCards = favoriteCards;
     }
 
@@ -89,7 +89,7 @@ public class User {
         this.currency += currency;
     }
 
-    public ArrayList<Integer> getOwnedCards() {
+    public ArrayList<Card> getOwnedCards() {
         return ownedCards;
     }
 
@@ -103,7 +103,7 @@ public class User {
     }
 
     public void addCardToList(Card card) {
-        ownedCards.add(card.getId());
+        ownedCards.add(card);
     }
 
     public void removeCardFromList(Card card){
@@ -115,7 +115,7 @@ public class User {
             Pack newPack = new Pack(pack);
             ArrayList<Card> packList = newPack.openPack();
             for (Card card : packList) {
-                ownedCards.add(card.getId());
+                ownedCards.add(card);
             }
             return packList;
         }
