@@ -99,7 +99,7 @@ public class DataWriter {
           }
   }
     try (FileWriter file = new FileWriter(USERS_FILE_PATH)) {
-      file.write(existingUsersArray.toJSONString());
+      file.write(gson.toJson(existingUsersArray));
       file.flush();
     } catch (IOException e) {
         e.printStackTrace();
