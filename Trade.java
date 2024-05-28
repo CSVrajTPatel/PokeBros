@@ -69,9 +69,9 @@ public class Trade {
       // if the cumulative value of the cards is within 50, the trade is fair
       // otherwise the trade is false
       if ((Math.abs((sellerCardValue - buyerCardValue)) <=50 )){
-        return true;
+        isFairTrade = true;
       }
-      return false;
+      return isFairTrade;
       
     }
 
