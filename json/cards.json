@@ -1492,11 +1492,11 @@
         "name": "Jynx",
         "type": "Water",
         "rarity": "Double Rare",
-        "pack": " ",
+        "pack": 2,
         "hp": 200,
         "value": 1.00,
         "evoStage": 1,
-        "family": "",
+        "family": [],
         "attacks": ["Heart-Stopping Kiss", "Icy Wind"]
     },
     {
@@ -1504,11 +1504,11 @@
         "name": "Electabuzz",
         "type": "Lightning",
         "rarity": "Common",
-        "pack": "",
+        "pack": 3,
         "hp": 90,
         "value": 0.20,
         "evoStage": 1,
-        "family": "",
+        "family": [],
         "attacks": ["Electro Combo", "Light Punch"]
     },
     {
@@ -1516,11 +1516,11 @@
         "name": "Magmar",
         "type": "Fire",
         "rarity": "Common",
-        "pack": "",
+        "pack": 1,
         "hp": 90,
         "value": 0.10,
         "evoStage": 1,
-        "family": "",
+        "family": [],
         "attacks": ["Live Coal", "Flare Combo"]
     },
     {
@@ -1528,11 +1528,11 @@
         "name": "Pinsir",
         "type": "Grase",
         "rarity": "Uncommon",
-        "pack": "",
+        "pack": 2,
         "hp": 120,
         "value": 0.15,
         "evoStage": 1,
-        "family": "",
+        "family":[],
         "attacks": ["Vise Grip ", "Reckless Throw"]
     },
     {
@@ -1540,11 +1540,11 @@
         "name": "Tauros",
         "type": "Colorless",
         "rarity": "Uncommon",
-        "pack": "",
+        "pack": 3,
         "hp": 120,
         "value": 0.10,
         "evoStage": 1,
-        "family": "",
+        "family": [],
         "attacks": ["Gather the Crew", "Rage"]
     },
     {
@@ -1552,11 +1552,11 @@
         "name": "Magikarp",
         "type": "Water",
         "rarity": "Common",
-        "pack": " ",
+        "pack": 1,
         "hp": 30,
         "value": 0.10,
         "evoStage": 1,
-        "family": "",
+        "family": 130,
         "attacks": ["Splashy Splash"]
     },
     {
@@ -1564,11 +1564,11 @@
         "name": "Gyarados",
         "type": "Water",
         "rarity": "Rare",
-        "pack": " ",
+        "pack": 1,
         "hp": 190,
         "value": 0.25,
         "evoStage": 2,
-        "family": "",
+        "family": 129,
         "attacks": ["Hyper Beam"]
     },
     {
@@ -1576,11 +1576,11 @@
         "name": "Lapras",
         "type": "Water",
         "rarity": "Uncommon",
-        "pack": "",
+        "pack": 2,
         "hp": 110,
         "value": 0.10,
         "evoStage": 1,
-        "family": "",
+        "family": [],
         "attacks": ["Hop on My Back", "Aqua Edge"]
     },
     {
@@ -1588,11 +1588,11 @@
         "name": "Ditto",
         "type": "Colorless",
         "rarity": "Rare",
-        "pack": " ",
+        "pack": 3,
         "hp": 60,
         "value": 0.25,
         "evoStage": 1,
-        "family": "",
+        "family": [],
         "attacks": ["Splup"]
     },
     {

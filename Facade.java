@@ -140,7 +140,20 @@ public class Facade {
 
     // FACADE NEEDS TO BE SINGLETON AS WELL
     public static void main(String[] args) {
-      Facade facade = new Facade();
+      CardList masterList = new CardList();
+      int count;
+      for (int i = 1; i > 4; i++) {
+        count = 0;
+        ArrayList<Card> pack1 = masterList.searchByPack(i);
+        for (Card card : pack1) {
+          count++;
+        }
+        System.out.println("Pack " + i);
+      
+        System.out.println(count);
+      
+      }
+      // Facade facade = new Facade();
   /*
       // Test creating a user
       boolean userCreated = facade.createUser("testUser", "password123", "John", "Doe", "john.doe@example.com");
@@ -151,7 +164,7 @@ public class Facade {
       }
   */
       // Test logging in
-      User loggedInUser = facade.loginUser("VrajTPatel", "VrajIsStupid");
+      /* User loggedInUser = facade.loginUser("VrajTPatel", "VrajIsStupid");
       if (loggedInUser != null) {
           System.out.println("Login successful for user: " + loggedInUser.getUserName());
           System.out.println("User Information:");
@@ -173,7 +186,9 @@ public class Facade {
           System.out.println("Something is broken Fix it");
       }
   }
-}
+   */
+
+
     /* TEST FOR PACK OPENING
       Pack newPack = new Pack(1);
       ArrayList<Card> packList = newPack.openPack();
@@ -189,3 +204,8 @@ public class Facade {
         System.out.println(card.getName());
     }
     */
+
+  }
+}
+  
+
