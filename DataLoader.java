@@ -162,10 +162,17 @@ public class DataLoader {
         CardList masterList = new CardList();
         UserList userList = new UserList();
         String recieverUserName = getStringValue(tradeObject, "recieverUserName");
+<<<<<<< HEAD
         //User reciever = userList.searchByUserName(recieverUserName);// Have to search by UserName in order to return user she wants type user in trade constructor
 
         String senderUserName = getStringValue(tradeObject, "senderUserName");
         //User sender = userList.searchByUserName(senderUserName); // Same here
+=======
+        User reciever = userList.searchByUserName(recieverUserName);
+
+        String senderUserName = getStringValue(tradeObject, "senderUserName");
+        User sender = userList.searchByUserName(senderUserName); 
+>>>>>>> 12af75723d2d84b60f1a415128ac59d19ce75d9e
 
         ArrayList<Integer> cardsIds = getIntegerList(tradeObject, "cardsOffered");
         ArrayList<Card> cardsOffered = new ArrayList<Card>();
