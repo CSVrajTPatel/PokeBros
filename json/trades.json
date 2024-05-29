@@ -1,7 +1,7 @@
 [
     {
-    "buyerUserName": "buyerUserName",
-    "sellerUserName": "sellerUserName",
+    "recieverUserName": "recieverUserName",
+    "senderUserName": "senderUserName",
     "cardsOffered": [1, 2, 3],
     "cardsRequested": [4, 5, 6],
     "isFairTrade": true,

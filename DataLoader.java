@@ -159,18 +159,30 @@ public class DataLoader {
     }
 
     private static Trade parseTrade(JSONObject tradeObject) {
-        String buyerUserName = getStringValue(tradeObject, "buyerUserName");
-        String sellerUserName = getStringValue(tradeObject, "sellerUserName");
+        CardList masterList = new CardList();
+        UserList userList = new UserList();
+        String recieverUserName = getStringValue(tradeObject, "recieverUserName");
+        User reciever = userList.searchByUserName(recieverUserName);// Have to search by UserName in order to return user she wants type user in trade constructor
 
-        ArrayList<Integer> cardsOffered = getIntegerList(tradeObject, "cardsOffered");
-        ArrayList<Integer> cardsRequested = getIntegerList(tradeObject, "cardsRequested");
+        String senderUserName = getStringValue(tradeObject, "senderUserName");
+        User sender = userList.searchByUserName(senderUserName); // Same here
 
+        ArrayList<Integer> cardsIds = getIntegerList(tradeObject, "cardsOffered");
+        ArrayList<Card> cardsOffered = new ArrayList<Card>();
+        for (int num : cardsIds) {
+            cardsOffered.add(masterList.searchById(num));
+        }
+        ArrayList<Card> cardRequested = new ArrayList<Card>();
+        cardsIds = getIntegerList(tradeObject, "cardsRequested");
+        for (int num : cardsIds) {
+            cardRequested.add(masterList.searchById(num));
+        }
         boolean isFairTrade = (Boolean) tradeObject.get("isFairTrade");
         boolean awaitingResponse = (Boolean) tradeObject.get("awaitingResponse");
         boolean wasAccepted = (Boolean) tradeObject.get("wasAccepted");
         String comment = getStringValue(tradeObject, "comment");
 
-        return new Trade(buyerUserName, sellerUserName, cardsOffered, cardsRequested, isFairTrade, awaitingResponse, wasAccepted, comment);
+        return new Trade(reciever, sender, cardsOffered, cardRequested.get(0), isFairTrade, awaitingResponse, wasAccepted, comment);
     }
 
     public static void main(String[] args) {

@@ -5,17 +5,17 @@ public class Trade {
     private User sender;
     private User receiver ;
     private ArrayList<Card> sendersCards;
-    private Card reciversCard;
+    private Card recieverCard;
     private boolean isFairTrade;
     private boolean awaitingResponse;
     private boolean wasAccepted;
     private String comment;
 
-    public Trade(User sender, User seller, ArrayList <Card> sendersCards, Card reciversCard, boolean isFairTrade, boolean awaitingResponse, boolean wasAccepted, String comment){
+    public Trade(User sender, User seller, ArrayList <Card> sendersCards, Card recieverCard, boolean isFairTrade, boolean awaitingResponse, boolean wasAccepted, String comment){
         this.sender = sender;
         this.receiver = seller;
         this.sendersCards = sendersCards;
-        this.reciversCard = reciversCard;
+        this.recieverCard = recieverCard;
         this.isFairTrade = isFairTrade;
         this.awaitingResponse = awaitingResponse;
         this.wasAccepted = wasAccepted;
@@ -26,12 +26,15 @@ public class Trade {
         return sender;
     }
     
-    public User getSeller() {
-        return seller;
+    public User getReceiver() {
+        return receiver;
     }
 
+
+    // THIS NEEDS TO BE REDONE
+     
     public boolean isFairTrade() {
-        CardList masterCardList = new CardList();
+       /*  CardList masterCardList = new CardList();
         double buyerCardValue = 0;
         double sellerCardValue = 0;
         for(int i = 0; i < cardsOffered.size(); i++){
@@ -45,6 +48,7 @@ public class Trade {
         if ((Math.abs((sellerCardValue - buyerCardValue)) <=50 )){
           isFairTrade = true;
         }
+        */
         return isFairTrade;
         
       }
@@ -59,8 +63,8 @@ public class Trade {
    
     public void acceptTrade() {
         this.wasAccepted = true;
-        sender.addCardToList(reciversCard);
-        receiver.removeCardFromList(reciversCard);
+        sender.addCardToList(recieverCard);
+        receiver.removeCardFromList(recieverCard);
 
         for(Card card : sendersCards){
             receiver.addCardToList(card);
@@ -80,7 +84,20 @@ public class Trade {
         return wasAccepted;
     }
    
+    public String getRecieverUserName() {
+        return receiver.getUserName();
+    }
 
+    public String getSenderUserName() {
+        return sender.getUserName();
+    }
+
+    public ArrayList<Card> getCardsOffered() {
+        return sendersCards;
+    }
    
+    public Card getRecieverCard() {
+        return recieverCard;
+    }
    
 }

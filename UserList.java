@@ -13,7 +13,7 @@ public class UserList {
     }
 
     // Adding a User
-    // public boolean addUserToList(String userName, String password, String firstName, String lastName, String email) {
+    public boolean addUserToList(String userName, String password, String firstName, String lastName, String email) {
         // MOVE TO USER CONSTRUCTOR
         // ArrayList<Card> emptyFavoriteCards = new ArrayList<Card>();
         // ArrayList<Card> emptyOwnedCards = new ArrayList<Card>();
@@ -27,7 +27,9 @@ public class UserList {
         // 
         // DataWriter.updateUsers(userList);
 
-        // return true;
+        return true;
+
+    }
 
     public User loginUser(String userName, String password) {
         for (User user : userList) {

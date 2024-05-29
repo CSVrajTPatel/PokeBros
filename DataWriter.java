@@ -111,19 +111,17 @@ public class DataWriter {
      */
     private static JSONObject tradeToJson(Trade trade) {
         JSONObject tradeObject = new JSONObject();
-        tradeObject.put("buyerUserName", trade.getBuyerUserName());
-        tradeObject.put("sellerUserName", trade.getSellerUserName());
+        tradeObject.put("receiverUserName", trade.getRecieverUserName());
+        tradeObject.put("senderUserName", trade.getSenderUserName());
 
         JSONArray cardsOfferedArray = new JSONArray();
-        for (Integer cardId : trade.getCardsOffered()) {
-            cardsOfferedArray.add(cardId);
+        for (Card card : trade.getCardsOffered()) {
+            cardsOfferedArray.add(card.getId());
         }
         tradeObject.put("cardsOffered", cardsOfferedArray);
 
         JSONArray cardsRequestedArray = new JSONArray();
-        for (Integer cardId : trade.getCardsRequested()) {
-            cardsRequestedArray.add(cardId);
-        }
+        cardsRequestedArray.add(trade.getRecieverCard());
         tradeObject.put("cardsRequested", cardsRequestedArray);
 
         tradeObject.put("isFairTrade", trade.isFairTrade());
