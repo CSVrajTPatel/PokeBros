@@ -129,11 +129,16 @@ public class Facade {
       return userList.addUserToList(userName, password, firstName, lastName, email);
     }
 
+
+    // USER LIST NEEDS TO BE A SINGLETON SO NO CONSTRUCTOR
+    // EVERY USER LIST NEEDS TO BE THE SAME
     public User loginUser(String userName, String password) {
       UserList userList = new UserList();
       return userList.loginUser(userName, password);
     }
 
+
+    // FACADE NEEDS TO BE SINGLETON AS WELL
     public static void main(String[] args) {
       Facade facade = new Facade();
   /*

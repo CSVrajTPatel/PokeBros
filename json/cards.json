@@ -404,7 +404,7 @@
         "hp": 90,
         "value": 0.20,
         "evoStage": 2,
-        "family": [ ],
+        "family": [32,34],
         "attacks": ["Sharp Fang", "Superpower Horns"]
     },
     {
@@ -416,7 +416,7 @@
         "hp": 170,
         "value": 0.30,
         "evoStage": 3,
-        "family": [  ],
+        "family": [32,33  ],
         "attacks": ["Venomous Impact"]
     },
     {
@@ -428,7 +428,7 @@
         "hp": 60,
         "value": 0.30,
         "evoStage": 1,
-        "family": [ ] ,
+        "family": [36 ] ,
         "attacks": ["Moon-Viewing Invitation", "Smack"]
     },
     {
@@ -440,7 +440,7 @@
         "hp": 100,
         "value": 0.40,
         "evoStage": 2,
-        "family": "",
+        "family": 35,
         "attacks": ["Follow Me", "More Moon"]
     },
     {
@@ -452,7 +452,7 @@
         "hp": 70,
         "value": 0.30,
         "evoStage": 1,
-        "family":[ ] ,
+        "family":38,
         "attacks": ["Super Singe"]
     },
     {
@@ -464,7 +464,7 @@
         "hp": 260,
         "value": 1.30,
         "evoStage": 2,
-        "family":[ ] ,
+        "family":37,
         "attacks": ["Heat Wave", "Mirrored Flames"]
     },
     {
@@ -476,7 +476,7 @@
         "hp": 70,
         "value": 0.25,
         "evoStage": 1,
-        "family":[ ] ,
+        "family":40,
         "attacks": ["Lead", "Stompy Stomp"]
     },
     {
@@ -488,7 +488,7 @@
         "hp": 250,
         "value": 2.00,
         "evoStage": 2,
-        "family":[ ] ,
+        "family":39,
         "attacks": ["Friend Tackle"]
     },
     {
@@ -500,7 +500,7 @@
         "hp": 40,
         "value": 0.20,
         "evoStage": 1,
-        "family":[ ] ,
+        "family":42,
         "attacks": ["bite"]
     },
     {
@@ -512,7 +512,7 @@
         "hp": 80,
         "value": 0.30,
         "evoStage": 2,
-        "family":[ ] ,
+        "family":41,
         "attacks": ["Skill Dive"]
     },
     {
@@ -524,7 +524,7 @@
         "hp": 60,
         "value": 0.15,
         "evoStage": 1,
-        "family": [ ],
+        "family": [44,45],
         "attacks": ["Razor Leaf"]
     },
     {
@@ -536,7 +536,7 @@
         "hp": 70,
         "value": 0.20,
         "evoStage": 2,
-        "family": [ ],
+        "family": [43,45],
         "attacks": ["Drool"]
     },
     {
@@ -548,7 +548,7 @@
         "hp": 140,
         "value": 0.30,
         "evoStage": 3,
-        "family": [ ],
+        "family": [43,44],
         "attacks": ["Solar Beam"]
     },
     {
@@ -560,7 +560,7 @@
         "hp": 70,
         "value":0.30,
         "evoStage": 1,
-        "family":[ ] ,
+        "family":47,
         "attacks": ["Stampede", "Spore Ball"]
     },
     {
@@ -572,7 +572,7 @@
         "hp": 120,
         "value": 0.15,
         "evoStage": 2,
-        "family": [ ] ,
+        "family": 46,
         "attacks": ["Spread Filaments", "Claw Slash"]
     },
     {
@@ -584,7 +584,7 @@
         "hp": 70,
         "value": 0.20,
         "evoStage": 1,
-        "family": [ ] ,
+        "family": 49,
         "attacks": ["Gnaw", "Beam"]
     },
     {
@@ -596,7 +596,7 @@
         "hp": 90,
         "value": 0.30,
         "evoStage": 2,
-        "family":[] ,
+        "family":48,
         "attacks": ["Perplexing Powder", "Speed Wing"]
     },
     {
@@ -608,7 +608,7 @@
         "hp": 50,
         "value": 0.15,
         "evoStage": 1,
-        "family": [ ],
+        "family": 51,
         "attacks": ["Headbutt Bounce", "Mud-Slap"]
     },
     {
@@ -620,7 +620,7 @@
         "hp": 90,
         "value": 0.30,
         "evoStage": 2,
-        "family": [ ],
+        "family": 50,
         "attacks": ["Headbutt Bounce", "Mud-Bomb"]
     },
     {
@@ -632,7 +632,7 @@
         "hp": 70,
         "value": 0.15,
         "evoStage": 1,
-        "family":[ ] ,
+        "family":53,
         "attacks": ["Come Here Right Meow", "Dig Claws"]
     },
     {
@@ -656,7 +656,7 @@
         "hp": 110,
         "value": 0.20,
         "evoStage": 1,
-        "family":[ ] ,
+        "family": 55,
         "attacks": ["Rocket Call", "Slash"]
     },
     {
@@ -668,7 +668,7 @@
         "hp": 110,
         "value": 0.20,
         "evoStage": 2,
-        "family":[ ] ,
+        "family":54 ,
         "attacks": ["Aquatic Rescue", "Super Splash"]
     },
     {
@@ -680,7 +680,7 @@
         "hp": 60,
         "value": 0.15,
         "evoStage": 1,
-        "family":[ ] ,
+        "family":57,
         "attacks": ["Thrash"]
     },
     {
@@ -692,7 +692,7 @@
         "hp": 120,
         "value": 0.30,
         "evoStage": 2,
-        "family":[ ] ,
+        "family":56,
         "attacks": ["Rant and Rave", "Raging Smash"]
     },
     {
@@ -704,7 +704,7 @@
         "hp": 80,
         "value": 0.20,
         "evoStage": 1,
-        "family":[ ] ,
+        "family":59,
         "attacks": ["Vaporize"]
     },
     {
@@ -716,7 +716,7 @@
         "hp": 150,
         "value": 0.40,
         "evoStage": 2,
-        "family":[ ] ,
+        "family":58,
         "attacks": ["Torrid Torrent", "Dynamite Fang"]
     },
     {
@@ -728,7 +728,7 @@
         "hp": 60,
         "value": 0.15,
         "evoStage": 1,
-        "family": [ ],
+        "family": [61,62],
         "attacks": ["Bubble"]
     },
     {
@@ -740,7 +740,7 @@
         "hp": 90,
         "value": 0.90,
         "evoStage": 2,
-        "family": [ ],
+        "family": [ 60,62],
         "attacks": ["Wave Splash", "Frog Hop"]
     },
     {
@@ -752,7 +752,7 @@
         "hp": 160,
         "value": 0.40,
         "evoStage": 3,
-        "family": [ ],
+        "family": [ 60,61],
         "attacks": ["Bubble Beam", "Heroic Punch"]
     },
     {
@@ -760,11 +760,11 @@
         "name": "Abra",
         "type": "Psychic",
         "rarity": "Common",
-        "pack": " ",
+        "pack": 3,
         "hp": 50,
         "value": 0.15,
-        "evoStage": "1",
-        "family": "",
+        "evoStage": 1,
+        "family": [64,65],
         "attacks": ["Psyshot"]
     },
     {
@@ -772,11 +772,11 @@
         "name": "Kadabra",
         "type": "Psychic",
         "rarity": "Uncommon",
-        "pack": " ",
+        "pack": 3,
         "hp": 80,
         "value": 0.30,
-        "evoStage": "2",
-        "family": "",
+        "evoStage": 2,
+        "family": [63,65],
         "attacks": ["Teleportation Attack"]
     },
     {
@@ -784,11 +784,11 @@
         "name": "Alakazam",
         "type": "Psychic",
         "rarity": "Double Rare",
-        "pack": " ",
+        "pack": 3,
         "hp": 310,
         "value": 2.30,
-        "evoStage": "3",
-        "family": " ",
+        "evoStage": 3,
+        "family": [63,64],
         "attacks": ["Psychic", "Recover"]
     },
     {
@@ -796,11 +796,11 @@
         "name": "Machop",
         "type": "Fighting",
         "rarity": "Common",
-        "pack": " ",
+        "pack": 1,
         "hp": 70,
         "value": 0.20,
-        "evoStage": "1",
-        "family": "",
+        "evoStage": 1,
+        "family": [67,68],
         "attacks": ["Mountain Mashing", "Punch"]
     },
     {
@@ -808,11 +808,11 @@
         "name": "Machoke",
         "type": "Fighting",
         "rarity": "Uncommon",
-        "pack": " ",
+        "pack": 1,
         "hp": 100,
         "value": 0.10,
-        "evoStage": "2",
-        "family": "",
+        "evoStage": 2,
+        "family": [66,68],
         "attacks": ["Mountain Ramming"]
     },
     {
@@ -820,11 +820,11 @@
         "name": "Machamp",
         "type": "Fighting",
         "rarity": "Rare",
-        "pack": " ",
+        "pack": 1,
         "hp": 180,
         "value": 0.40,
-        "evoStage": "3",
-        "family": " ",
+        "evoStage": 3,
+        "family": [64,65],
         "attacks": ["Mountain Chopping"]
     },
     {
@@ -832,11 +832,11 @@
         "name": "Bellsprout",
         "type": "Grass",
         "rarity": "Common",
-        "pack": " ",
+        "pack": 2,
         "hp": 60,
         "value": 0.15,
-        "evoStage": "1",
-        "family": " ",
+        "evoStage": 1,
+        "family": [70,71],
         "attacks": ["Cut", "Bind Down "]
     },
     {
@@ -844,11 +844,11 @@
         "name": "Weepinbell",
         "type": "Grass",
         "rarity": "Common",
-        "pack": " ",
+        "pack": 2,
         "hp": 90,
         "value": 1.25,
-        "evoStage": "2",
-        "family": " ",
+        "evoStage": 2,
+        "family": [70,72],
         "attacks": ["Cut", "Spray Fluid"]
     },
     {
@@ -856,11 +856,11 @@
         "name": "Victreebel",
         "type": "Grass",
         "rarity": "Uncommon",
-        "pack": " ",
+        "pack": 2,
         "hp": 150,
         "value": 0.30,
-        "evoStage": "3",
-        "family": " ",
+        "evoStage": 3,
+        "family": [69,70],
         "attacks": [" Split Up", "Slow-Acting Acid"]
     },
     {
@@ -868,11 +868,11 @@
         "name": "Tentacool",
         "type": "Water",
         "rarity": "Common",
-        "pack": " ",
+        "pack": 3,
         "hp": 60,
         "value": 0.15,
-        "evoStage": "1",
-        "family": " ",
+        "evoStage": 1,
+        "family": 73,
         "attacks": [" Tingle", "Watering"]
     },
     {
@@ -880,11 +880,11 @@
         "name": "Tentacruel",
         "type": "Water",
         "rarity": "Uncommon",
-        "pack": " ",
+        "pack": 3,
         "hp": 120,
         "value": 0.50,
-        "evoStage": "2 ",
-        "family": " ",
+        "evoStage": 2,
+        "family": 72,
         "attacks": ["Poisonous Whip", "Tentacular Panic"]
     },
     {
@@ -892,11 +892,11 @@
         "name": "Geodude",
         "type": "Fighting",
         "rarity": "Common",
-        "pack": "  ",
+        "pack": 1,
         "hp": 80,
         "value": 0.15,
-        "evoStage": "1",
-        "family": " ",
+        "evoStage": 1,
+        "family": [75,76],
         "attacks": ["Stiffen", "Knuckle Punch"]
     },
     {
@@ -904,11 +904,11 @@
         "name": "Graveler",
         "type": "Fighting",
         "rarity": "Uncommon",
-        "pack": " ",
+        "pack": 1,
         "hp": 110,
         "value": 0.20,
-        "evoStage": "2",
-        "family": "",
+        "evoStage": 2,
+        "family": [75,76],
         "attacks": ["Rock Cannon", "Heavy Impact"]
     },
     {
@@ -916,11 +916,11 @@
         "name": "Golem",
         "type": "Fighting",
         "rarity": "Double Rare",
-        "pack": " ",
+        "pack": 1,
         "hp": 330,
         "value": 1.30,
-        "evoStage": "3",
-        "family": "",
+        "evoStage": 3,
+        "family": [75,76],
         "attacks": ["Dynamic Roll", "Rock Blaster"]
     },
     {
@@ -928,11 +928,11 @@
         "name": "Ponyta",
         "type": "Fire",
         "rarity": "Common",
-        "pack": " ",
+        "pack": 2,
         "hp": 70,
         "value": 0.15,
-        "evoStage": "1",
-        "family": " ",
+        "evoStage": 1,
+        "family": 78,
         "attacks": ["Collect Draw a Card", "Flop"]
     },
     {
@@ -940,11 +940,11 @@
         "name": "Rapidash",
         "type": "Fire",
         "rarity": "Uncommon",
-        "pack": " ",
+        "pack": 2,
         "hp": 100,
         "value": 0.30,
-        "evoStage": "2",
-        "family": " ",
+        "evoStage": 2,
+        "family": 77,
         "attacks": [" Singe ", " Mach Turn"]
     },
     {
@@ -952,11 +952,11 @@
         "name": "Slowpoke",
         "type": "Psychic",
         "rarity": "Common",
-        "pack": " ",
+        "pack": 3,
         "hp": 80,
         "value": 0.10,
-        "evoStage": "1",
-        "family": " ",
+        "evoStage": 1,
+        "family": 80,
         "attacks": ["Sea Bathing", "Headbutt"]
     },
     {
@@ -964,11 +964,11 @@
         "name": "Slowbro",
         "type": "Psychic",
         "rarity": "Uncommon",
-        "pack": " ",
+        "pack": 3,
         "hp": 130,
         "value": 0.20,
-        "evoStage": "2 ",
-        "family": "",
+        "evoStage": 2,
+        "family": 79,
         "attacks": ["Big Yawn", "Laid-Back Tackle"]
     },
     {
@@ -976,11 +976,11 @@
         "name": "Magnemite",
         "type": "Lightning",
         "rarity": "Common",
-        "pack": " ",
+        "pack": 1,
         "hp": 60,
         "value": 0.20,
-        "evoStage": "1",
-        "family": "",
+        "evoStage": 1,
+        "family": 82,
         "attacks": ["Tiny Charge ", "Big Explosion"]
     },
     {
@@ -988,11 +988,11 @@
         "name": "Magneton",
         "type": "Lightning",
         "rarity": "Uncommon",
-        "pack": " ",
+        "pack": 1,
         "hp": 90,
         "value": 0.30,
-        "evoStage": "2",
-        "family": "",
+        "evoStage": 2,
+        "family": 81,
         "attacks": ["Junk Magnet", "Head Bolt"]
     },
     {
@@ -1000,11 +1000,11 @@
         "name": "Farfetch'd",
         "type": "Colorless",
         "rarity": "Common",
-        "pack": " ",
+        "pack": 2,
         "hp": 90,
         "value": 0.30,
-        "evoStage": "1",
-        "family": " ",
+        "evoStage": 1,
+        "family": [],
         "attacks": ["Package Deal", "Leek Clobber"]
     },
     {
@@ -1012,11 +1012,11 @@
         "name": "Doduo",
         "type": "Colorless",
         "rarity": "Common",
-        "pack": " ",
+        "pack": 1,
         "hp": 70,
         "value": 0.15,
-        "evoStage": "1",
-        "family": "",
+        "evoStage": 1,
+        "family": 85,
         "attacks": ["Reckless Charge"]
     },
     {
@@ -1024,11 +1024,11 @@
         "name": "Dodrio",
         "type": "Colorless",
         "rarity": "Rare",
-        "pack": " ",
+        "pack": 1,
         "hp": 100,
         "value": 0.20,
-        "evoStage": "2",
-        "family": "",
+        "evoStage": 2,
+        "family": 84,
         "attacks": ["Ballistic Beak"]
     },
     {
@@ -1036,11 +1036,11 @@
         "name": "Seel",
         "type": "Water",
         "rarity": "Common",
-        "pack": " ",
+        "pack": 2,
         "hp": 80,
         "value": 0.10,
-        "evoStage": "1",
-        "family": "",
+        "evoStage": 1,
+        "family": 87,
         "attacks": ["Chilly"]
     },
     {
@@ -1048,11 +1048,11 @@
         "name": "Dewgong",
         "type": "Water",
         "rarity": "Uncommon",
-        "pack": " ",
+        "pack": 2,
         "hp": 130,
         "value": 0.25,
-        "evoStage": "2",
-        "family": " ",
+        "evoStage": 2,
+        "family": 86,
         "attacks": ["Dual Splash", "Aurora Beam"]
     },
     {
@@ -1060,11 +1060,11 @@
         "name": "Grimer",
         "type": "Darkness",
         "rarity": "Common",
-        "pack": " ",
+        "pack": 3,
         "hp": 80,
         "value": 0.20,
-        "evoStage": "1",
-        "family": " ",
+        "evoStage": 1,
+        "family": 89,
         "attacks": ["Gummy Press"]
     },
     {
@@ -1072,11 +1072,11 @@
         "name": "Muk",
         "type": "Darkness",
         "rarity": "Uncommon",
-        "pack": " ",
+        "pack": 3,
         "hp": 150,
         "value": 0.30,
-        "evoStage": "2",
-        "family": " ",
+        "evoStage": 2,
+        "family": 88,
         "attacks": ["Sludge Bomb", "Sticky Jail"]
     },
     {
@@ -1084,11 +1084,11 @@
         "name": "Shellder",
         "type": "Water",
         "rarity": "Common",
-        "pack": " ",
+        "pack": 1,
         "hp": 70,
         "value": 0.15,
-        "evoStage": "1",
-        "family": " ",
+        "evoStage": 1,
+        "family": 91,
         "attacks": ["Shell Press"]
     },
     {
@@ -1096,11 +1096,11 @@
         "name": "Cloyster",
         "type": "Water",
         "rarity": "Uncommon",
-        "pack": " ",
+        "pack": 1,
         "hp": 130,
         "value": 0.25,
-        "evoStage": "2",
-        "family": " ",
+        "evoStage": 2,
+        "family": 90,
         "attacks": ["Protect Charge"]
     },
     {
@@ -1108,11 +1108,11 @@
         "name": "Gastly",
         "type": "Psychic",
         "rarity": "Common",
-        "pack": " ",
+        "pack": 2,
         "hp": 50,
         "value": 0.15,
-        "evoStage": "1",
-        "family": " ",
+        "evoStage": 1,
+        "family": [93,94],
         "attacks": ["Suffocating Gas"]
     },
     {
@@ -1120,11 +1120,11 @@
         "name": "Haunter",
         "type": "Psychic",
         "rarity": "Uncommon",
-        "pack": " ",
+        "pack": 2,
         "hp": 80,
         "value": 0.20,
-        "evoStage": "2",
-        "family": " ",
+        "evoStage": 2,
+        "family": [92,94],
         "attacks": ["mumble"]
     },
     {
@@ -1132,11 +1132,11 @@
         "name": "Gengar",
         "type": "Psychic",
         "rarity": "Rare",
-        "pack": " ",
+        "pack": 2,
         "hp": 130,
         "value": 1.90,
-        "evoStage": "3 ",
-        "family": " ",
+        "evoStage": 3,
+        "family": [92,93],
         "attacks": ["Poltergeist ", "Hollow Dive"]
     },
     {
@@ -1144,11 +1144,11 @@
         "name": "Onix",
         "type": "Fighting",
         "rarity": "Uncommon",
-        "pack": " ",
+        "pack": 3,
         "hp": 120,
         "value": 0.80,
-        "evoStage": "1",
-        "family": " ",
+        "evoStage": 1,
+        "family": [],
         "attacks": ["Thumpalanche", "Heavy Impact"]
     },
     {
@@ -1156,11 +1156,11 @@
         "name": "Drowzee",
         "type": "Psychic",
         "rarity": "Common",
-        "pack": " ",
+        "pack": 1,
         "hp": 80,
         "value": 0.25,
-        "evoStage": "1",
-        "family": "",
+        "evoStage": 1,
+        "family": 97,
         "attacks": ["Zen Headbutt"]
     },
     {
@@ -1168,11 +1168,11 @@
         "name": "Hypno",
         "type": "Psychic",
         "rarity": "Uncommon",
-        "pack": " ",
+        "pack": 1,
         "hp": 110,
         "value": 0.70,
-        "evoStage": "2",
-        "family": " ",
+        "evoStage": 2,
+        "family": 96,
         "attacks": ["Super Psy Bolt"]
     },
     {
@@ -1180,11 +1180,11 @@
         "name": "Krabby",
         "type": "Water",
         "rarity": "Common",
-        "pack": " ",
+        "pack": 2,
         "hp": 70,
         "value": 0.15,
-        "evoStage": "1",
-        "family": " ",
+        "evoStage": 1,
+        "family": 99,
         "attacks": ["Salt Water", "Crabhammer"]
     },
     {
@@ -1192,11 +1192,11 @@
         "name": "Kingler",
         "type": "Water",
         "rarity": "Uncommon",
-        "pack": " ",
+        "pack": 2,
         "hp": 140,
         "value": 1.20,
-        "evoStage": "2",
-        "family": " ",
+        "evoStage": 2,
+        "family": 98,
         "attacks": ["Hammer Arm", "Guilotine"]
     },
     {
@@ -1204,11 +1204,11 @@
         "name": "Voltorb",
         "type": "Lightning",
         "rarity": "Common",
-        "pack": " ",
+        "pack": 3,
         "hp": 60,
         "value": 0.10,
-        "evoStage": "1",
-        "family": "",
+        "evoStage": 1,
+        "family": 101,
         "attacks": ["Tumbling Attack"]
     },
     {
@@ -1216,11 +1216,11 @@
         "name": "Electrode",
         "type": "Lightning",
         "rarity": "Rare",
-        "pack": " ",
+        "pack": 3,
         "hp": 90,
         "value": 0.15,
-        "evoStage": "2",
-        "family": "",
+        "evoStage": 2,
+        "family": 100,
         "attacks": ["Bang Boom Chain", "Electro Ball"]
     },
     {
@@ -1228,11 +1228,11 @@
         "name": "Exeggcute",
         "type": "Grass",
         "rarity": "Common",
-        "pack": " ",
+        "pack": 1,
         "hp": 60,
         "value": 0.10,
-        "evoStage": "1",
-        "family": "Exeggcute",
+        "evoStage": 1,
+        "family": 103,
         "attacks": ["Ball Roll"]
     },
     {
@@ -1240,11 +1240,11 @@
         "name": "Exeggutor",
         "type": "Grass",
         "rarity": "Uncommon",
-        "pack": "",
+        "pack": 1,
         "hp": 140,
         "value": 0.15,
-        "evoStage": "2",
-        "family": "",
+        "evoStage": 2,
+        "family": 102,
         "attacks": ["Psychic", "Hammer In"]
     },
     {
@@ -1252,11 +1252,11 @@
         "name": "Cubone",
         "type": "Fighting",
         "rarity": "Common",
-        "pack": " ",
+        "pack": 2,
         "hp": 70,
         "value": 0.10,
-        "evoStage": "1",
-        "family": "",
+        "evoStage": 1,
+        "family": 105,
         "attacks": ["Hit Twice"]
     },
     {
@@ -1264,11 +1264,11 @@
         "name": "Marowak",
         "type": "Ground",
         "rarity": "Rare",
-        "pack": " ",
+        "pack": 2,
         "hp": 120,
         "value": 0.15,
-        "evoStage": "2",
-        "family": "",
+        "evoStage": 2,
+        "family": 104,
         "attacks": ["Bone Throw", "Boundless Power"]
     },
     {
@@ -1276,11 +1276,11 @@
         "name": "Hitmonlee",
         "type": "Fighting",
         "rarity": "Uncommon",
-        "pack": "",
+        "pack": 3,
         "hp": 120,
         "value": 0.10,
-        "evoStage": "1",
-        "family": "Hitmonlee",
+        "evoStage": 1,
+        "family": [],
         "attacks": ["Twister Kick", "Low Kick"]
     },
     {
@@ -1288,11 +1288,11 @@
         "name": "Hitmonchan",
         "type": "Fighting",
         "rarity": "Uncommon",
-        "pack": "",
+        "pack": 1,
         "hp": 120,
         "value": 0.10,
-        "evoStage": "1",
-        "family": "",
+        "evoStage": 1,
+        "family": [],
         "attacks": ["Excited Punch"]
     },
     {
@@ -1300,11 +1300,11 @@
         "name": "Lickitung",
         "type": "Colorless",
         "rarity": "Common",
-        "pack": "",
+        "pack": 2,
         "hp": 100,
         "value": 0.10,
-        "evoStage": "1",
-        "family": "",
+        "evoStage": 1,
+        "family": [],
         "attacks": ["Tongue-Tied"]
     },
     {
@@ -1312,11 +1312,11 @@
         "name": "Koffing",
         "type": "Psychic",
         "rarity": "Common",
-        "pack": " ",
+        "pack": 3,
         "hp": 60,
         "value": 0.10,
-        "evoStage": "1",
-        "family": "",
+        "evoStage": 1,
+        "family": 110,
         "attacks": ["Suspicious Gas"]
     },
     {
@@ -1324,11 +1324,11 @@
         "name": "Weezing",
         "type": "Psychic",
         "rarity": "Rare",
-        "pack": "",
+        "pack": 3,
         "hp": 1110,
         "value": 0.15,
-        "evoStage": "2",
-        "family": " ",
+        "evoStage": 2,
+        "family": 109,
         "attacks": ["Spinning Fumes"]
     },
     {
@@ -1336,11 +1336,11 @@
         "name": "Rhyhorn",
         "type": "Fighting",
         "rarity": "Common",
-        "pack": " ",
+        "pack": 1,
         "hp": 100,
         "value": 0.10,
-        "evoStage": "1",
-        "family": "",
+        "evoStage": 1,
+        "family": 112,
         "attacks": ["Push Down", "Boulder Crush"]
     },
     {
@@ -1348,11 +1348,11 @@
         "name": "Rhydon",
         "type": "Fighting",
         "rarity": "Uncommon",
-        "pack": " ",
+        "pack": 1,
         "hp": 120,
         "value": 0.10,
-        "evoStage": "2",
-        "family": "",
+        "evoStage": 2,
+        "family": 111,
         "attacks": ["Wrack Down", " Charismatic Drill"]
     },
     {
@@ -1360,11 +1360,11 @@
         "name": "Chansey",
         "type": "Colorless",
         "rarity": "Rare",
-        "pack": "",
+        "pack": 2,
         "hp": 110,
         "value": 0.20,
-        "evoStage": "1",
-        "family": "",
+        "evoStage": 1,
+        "family": [],
         "attacks": ["Gentle Slap"]
     },
     {
@@ -1372,11 +1372,11 @@
         "name": "Tangela",
         "type": "Grass",
         "rarity": "Common",
-        "pack": "",
+        "pack": 3,
         "hp": 80,
         "value": 0.10,
-        "evoStage": "1",
-        "family": "",
+        "evoStage": 1,
+        "family": [],
         "attacks": ["Tactful Tangling"]
     },
     {
@@ -1384,11 +1384,11 @@
         "name": "Kangaskhan",
         "type": "Colorless",
         "rarity": "Double Rare",
-        "pack": " ",
+        "pack": 1,
         "hp": 230,
         "value": 1.00,
-        "evoStage": "1",
-        "family": "",
+        "evoStage": 1,
+        "family": [],
         "attacks": ["Triple Draw ", "Incessant Punching"]
     },
     {
@@ -1396,11 +1396,11 @@
         "name": "Horsea",
         "type": "Water",
         "rarity": "Common",
-        "pack": " ",
+        "pack": 2,
         "hp": 60,
         "value": 0.10,
-        "evoStage": "1",
-        "family": "",
+        "evoStage": 1,
+        "family": 117,
         "attacks": ["Rain Splash", "Sharp Fin"]
     },
     {
@@ -1408,11 +1408,11 @@
         "name": "Seadra",
         "type": "Water",
         "rarity": "Uncommon",
-        "pack": " ",
+        "pack": 2,
         "hp": 80,
         "value": 0.10,
-        "evoStage": "2",
-        "family": "",
+        "evoStage": 2,
+        "family": 116,
         "attacks": ["Blinding Ink"]
     },
     {
@@ -1420,11 +1420,11 @@
         "name": "Goldeen",
         "type": "Water",
         "rarity": "Common",
-        "pack": " ",
+        "pack": 3,
         "hp": 70,
         "value": 0.10,
-        "evoStage": "1",
-        "family": "",
+        "evoStage": 1,
+        "family": 119,
         "attacks": ["Triple Strike", "Sprinkle Water"]
     },
     {
@@ -1432,11 +1432,11 @@
         "name": "Seaking",
         "type": "Water",
         "rarity": "Uncommon",
-        "pack": "",
+        "pack": 3,
         "hp": 110,
         "value": 0.15,
-        "evoStage": "2",
-        "family": "",
+        "evoStage": 2,
+        "family": 118,
         "attacks": ["Swim Freely", "Aqua Horn"]
     },
     {
@@ -1444,11 +1444,11 @@
         "name": "Staryu",
         "type": "Water",
         "rarity": "Common",
-        "pack": "",
+        "pack": 1,
         "hp": 60,
         "value": 0.10,
-        "evoStage": "1",
-        "family": "",
+        "evoStage": 1,
+        "family": 121,
         "attacks": ["Swift"]
     },
     {
@@ -1456,11 +1456,11 @@
         "name": "Starmie",
         "type": "Water",
         "rarity": "Rare",
-        "pack": "",
+        "pack": 1,
         "hp": 90,
         "value": 0.15,
-        "evoStage": "2",
-        "family": "",
+        "evoStage": 2,
+        "family": 120,
         "attacks": ["Speed Attack"]
     },
     {
@@ -1468,11 +1468,11 @@
         "name": "Mr. Mime",
         "type": "Psychic",
         "rarity": "Rare",
-        "pack": " ",
+        "pack": 3,
         "hp": 90,
         "value": 0.15,
-        "evoStage": "1",
-        "family": " ",
+        "evoStage": 1,
+        "family": [],
         "attacks": ["Pyspower"]
     },
     {
@@ -1480,11 +1480,11 @@
         "name": "Scyther",
         "type": "Grass",
         "rarity": "Uncommon",
-        "pack": "",
+        "pack": 1,
         "hp": 70,
         "value": 0.10,
-        "evoStage": "1",
-        "family": "",
+        "evoStage": 1,
+        "family": [],
         "attacks": ["Helpful Slash", "Slicing Blade"]
     },
     {
@@ -1495,7 +1495,7 @@
         "pack": " ",
         "hp": 200,
         "value": 1.00,
-        "evoStage": "1",
+        "evoStage": 1,
         "family": "",
         "attacks": ["Heart-Stopping Kiss", "Icy Wind"]
     },
@@ -1507,7 +1507,7 @@
         "pack": "",
         "hp": 90,
         "value": 0.20,
-        "evoStage": "1",
+        "evoStage": 1,
         "family": "",
         "attacks": ["Electro Combo", "Light Punch"]
     },
@@ -1519,7 +1519,7 @@
         "pack": "",
         "hp": 90,
         "value": 0.10,
-        "evoStage": "1",
+        "evoStage": 1,
         "family": "",
         "attacks": ["Live Coal", "Flare Combo"]
     },
@@ -1531,7 +1531,7 @@
         "pack": "",
         "hp": 120,
         "value": 0.15,
-        "evoStage": "1",
+        "evoStage": 1,
         "family": "",
         "attacks": ["Vise Grip ", "Reckless Throw"]
     },
@@ -1543,7 +1543,7 @@
         "pack": "",
         "hp": 120,
         "value": 0.10,
-        "evoStage": "1",
+        "evoStage": 1,
         "family": "",
         "attacks": ["Gather the Crew", "Rage"]
     },
@@ -1555,7 +1555,7 @@
         "pack": " ",
         "hp": 30,
         "value": 0.10,
-        "evoStage": "1",
+        "evoStage": 1,
         "family": "",
         "attacks": ["Splashy Splash"]
     },
@@ -1567,7 +1567,7 @@
         "pack": " ",
         "hp": 190,
         "value": 0.25,
-        "evoStage": "2",
+        "evoStage": 2,
         "family": "",
         "attacks": ["Hyper Beam"]
     },
@@ -1579,7 +1579,7 @@
         "pack": "",
         "hp": 110,
         "value": 0.10,
-        "evoStage": "1",
+        "evoStage": 1,
         "family": "",
         "attacks": ["Hop on My Back", "Aqua Edge"]
     },
@@ -1591,7 +1591,7 @@
         "pack": " ",
         "hp": 60,
         "value": 0.25,
-        "evoStage": "1",
+        "evoStage": 1,
         "family": "",
         "attacks": ["Splup"]
     },
@@ -1603,7 +1603,7 @@
         "pack": " ",
         "hp": 70,
         "value": 0.10,
-        "evoStage": "1",
+        "evoStage": 1,
         "family": "",
         "attacks": ["Colorful Friends", "Skip"]
     },
@@ -1615,7 +1615,7 @@
         "pack": "",
         "hp": 130,
         "value": 0.25,
-        "evoStage": "2",
+        "evoStage": 2,
         "family": "",
         "attacks": ["Spiral Drain", "Fighting Whirlpool"]
     },
@@ -1627,7 +1627,7 @@
         "pack": " ",
         "hp": 110,
         "value": 0.20,
-        "evoStage": "2",
+        "evoStage": 2,
         "family": "",
         "attacks": ["Linear Attack"," Fighting Lightning"]
     },
@@ -1639,7 +1639,7 @@
         "pack": " ",
         "hp": 130,
         "value": 0.30,
-        "evoStage": "2",
+        "evoStage": 2,
         "family": "",
         "attacks": ["Destructive Flame", "Fighting Blaze"]
     },
@@ -1651,7 +1651,7 @@
         "pack": "Base Set",
         "hp": 60,
         "value": 0.10,
-        "evoStage": " 1",
+        "evoStage": 1,
         "family": " ",
         "attacks": [" "]
     },
@@ -1663,7 +1663,7 @@
         "pack": " ",
         "hp": 100,
         "value": 0.10,
-        "evoStage": "2",
+        "evoStage": 2,
         "family": " ",
         "attacks": ["Tentacular Return"]
     },
@@ -1675,7 +1675,7 @@
         "pack": " ",
         "hp": 150,
         "value": 0.15,
-        "evoStage": "2",
+        "evoStage": 2,
         "family": " ",
         "attacks": ["Aqua Split"]
     },
@@ -1687,7 +1687,7 @@
         "pack": "",
         "hp": 90,
         "value": 0.10,
-        "evoStage": "2",
+        "evoStage": 2,
         "family": " ",
         "attacks": ["Double Scratch"]
     },
@@ -1699,7 +1699,7 @@
         "pack": " ",
         "hp": 160,
         "value": 0.15,
-        "evoStage": "2",
+        "evoStage": 2,
         "family": " ",
         "attacks": ["Draining Blade"]
     },
@@ -1711,7 +1711,7 @@
         "pack": "",
         "hp": 130,
         "value": 0.20,
-        "evoStage": "2",
+        "evoStage": 2,
         "family": " ",
         "attacks": ["Glide ", "Devolution Ray"]
     },
@@ -1724,7 +1724,7 @@
         "pack": "",
         "hp": 150,
         "value": 0.15,
-        "evoStage": "1",
+        "evoStage": 1,
 	    "family": "",
         "attacks": ["Thudding Press"]
     },
@@ -1817,7 +1817,7 @@
         "name": "Mew",
         "type": "Psychic",
         "rarity": "Double Rare",
-        "pack": "1",
+        "pack": 1,
         "hp": 180,
         "value": 3,
         "evoStage": 1,
