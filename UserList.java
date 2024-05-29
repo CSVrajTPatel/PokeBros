@@ -50,4 +50,27 @@ public class UserList {
         }
         return false;  // User not found
     }
+
+    public User searchByUserName(String username){
+        for (User user : userList){
+            if(user.getUserName().equalsIgnoreCase(username)){
+                return user;
+            }
+        }
+        return null;
+    }
+    public static void main(String[] args) {
+        UserList userList = new UserList();
+
+        // Test searchByUserName method
+        String testUsername = "VrajTPatel";
+        User foundUser = userList.searchByUserName(testUsername);
+
+        if (foundUser != null) {
+            System.out.println("User found: " + foundUser.getUserName());
+            System.out.println("Email: " + foundUser.getEmail());
+        } else {
+            System.out.println("User not found.");
+        }
+    }
 }
