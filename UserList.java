@@ -28,7 +28,6 @@ public class UserList {
         // DataWriter.updateUsers(userList);
 
         // return true;
-    }
 
     public User loginUser(String userName, String password) {
         for (User user : userList) {
