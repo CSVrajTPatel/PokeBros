@@ -1,14 +1,26 @@
 [
-    {
-    "userName": "exampleUserName",
-    "uniqueIdentifier": "123e4567-e89b-12d3-a456-426614174000",
-    "password": "examplePassword",
-    "firstName": "John",
-    "lastName": "Doe",
-    "email": "john.doe@example.com",
-    "favoriteCards": [1, 4, 7],
-    "currency": 1000.0,
-    "ownedCards": [1, 2, 3],
-    "lastClaimedCurrencyTime":"2023-05-25T10:00:00Z"
+  {
+  "userName": "exampleUserName",
+  "uniqueIdentifier": "123e4567-e89b-12d3-a456-426614174000",
+  "password": "examplePassword",
+  "firstName": "John",
+  "lastName": "Doe",
+  "email": "john.doe@example.com",
+  "favoriteCards": [1, 4, 7],
+  "currency": 1000.0,
+  "ownedCards": [1, 2, 3],
+  "lastClaimedCurrencyTime":"2023-05-25T10:00:00Z"
+},
+{
+  "userName": "VrajTPatel",
+  "uniqueIdentifier": "123e4567-e89b-12d3-a456-426614174000",
+  "password": "VrajIsStupid",
+  "firstName": "Vraj",
+  "lastName": "Patel",
+  "email": "john.doe@example.com",
+  "favoriteCards": [1, 4, 7],
+  "currency": 1000.0,
+  "ownedCards": [1, 2, 3],
+  "lastClaimedCurrencyTime":"2023-05-25T10:00:00Z"
 }
 ]

@@ -7,6 +7,7 @@ public class Facade {
 
   private User user;
   private CardList masterCardList;
+  private UserList userlist;
   //masterCardList = new CardList();
 
   //public Facade() {
@@ -120,8 +121,55 @@ public class Facade {
     // need to add reading and writing from JSON file
     return false;  
   }
+/*
+ * VP USER SECTION:
+ */
+    public boolean createUser(String userName, String password, String firstName, String lastName, String email) {
+      UserList userList = new UserList();
+      return userList.addUserToList(userName, password, firstName, lastName, email);
+    }
 
-  public static void main(String[] args) {
+    public User loginUser(String userName, String password) {
+      UserList userList = new UserList();
+      return userList.loginUser(userName, password);
+    }
+
+    public static void main(String[] args) {
+      Facade facade = new Facade();
+  /*
+      // Test creating a user
+      boolean userCreated = facade.createUser("testUser", "password123", "John", "Doe", "john.doe@example.com");
+      if (userCreated) {
+          System.out.println("User created successfully.");
+      } else {
+          System.out.println("User creation failed.");
+      }
+  */
+      // Test logging in
+      User loggedInUser = facade.loginUser("VrajTPatel", "VrajIsStupid");
+      if (loggedInUser != null) {
+          System.out.println("Login successful for user: " + loggedInUser.getUserName());
+          System.out.println("User Information:");
+          System.out.println("Username: " + loggedInUser.getUserName());
+          System.out.println("First Name: " + loggedInUser.getFirstName());
+          System.out.println("Last Name: " + loggedInUser.getLastName());
+          System.out.println("Email: " + loggedInUser.getEmail());
+          System.out.println("Currency: " + loggedInUser.getCurrency());
+          System.out.println("Favorite Cards:");
+          for (Card card : loggedInUser.getFavoriteCards()) {
+              System.out.println(card.getName());
+          }
+// To ensure Functionality with Cards.
+          System.out.println("Owned Cards:");
+          for (Card card : loggedInUser.getOwnedCards()) {
+            System.out.println(card.getName());
+          }
+      } else {
+          System.out.println("Something is broken Fix it");
+      }
+  }
+}
+    /* TEST FOR PACK OPENING
       Pack newPack = new Pack(1);
       ArrayList<Card> packList = newPack.openPack();
       for (Card card : packList) {
@@ -135,7 +183,4 @@ public class Facade {
       for (Card card : packList) {
         System.out.println(card.getName());
     }
-
-  }
-
-}
+    */

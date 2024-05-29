@@ -352,7 +352,7 @@
         "name": "Nidoran♀",
         "type": "Darkness",
         "rarity": "Common",
-        "pack": ,
+        "pack": "",
         "hp": 60,
         "value": 0.40,
         "evoStage": 1,
@@ -440,7 +440,7 @@
         "hp": 100,
         "value": 0.40,
         "evoStage": 2,
-        "family": ,
+        "family": "",
         "attacks": ["Follow Me", "More Moon"]
     },
     {

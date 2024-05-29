@@ -1,10 +1,10 @@
 import java.util.ArrayList;
-import java.util.Arrays;
+
 public class UserList {
     public ArrayList<User> userList;
 
     public UserList() {
-        userList = new ArrayList<>();
+        userList = DataLoader.loadUsers();
     }
 
     public ArrayList<User> getUserList() {
@@ -12,15 +12,36 @@ public class UserList {
         return userList;
     }
 
-    public boolean addUserToList(User user) {
+    // Adding a User
+    public boolean addUserToList(String userName, String password, String firstName, String lastName, String email) {
+        ArrayList<Card> emptyFavoriteCards = new ArrayList<Card>();
+        ArrayList<Card> emptyOwnedCards = new ArrayList<Card>();
+        double initialCurrency = 1000.0;
 
-        return false;
+        User newUser = new User(userName, password, firstName, lastName, email, emptyFavoriteCards, initialCurrency, emptyOwnedCards);
+        userList.add(newUser);
+        DataWriter.updateUsers(userList);
+
+        return true;
+    }
+
+    public User loginUser(String userName, String password) {
+        for (User user : userList) {
+            if (user.getUserName().equals(userName) && user.getPassword().equals(password)) {
+                return user;  // Login successful
+            }
+        }
+        return null;  // Login failed
     }
 
     public boolean removeUserFromList(String username) {
-
-        return false;
+        for (User user : userList) {
+            if (user.getUserName().equals(username)) {
+                userList.remove(user);
+                DataWriter.updateUsers(userList);
+                return true;
+            }
+        }
+        return false;  // User not found
     }
-    
-
 }

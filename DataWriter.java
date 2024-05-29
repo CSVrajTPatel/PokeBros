@@ -10,7 +10,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
+
 
 public class DataWriter {
     private static final String USERS_FILE_PATH = "./json/users.json";
@@ -19,24 +19,22 @@ public class DataWriter {
     private static final Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
     public static void updateUsers(ArrayList<User> users) {
-        JSONArray existingUsersArray = readJsonArrayFromFile(USERS_FILE_PATH);
-        if (existingUsersArray == null) {
-            existingUsersArray = new JSONArray();
-        }
+        // Clear the existing users
+        JSONArray usersArray = new JSONArray();
 
         for (User user : users) {
             JSONObject userJson = userToJson(user);
-            existingUsersArray.add(userJson);
+            usersArray.add(userJson);
         }
 
+        // Write the JSONArray to the file, OVERWRITING existing content
         try (FileWriter file = new FileWriter(USERS_FILE_PATH)) {
-            file.write(gson.toJson(existingUsersArray));
+            file.write(gson.toJson(usersArray));
             file.flush();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-
     public static void updateTrades(ArrayList<Trade> trades) {
         JSONArray existingTradesArray = readJsonArrayFromFile(TRADES_FILE_PATH);
         if (existingTradesArray == null) {
