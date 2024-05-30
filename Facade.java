@@ -111,10 +111,7 @@ public class Facade {
       return user.getUserName();
     }
 
-
     public static void main(String[] args) {
-
-      /* 
       CardList masterList = CardList.getInstance();
       int count;
       for (int i = 1; i < 4; i++) {
@@ -127,7 +124,10 @@ public class Facade {
         System.out.println(count);
       
       }
-      */
+
+    }
+  
+}
 
   /*
       // Test creating a user
@@ -180,7 +180,5 @@ public class Facade {
     }
     */
 
-  }
-}
   
 
