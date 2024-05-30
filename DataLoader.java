@@ -186,6 +186,7 @@ public class DataLoader {
 
         Trade trade = new Trade(receiver, sender, cardsOffered, cardRequested.get(0), isFairTrade, awaitingResponse, wasAccepted, comment);
         sender.addSendingTrade(trade);
+        sender.addRecivingTrade(trade);
         return trade;
     }
 

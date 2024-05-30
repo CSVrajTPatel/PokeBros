@@ -172,4 +172,8 @@ public class User {
     public void addSendingTrade(Trade trade) {
         sendingTrades.add(trade);
     }
+
+    public void addRecivingTrade(Trade trade) {
+        sendingTrades.add(trade);
+    }
 }
