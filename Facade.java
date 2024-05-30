@@ -45,7 +45,7 @@ public class Facade {
     return CardList.getCardList();
   }
 
-  public ArrayList<Integer> viewFamily(Card card) {
+  public ArrayList<Card> viewFamily(Card card) {
     return card.getFamily();
   }
 

@@ -9,7 +9,7 @@ public class Card {
     private int hp;
     private double value;
     private int evoStage;
-    private ArrayList<Integer> family;
+    private ArrayList<Card> family;
     private ArrayList<String> attacks;
 
     public Card() { 
@@ -21,11 +21,11 @@ public class Card {
         hp = 100;
         value = 10.4;
         evoStage = 1;
-        family = new ArrayList<Integer>();
+        family = new ArrayList<Card>();
         attacks = new ArrayList<String>();
     }
 
-    public Card(int id, String name, String type, String rarity, int pack, int hp, double value, int evoStage, ArrayList<Integer> family, ArrayList<String> attacks) {
+    public Card(int id, String name, String type, String rarity, int pack, int hp, double value, int evoStage, ArrayList<Card> family, ArrayList<String> attacks) {
         //VP initialize Card objects 
         this.id = id;
         this.name = name;
@@ -104,11 +104,11 @@ public class Card {
         this.evoStage = evoStage;
     }
 
-    public ArrayList<Integer> getFamily() {
+    public ArrayList<Card> getFamily() {
         return family;
     }
 
-    public void setFamily(ArrayList<Integer> family) {
+    public void setFamily(ArrayList<Card> family) {
         this.family = family;
     }
 
