@@ -12,6 +12,18 @@
         "attacks": ["Pimpin"]
     },
     {
+        "id": 1,
+        "name": "Bulbasaur",
+        "type": "Grass",
+        "rarity": "Illustration Rare",
+        "pack": 1,
+        "hp": 70,
+        "value": 21.55,
+        "evoStage": 1,
+        "family": [2,3],
+        "attacks": ["Leech Seed"]
+    },
+    {
         "id": 2,
         "name": "Ivysaur",
         "type": "Grass",
