@@ -140,12 +140,11 @@ public class Facade {
 
     // FACADE NEEDS TO BE SINGLETON AS WELL
     public static void main(String[] args) {
-      CardList masterList = new CardList();
       int count;
-      for (int i = 1; i > 4; i++) {
+      for (int i = 1; i < 4; i++) {
         count = 0;
         ArrayList<Card> pack1 = CardList.searchByPack(i);
-        for (Card card : pack1) {
+        for (int j = 0; j < pack1.size(); j++) {
           count++;
         }
         System.out.println("Pack " + i);

@@ -28,6 +28,10 @@ public class User {
         this.lastClaimedCurrencyTime = Instant.now();
     }
 
+    public User () {
+        
+    }
+
     // VP Getters and setters for User attributes
     public String getUserName() {
         return userName;

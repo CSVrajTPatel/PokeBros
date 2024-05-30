@@ -142,14 +142,14 @@ public class DataLoader {
         double currency = getDoubleValue(userObject, "currency");
         ArrayList<Integer> favoriteCardsTemp = getIntegerList(userObject, "favoriteCards");
         ArrayList<Card> favoriteCards = new ArrayList<Card>();
-        CardList masterList = new CardList();
+        // CardList masterList = new CardList();
             for (Integer temp : favoriteCardsTemp) {
-                favoriteCards.add(masterList.searchById(temp));
+                favoriteCards.add(CardList.searchById(temp));
             }
         ArrayList<Integer> ownedCardsTemp = getIntegerList(userObject, "ownedCards");
         ArrayList<Card> ownedCards = new ArrayList<Card>();
             for (Integer temp : ownedCardsTemp) {
-                ownedCards.add(masterList.searchById(temp));
+                ownedCards.add(CardList.searchById(temp));
             }
 
         Instant lastClaimedCurrencyTime = Instant.parse(getStringValue(userObject, "lastClaimedCurrencyTime"));
@@ -159,30 +159,23 @@ public class DataLoader {
     }
 
     private static Trade parseTrade(JSONObject tradeObject) {
-        CardList masterList = new CardList();
+        // CardList masterList = new CardList();
         UserList userList = new UserList();
         String recieverUserName = getStringValue(tradeObject, "recieverUserName");
-<<<<<<< HEAD
-        //User reciever = userList.searchByUserName(recieverUserName);// Have to search by UserName in order to return user she wants type user in trade constructor
-
-        String senderUserName = getStringValue(tradeObject, "senderUserName");
-        //User sender = userList.searchByUserName(senderUserName); // Same here
-=======
         User reciever = userList.searchByUserName(recieverUserName);
 
         String senderUserName = getStringValue(tradeObject, "senderUserName");
         User sender = userList.searchByUserName(senderUserName); 
->>>>>>> 12af75723d2d84b60f1a415128ac59d19ce75d9e
 
         ArrayList<Integer> cardsIds = getIntegerList(tradeObject, "cardsOffered");
         ArrayList<Card> cardsOffered = new ArrayList<Card>();
         for (int num : cardsIds) {
-            cardsOffered.add(masterList.searchById(num));
+            cardsOffered.add(CardList.searchById(num));
         }
         ArrayList<Card> cardRequested = new ArrayList<Card>();
         cardsIds = getIntegerList(tradeObject, "cardsRequested");
         for (int num : cardsIds) {
-            cardRequested.add(masterList.searchById(num));
+            cardRequested.add(CardList.searchById(num));
         }
         boolean isFairTrade = (Boolean) tradeObject.get("isFairTrade");
         boolean awaitingResponse = (Boolean) tradeObject.get("awaitingResponse");
