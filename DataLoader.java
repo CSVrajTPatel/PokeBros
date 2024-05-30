@@ -160,8 +160,8 @@ public class DataLoader {
 
     private static Trade parseTrade(JSONObject tradeObject) {
         // CardList masterList = new CardList();
-        String recieverUserName = getStringValue(tradeObject, "recieverUserName");
-        User reciever = UserList.searchByUserName(recieverUserName);
+        String receiverUserName = getStringValue(tradeObject, "receiverUserName");
+        User receiver = UserList.searchByUserName(receiverUserName);
 
         String senderUserName = getStringValue(tradeObject, "senderUserName");
         User sender = UserList.searchByUserName(senderUserName); 
@@ -181,7 +181,7 @@ public class DataLoader {
         boolean wasAccepted = (Boolean) tradeObject.get("wasAccepted");
         String comment = getStringValue(tradeObject, "comment");
 
-        return new Trade(reciever, sender, cardsOffered, cardRequested.get(0), isFairTrade, awaitingResponse, wasAccepted, comment);
+        return new Trade(receiver, sender, cardsOffered, cardRequested.get(0), isFairTrade, awaitingResponse, wasAccepted, comment);
     }
 
     public static void main(String[] args) {
