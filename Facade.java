@@ -44,7 +44,7 @@ public class Facade {
     return CardList.getCardList();
   }
 
-  public ArrayList<Card> viewFamily(Card card) {
+  public ArrayList<Integer> viewFamily(Card card) {
     return card.getFamily();
   }
 
@@ -74,24 +74,21 @@ public class Facade {
   }
 
   public boolean evaluateTrade(Trade trade) {
-    return true;
+    return trade.isFairTrade();
   }
 
- /* public ArrayList<Trade> getPastTradeHistory() {
+  public ArrayList<Trade> getPastTradeHistory() {
     return user.getTradeHistory();
   }
 
   public ArrayList<Trade> getPendingTrades() {
-    return user.viewPendingTradeRequests();
+    return user.getPendingTrades();
   }
 
-  public boolean setFavoriteCard(Card targetCard) {
-    if(user.addFavoriteCard(targetCard)){
-      return true;
-    }
-    return false;
+  public boolean addFavoriteCard(Card card) {
+    return user.addFavoriteCard(card);
   }
-   */
+  
   
 
   public boolean purchasePack(int num) {

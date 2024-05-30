@@ -95,6 +95,16 @@ public class User {
         this.favoriteCards = favoriteCards;
     }
 
+    public boolean addFavoriteCard(Card card) {
+        for (Card favCard : favoriteCards) {
+            if (card == favCard) {
+                return false;
+            }
+        }
+        favoriteCards.add(card);
+        return true;
+    }
+
     public double getCurrency() {
         return currency;
     }
@@ -136,4 +146,11 @@ public class User {
         return null;
     }
     
+    public ArrayList<Trade> getPendingTrades() {
+        return new ArrayList<Trade>();
+    }
+    
+    public ArrayList<Trade> getTradeHistory() {
+        return new ArrayList<Trade>();
+    }
 }

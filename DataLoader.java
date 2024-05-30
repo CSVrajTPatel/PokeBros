@@ -71,13 +71,8 @@ public class DataLoader {
         double value = getDoubleValue(cardObject, "value");
         int evoStage = getIntValue(cardObject, "evoStage");
 
-        ArrayList<Integer> familyCardsTemp = getIntegerList(cardObject, "family");
-        ArrayList<Card> familyCards = new ArrayList<Card>();
-        if (familyCardsTemp.size() != 0) {
-            for (int temp : familyCardsTemp) {
-                familyCards.add(CardList.searchById(temp));
-            }
-        }
+        ArrayList<Integer> familyCards = getIntegerList(cardObject, "family");
+        
         // CardList masterList = new CardList();
             
         ArrayList<String> attacks = getStringList(cardObject, "attacks");
@@ -193,10 +188,9 @@ public class DataLoader {
     }
 
     public static void main(String[] args) {
-        ArrayList<User> testing = new ArrayList<>();
-        testing = loadUsers();
-        ArrayList<Card> userCards = testing.get(0).getOwnedCards();
-        for (Card card : userCards)
+        ArrayList<Card> testing = new ArrayList<>();
+        testing = loadCards();
+        for (Card card : testing)
             System.out.println(card.getName());
     }
 }
