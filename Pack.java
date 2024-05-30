@@ -117,8 +117,10 @@ public class Pack {
       }
     }
     return newPack;
-  }
+    
 
+  }
+  
     
 
     public ArrayList<Card> getCardList() {

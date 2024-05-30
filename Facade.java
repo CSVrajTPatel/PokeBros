@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 import java.time.Instant;
 import java.time.Duration;
 
@@ -91,8 +93,8 @@ public class Facade {
     return user.getFavoriteCards();
   }
 
-  public boolean openPack(int num) {
-    return user.openPack(num);
+  public boolean openPack(int pack) {
+    return user.openPack(pack);
     
   }
 
@@ -115,24 +117,49 @@ public class Facade {
     }
 
     public static void main(String[] args) {
-      UserList masterList = UserList.getInstance();
-      User user1 = masterList.searchByUserName("VrajTPatel");
-     // ("VrajTPatel", "VrajIsStupid");
-      if (user1 != null) {
-          System.out.println("Logged in as: " + user1.getUserName());
-
+      // Initialize the facade, which logs in the user as part of the constructor
+      Facade facade = new Facade("VrajTPatel", "VrajIsStupid");  // Adjust these credentials as needed
+  
+      if (facade.user != null) {
+          System.out.println("Logged in as: " + facade.user.getUserName());
+  
           // Display original cards
-          System.out.println("Cards owned by " + user1.getUserName() + ":");
-          for (Card card : user1.getOwnedCards()) {  // Directly use user1's method
+          System.out.println("Original Cards Owned by " + facade.user.getUserName() + ":");
+          for (Card card : facade.getOwnedCards()) {
               System.out.println(card.getName());
           }
-
-
-  }
-
-    }
   
+          // Test the openPack method which should update the user's owned cards
+          System.out.println("Opening Pack 1:");
+          if (facade.openPack(1)) {  // Assumes openPack method returns true if successful
+              System.out.println("Cards now owned by " + facade.user.getUserName() + " after opening the pack:");
+              for (Card card : facade.getOwnedCards()) {  // This will include the newly added cards
+                  System.out.println(card.getName());
+              }
+          } else {
+              System.out.println("Failed to open pack.");
+          }
+  
+          // Display updated cards right before logging off to confirm they are updated
+          System.out.println("Final check of cards owned by " + facade.user.getUserName() + " before logging off:");
+          for (Card card : facade.getOwnedCards()) {
+              System.out.println(card.getName());
+          }
+  
+          // Log off the user
+          facade.logOffUser(facade.user.getUserName());
+          System.out.println("User logged off.");
+      } else {
+          System.out.println("Login failed, user not found.");
+      }
+  }
 }
+      
+
+  
+
+  
+
 
   /*
       // Test creating a user
