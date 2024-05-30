@@ -6,8 +6,6 @@ import java.util.Scanner;
 public class Facade {
 
   private User user;
-  private CardList masterCardList;
-  private UserList userlist;
   //masterCardList = new CardList();
 
   //public Facade() {
@@ -15,19 +13,19 @@ public class Facade {
   //}
 
   public Card searchByName(String name) {
-    return masterCardList.searchByName(name);
+    return CardList.searchByName(name);
   }
 
   public ArrayList<Card> searchByType(String filter) {
-    return masterCardList.searchByType(filter);
+    return CardList.searchByType(filter);
   }
 
   public ArrayList<Card> searchByRarity(String filter) {
-    return masterCardList.searchByRarity(filter);
+    return CardList.searchByRarity(filter);
   }
 
   public Card searchById(int filter) {
-    return masterCardList.searchById(filter);
+    return CardList.searchById(filter);
   }
 
   public Card getCard(Card card) {
@@ -44,7 +42,7 @@ public class Facade {
   }
 
   public ArrayList<Card> getCardList() {
-    return masterCardList.getCardList();
+    return CardList.getCardList();
   }
 
   public ArrayList<Integer> viewFamily(Card card) {
