@@ -59,6 +59,16 @@ public class UserList {
         }
         return null;
     }
+
+    public void logOffUser(String username){
+        User user = searchByUserName(username);
+        if (user != null){
+            
+            DataWriter.updateUsers(userList);
+
+        }
+    }
+    
     public static void main(String[] args) {
         UserList userList = new UserList();
 
