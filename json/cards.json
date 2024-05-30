@@ -1713,7 +1713,7 @@
         "value": 0.20,
         "evoStage": 1,
         "family": [],
-        "attacks": ["Glide ", "Devolution Ray"]
+        "attacks": ["Glide", "Devolution Ray"]
     },
     {
         "id": 143,
@@ -1770,7 +1770,7 @@
         "rarity": "Common",
         "pack": 3,
         "hp": 60,
-        "value": 0.20,
+        "value": 3.45,
         "evoStage": 1,
         "family": [148,149],
         "attacks": ["Beat", "Draconic Whip"]
@@ -1782,7 +1782,7 @@
         "rarity": "Illustration Rare",
         "pack": 3,
         "hp": 100,
-        "value": 1.25,
+        "value": 24.15,
         "evoStage": 2,
     	"family": [147,149],
         "attacks": ["Beat","Aqua Slash"]
@@ -1794,7 +1794,7 @@
         "rarity": "Rare",
         "pack": 3,
         "hp": 180,
-        "value": 0.25,
+        "value": 13.95,
         "evoStage": 3,
 	    "family": [147,148],
         "attacks": ["Dragon Pulse"]
@@ -1806,7 +1806,7 @@
         "rarity": "Rare",
         "pack": 1,
         "hp": 130,
-        "value": 0.50,
+        "value": 18.45,
         "evoStage": 2,
 	    "family": [],
         "attacks": ["Reflective Barrier", "Psyslash"]
@@ -1818,7 +1818,7 @@
         "rarity": "Illustration Rare",
         "pack": 2,
         "hp": 180,
-        "value": 3,
+        "value": 38.70,
         "evoStage": 1,
 	    "family": [],
         "attacks": ["Genome Hacking"]
