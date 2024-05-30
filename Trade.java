@@ -5,17 +5,17 @@ public class Trade {
     private User sender;
     private User receiver ;
     private ArrayList<Card> sendersCards;
-    private Card recieverCard;
+    private Card receiverCard;
     private boolean isFairTrade;
     private boolean awaitingResponse;
     private boolean wasAccepted;
     private String comment;
 
-    public Trade(User sender, User seller, ArrayList <Card> sendersCards, Card recieverCard, boolean isFairTrade, boolean awaitingResponse, boolean wasAccepted, String comment){
+    public Trade(User sender, User seller, ArrayList <Card> sendersCards, Card receiverCard, boolean isFairTrade, boolean awaitingResponse, boolean wasAccepted, String comment){
         this.sender = sender;
         this.receiver = seller;
         this.sendersCards = sendersCards;
-        this.recieverCard = recieverCard;
+        this.receiverCard = receiverCard;
         this.isFairTrade = isFairTrade;
         this.awaitingResponse = awaitingResponse;
         this.wasAccepted = wasAccepted;
@@ -34,22 +34,21 @@ public class Trade {
     // THIS NEEDS TO BE REDONE
      
     public boolean isFairTrade() {
-       /*  CardList masterCardList = new CardList();
-        double buyerCardValue = 0;
-        double sellerCardValue = 0;
-        for(int i = 0; i < cardsOffered.size(); i++){
-          buyerCardValue += masterCardList.searchById(cardsOffered.get(i)).getValue();
+       
+        double senderCardValue = 0;
+        for(int i = 0; i < sendersCards.size(); i++){
+            senderCardValue += sendersCards.get(i).getValue();
         }
-        for(int i = 0; i < cardsRequested.size(); i++){
-          sellerCardValue += masterCardList.searchById(cardsRequested.get(i)).getValue();
-        }
-        // if the cumulative value of the cards is within 50, the trade is fair
+        // if the cumulative value of the cards is within `0%
         // otherwise the trade is false
-        if ((Math.abs((sellerCardValue - buyerCardValue)) <=50 )){
-          isFairTrade = true;
+        if (receiverCard.getValue() / senderCardValue >= 0.9 && receiverCard.getValue() / senderCardValue <= 1.1){
+            isFairTrade = true;
+            return isFairTrade;
         }
-        */
+        isFairTrade = false;
         return isFairTrade;
+            
+        
         
       }
 
@@ -63,8 +62,8 @@ public class Trade {
    
     public void acceptTrade() {
         this.wasAccepted = true;
-        sender.addCardToList(recieverCard);
-        receiver.removeCardFromList(recieverCard);
+        sender.addCardToList(receiverCard);
+        receiver.removeCardFromList(receiverCard);
 
         for(Card card : sendersCards){
             receiver.addCardToList(card);
@@ -80,24 +79,17 @@ public class Trade {
         return comment;
     }
 
+    // Not Needed I think
     public boolean wasAccepted() {
         return wasAccepted;
-    }
-   
-    public String getRecieverUserName() {
-        return receiver.getUserName();
-    }
-
-    public String getSenderUserName() {
-        return sender.getUserName();
     }
 
     public ArrayList<Card> getCardsOffered() {
         return sendersCards;
     }
    
-    public Card getRecieverCard() {
-        return recieverCard;
+    public Card getreceiverCard() {
+        return receiverCard;
     }
    
 }

@@ -27,10 +27,6 @@ public class UserList {
         // User newUser = new User(userName, password, firstName, lastName, email, emptyFavoriteCards, initialCurrency, emptyOwnedCards);
         // userList.add(newUser);
 
-        // If we are writing all the time it will be expensive on memory
-        // 
-        // DataWriter.updateUsers(userList);
-
         return true;
 
     }
