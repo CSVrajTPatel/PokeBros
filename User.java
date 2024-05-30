@@ -14,6 +14,8 @@ public class User {
     private double currency;
     private ArrayList<Card> ownedCards;
     private Instant lastClaimedCurrencyTime;
+    private ArrayList<Trade> sendingTrades = new ArrayList<>();
+    private ArrayList<Trade> receivingTrades = new ArrayList<>();
 
     public User(String userName, String password, String firstName, String lastName, String email, ArrayList<Card> favoriteCards, double currency, ArrayList<Card> ownedCards) {
         // VP Constructor to initialize User object
@@ -165,5 +167,9 @@ public class User {
     }
     // need to add reading and writing from JSON file
     return false;
+    }
+
+    public void addSendingTrade(Trade trade) {
+        sendingTrades.add(trade);
     }
 }

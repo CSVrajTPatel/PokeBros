@@ -184,7 +184,9 @@ public class DataLoader {
         boolean wasAccepted = (Boolean) tradeObject.get("wasAccepted");
         String comment = getStringValue(tradeObject, "comment");
 
-        return new Trade(receiver, sender, cardsOffered, cardRequested.get(0), isFairTrade, awaitingResponse, wasAccepted, comment);
+        Trade trade = new Trade(receiver, sender, cardsOffered, cardRequested.get(0), isFairTrade, awaitingResponse, wasAccepted, comment);
+        sender.addSendingTrade(trade);
+        return trade;
     }
 
     public static void main(String[] args) {

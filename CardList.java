@@ -16,6 +16,10 @@ public class CardList {
         return masterList;
     }
 
+    public ArrayList<Card> getCardList() {
+        return cardList;
+    }
+
     public Card searchByName(String name) {
         for (Card card : cardList) {
             if (card.getName().equalsIgnoreCase(name)) {

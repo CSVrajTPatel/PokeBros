@@ -26,16 +26,11 @@ public class Facade {
     return master.searchById(filter);
   }
 
-  public Card getCard(Card card) {
-    // confused why this method is needed
-    return card;
-  }
-
   public double getCurrency() {
     return user.getCurrency();
   }
 
-  public ArrayList<Card> getCollection() {
+  public ArrayList<Card> getOwnedCards() {
      return user.getOwnedCards();
   }
 
@@ -80,6 +75,9 @@ public class Facade {
     return user.addFavoriteCard(card);
   }
   
+  public ArrayList<Card> getFavoriteCards() {
+    return user.getFavoriteCards();
+  }
 
   public boolean openPack(int num) {
     return user.openPack(num);
@@ -102,11 +100,18 @@ public class Facade {
       UserList.logOffUser(userName);
     }
 
+    public String getUserName() {
+      return user.getUserName();
+    }
+
+
+
     public static void main(String[] args) {
+      CardList masterList = CardList.getInstance();
       int count;
       for (int i = 1; i < 4; i++) {
         count = 0;
-        ArrayList<Card> pack1 = CardList.searchByPack(i);
+        ArrayList<Card> pack1 = masterList.searchByPack(i);
         for (int j = 0; j < pack1.size(); j++) {
           count++;
         }
