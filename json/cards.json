@@ -12,18 +12,6 @@
         "attacks": ["Pimpin"]
     },
     {
-        "id": 1,
-        "name": "Bulbasaur",
-        "type": "Grass",
-        "rarity": "Illustration Rare",
-        "pack": 1,
-        "hp": 70,
-        "value": 21.55,
-        "evoStage": 1,
-        "family": [2,3],
-        "attacks": ["Leech Seed"]
-    },
-    {
         "id": 2,
         "name": "Ivysaur",
         "type": "Grass",
@@ -320,7 +308,7 @@
         "hp": 120,
         "value": 5.75,
         "evoStage": 2,
-        "family": 25,
+        "family": [25],
         "attacks": ["Electrical Grounding", "Thunder"]
     },
     {
@@ -332,7 +320,7 @@
         "hp": 60,
         "value": 0.25,
         "evoStage": 1,
-        "family": 28,
+        "family": [28],
         "attacks": ["Scratch", "Sand Attack"]
     },
     {
@@ -344,7 +332,7 @@
         "hp": 120,
         "value": 0.40,
         "evoStage": 2,
-        "family": 27,
+        "family": [27],
         "attacks": ["Rumble", "Spike Rend"]
     },
     {
@@ -440,7 +428,7 @@
         "hp": 100,
         "value": 0.40,
         "evoStage": 2,
-        "family": 35,
+        "family": [35],
         "attacks": ["Follow Me", "More Moon"]
     },
     {
@@ -452,7 +440,7 @@
         "hp": 70,
         "value": 0.30,
         "evoStage": 1,
-        "family":38,
+        "family":[38],
         "attacks": ["Super Singe"]
     },
     {
@@ -464,7 +452,7 @@
         "hp": 260,
         "value": 1.30,
         "evoStage": 2,
-        "family":37,
+        "family":[37],
         "attacks": ["Heat Wave", "Mirrored Flames"]
     },
     {
@@ -476,7 +464,7 @@
         "hp": 70,
         "value": 0.25,
         "evoStage": 1,
-        "family":40,
+        "family":[40],
         "attacks": ["Lead", "Stompy Stomp"]
     },
     {
@@ -488,7 +476,7 @@
         "hp": 250,
         "value": 2.00,
         "evoStage": 2,
-        "family":39,
+        "family":[39],
         "attacks": ["Friend Tackle"]
     },
     {
@@ -500,7 +488,7 @@
         "hp": 40,
         "value": 0.20,
         "evoStage": 1,
-        "family":42,
+        "family":[42],
         "attacks": ["bite"]
     },
     {
@@ -512,7 +500,7 @@
         "hp": 80,
         "value": 0.30,
         "evoStage": 2,
-        "family":41,
+        "family":[41],
         "attacks": ["Skill Dive"]
     },
     {
@@ -560,7 +548,7 @@
         "hp": 70,
         "value":0.30,
         "evoStage": 1,
-        "family":47,
+        "family":[47],
         "attacks": ["Stampede", "Spore Ball"]
     },
     {
@@ -572,7 +560,7 @@
         "hp": 120,
         "value": 0.15,
         "evoStage": 2,
-        "family": 46,
+        "family": [46],
         "attacks": ["Spread Filaments", "Claw Slash"]
     },
     {
@@ -584,7 +572,7 @@
         "hp": 70,
         "value": 0.20,
         "evoStage": 1,
-        "family": 49,
+        "family": [49],
         "attacks": ["Gnaw", "Beam"]
     },
     {
@@ -596,7 +584,7 @@
         "hp": 90,
         "value": 0.30,
         "evoStage": 2,
-        "family":48,
+        "family":[48],
         "attacks": ["Perplexing Powder", "Speed Wing"]
     },
     {
