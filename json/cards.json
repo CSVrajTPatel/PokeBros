@@ -1600,11 +1600,11 @@
         "name": "Eevee",
         "type": "Colorless",
         "rarity": "Common",
-        "pack": " ",
+        "pack": 3,
         "hp": 70,
         "value": 0.10,
         "evoStage": 1,
-        "family": "",
+        "family": [134,135,136],
         "attacks": ["Colorful Friends", "Skip"]
     },
     {
@@ -1612,11 +1612,11 @@
         "name": "Vaporeon",
         "type": "Water",
         "rarity": "Rare",
-        "pack": "",
+        "pack": 3,
         "hp": 130,
         "value": 0.25,
         "evoStage": 2,
-        "family": "",
+        "family": [133,135,136],
         "attacks": ["Spiral Drain", "Fighting Whirlpool"]
     },
     {
@@ -1624,11 +1624,11 @@
         "name": "Jolteon",
         "type": "Lightning",
         "rarity": "Rare",
-        "pack": " ",
+        "pack": 3,
         "hp": 110,
         "value": 0.20,
         "evoStage": 2,
-        "family": "",
+        "family": [133,134,136],
         "attacks": ["Linear Attack"," Fighting Lightning"]
     },
     {
@@ -1636,11 +1636,11 @@
         "name": "Flareon",
         "type": "Fire",
         "rarity": "Rare",
-        "pack": " ",
+        "pack": 3,
         "hp": 130,
         "value": 0.30,
         "evoStage": 2,
-        "family": "",
+        "family": [133,134,135],
         "attacks": ["Destructive Flame", "Fighting Blaze"]
     },
     {
@@ -1648,23 +1648,23 @@
         "name": "Porygon",
         "type": "Normal",
         "rarity": "Uncommon",
-        "pack": "Base Set",
+        "pack": 2,
         "hp": 60,
         "value": 0.10,
         "evoStage": 1,
-        "family": " ",
-        "attacks": [" "]
+        "family": [],
+        "attacks": ["Conversion 4"]
     },
     {
         "id": 138,
         "name": "Omanyte",
         "type": "Water",
         "rarity": "Uncommon",
-        "pack": " ",
+        "pack": 3,
         "hp": 100,
         "value": 0.10,
-        "evoStage": 2,
-        "family": " ",
+        "evoStage": 1,
+        "family": [139],
         "attacks": ["Tentacular Return"]
     },
     {
@@ -1672,11 +1672,11 @@
         "name": "Omastar",
         "type": "Water",
         "rarity": "Rare",
-        "pack": " ",
+        "pack": 3,
         "hp": 150,
         "value": 0.15,
         "evoStage": 2,
-        "family": " ",
+        "family": [138],
         "attacks": ["Aqua Split"]
     },
     {
@@ -1684,11 +1684,11 @@
         "name": "Kabuto",
         "type": "Fighting",
         "rarity": "Uncommon",
-        "pack": "",
+        "pack": 2,
         "hp": 90,
         "value": 0.10,
-        "evoStage": 2,
-        "family": " ",
+        "evoStage": 1,
+        "family": [141],
         "attacks": ["Double Scratch"]
     },
     {
@@ -1696,11 +1696,11 @@
         "name": "Kabutops",
         "type": "Fighting",
         "rarity": "Rare",
-        "pack": " ",
+        "pack": 2,
         "hp": 160,
         "value": 0.15,
         "evoStage": 2,
-        "family": " ",
+        "family": [140],
         "attacks": ["Draining Blade"]
     },
     {
@@ -1708,24 +1708,23 @@
         "name": "Aerodactyl",
         "type": "Colorless",
         "rarity": "Rare",
-        "pack": "",
+        "pack": 1,
         "hp": 130,
         "value": 0.20,
-        "evoStage": 2,
-        "family": " ",
+        "evoStage": 1,
+        "family": [],
         "attacks": ["Glide ", "Devolution Ray"]
     },
-
     {
         "id": 143,
         "name": "Snorlax",
         "type": "Colorless",
         "rarity": "Uncommon",
-        "pack": "",
+        "pack": 2,
         "hp": 150,
         "value": 0.15,
         "evoStage": 1,
-	    "family": "",
+	    "family": [],
         "attacks": ["Thudding Press"]
     },
     {
@@ -1733,11 +1732,11 @@
         "name": "Articuno",
         "type": "Water",
         "rarity": "Basic",
-        "pack": "",
+        "pack": 3,
         "hp": 120,
         "value": 0.20,
         "evoStage": 1,
-	    "family": " ",
+	    "family": [],
         "attacks": ["Blizzard"]
     },
     {
@@ -1745,11 +1744,11 @@
         "name": "Zapdos",
         "type": "Lightning",
         "rarity": "Double Rare",
-        "pack": "",
+        "pack": 1,
         "hp": 200,
         "value": 1.25,
         "evoStage": 1,
-	    "family": " ",
+	    "family": [],
         "attacks": ["Multishot Lightning"]
     },
     {
@@ -1757,11 +1756,11 @@
         "name": "Moltres",
         "type": "Fire",
         "rarity": "Rare",
-        "pack": "",
+        "pack": 2,
         "hp": 120,
         "value": 0.20,
         "evoStage": 1,
-	    "family": " ",
+	    "family": [],
         "attacks": ["Blazing Flight"]
     },
     {
@@ -1769,11 +1768,11 @@
         "name": "Dratini",
         "type": "Dragon",
         "rarity": "Common",
-        "pack": "",
+        "pack": 3,
         "hp": 60,
         "value": 0.20,
         "evoStage": 1,
-        "family": " ",
+        "family": [148,149],
         "attacks": ["Beat", "Draconic Whip"]
     },
     {
@@ -1781,11 +1780,11 @@
         "name": "Dragonair",
         "type": "Dragon",
         "rarity": "Uncommon",
-        "pack": "",
+        "pack": 3,
         "hp": 100,
         "value": 1.25,
         "evoStage": 2,
-    	"family": " ",
+    	"family": [147,149],
         "attacks": ["Beat","Aqua Slash"]
     },
     {
@@ -1793,11 +1792,11 @@
         "name": "Dragonite",
         "type": "Dragon",
         "rarity": "Rare",
-        "pack": "",
+        "pack": 3,
         "hp": 180,
         "value": 0.25,
         "evoStage": 3,
-	    "family": " ",
+	    "family": [147,148],
         "attacks": ["Dragon Pulse"]
     },
     {
@@ -1805,11 +1804,11 @@
         "name": "Mewtwo",
         "type": "Psychic",
         "rarity": "Rare",
-        "pack": "",
+        "pack": 1,
         "hp": 130,
         "value": 0.50,
         "evoStage": 2,
-	    "family": " ",
+	    "family": [],
         "attacks": ["Reflective Barrier", "Psyslash"]
     },
     {
@@ -1817,11 +1816,11 @@
         "name": "Mew",
         "type": "Psychic",
         "rarity": "Double Rare",
-        "pack": 1,
+        "pack": 2,
         "hp": 180,
         "value": 3,
         "evoStage": 1,
-	    "family": " ",
+	    "family": [],
         "attacks": ["Genome Hacking"]
     }
 ]
