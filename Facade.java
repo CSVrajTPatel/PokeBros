@@ -5,6 +5,14 @@ import java.time.Duration;
 public class Facade {
 
   private User user;
+
+  public Facade(String userName, String password) {
+    user = loginUser(userName, password);
+  }
+  
+  public User loginUser(String userName, String password) {
+    return UserList.loginUser(userName, password);
+  }
   
   public Card searchByName(String name) {
     CardList master = CardList.getInstance();
@@ -95,10 +103,6 @@ public class Facade {
       return UserList.addUserToList(userName, password, firstName, lastName, email);
     }
 
-    public User loginUser(String userName, String password) {
-      return UserList.loginUser(userName, password);
-    }
-
     public void logOffUser(String userName){
       UserList.logOffUser(userName);
     }
@@ -109,6 +113,8 @@ public class Facade {
 
 
     public static void main(String[] args) {
+
+      /* 
       CardList masterList = CardList.getInstance();
       int count;
       for (int i = 1; i < 4; i++) {
@@ -121,7 +127,8 @@ public class Facade {
         System.out.println(count);
       
       }
-      // Facade facade = new Facade();
+      */
+
   /*
       // Test creating a user
       boolean userCreated = facade.createUser("testUser", "password123", "John", "Doe", "john.doe@example.com");

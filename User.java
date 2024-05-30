@@ -14,8 +14,8 @@ public class User {
     private double currency;
     private ArrayList<Card> ownedCards;
     private Instant lastClaimedCurrencyTime;
-    private ArrayList<Trade> sendingTrades = new ArrayList<>();
-    private ArrayList<Trade> receivingTrades = new ArrayList<>();
+    private ArrayList<Trade> sendingTrades = new ArrayList<Trade>();
+    private ArrayList<Trade> receivingTrades = new ArrayList<Trade>();
 
     public User(String userName, String password, String firstName, String lastName, String email, ArrayList<Card> favoriteCards, double currency, ArrayList<Card> ownedCards) {
         // VP Constructor to initialize User object
