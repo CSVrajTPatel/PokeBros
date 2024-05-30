@@ -117,43 +117,43 @@ public class Facade {
     }
 
     public static void main(String[] args) {
-      // Initialize the facade, which logs in the user as part of the constructor
-      Facade facade = new Facade("VrajTPatel", "VrajIsStupid");  // Adjust these credentials as needed
+      UserList masterList = UserList.getInstance();
+      User user1 = masterList.searchByUserName("VrajTPatel");  // Assuming this is the correct login credential
   
-      if (facade.user != null) {
-          System.out.println("Logged in as: " + facade.user.getUserName());
+      if (user1 != null) {
+          System.out.println("Logged in as: " + user1.getUserName());
   
           // Display original cards
-          System.out.println("Original Cards Owned by " + facade.user.getUserName() + ":");
-          for (Card card : facade.getOwnedCards()) {
+          System.out.println("Original Cards Owned by " + user1.getUserName() + ":");
+          for (Card card : user1.getOwnedCards()) {
               System.out.println(card.getName());
           }
   
-          // Test the openPack method which should update the user's owned cards
+          // Opening a pack
           System.out.println("Opening Pack 1:");
-          if (facade.openPack(1)) {  // Assumes openPack method returns true if successful
-              System.out.println("Cards now owned by " + facade.user.getUserName() + " after opening the pack:");
-              for (Card card : facade.getOwnedCards()) {  // This will include the newly added cards
+          if (user1.openPack(1)) {  // Make sure openPack updates the user's card list and returns true if successful
+              System.out.println("Cards now owned by " + user1.getUserName() + " after opening the pack:");
+              for (Card card : user1.getOwnedCards()) {
                   System.out.println(card.getName());
               }
           } else {
               System.out.println("Failed to open pack.");
           }
   
-          // Display updated cards right before logging off to confirm they are updated
-          System.out.println("Final check of cards owned by " + facade.user.getUserName() + " before logging off:");
-          for (Card card : facade.getOwnedCards()) {
+          // Display updated cards right before logging off
+          System.out.println("Final check of cards owned by " + user1.getUserName() + " before logging off:");
+          for (Card card : user1.getOwnedCards()) {
               System.out.println(card.getName());
           }
   
           // Log off the user
-          facade.logOffUser(facade.user.getUserName());
+          masterList.logOffUser(user1.getUserName());
           System.out.println("User logged off.");
       } else {
           System.out.println("Login failed, user not found.");
       }
   }
-}
+}  
       
 
   
