@@ -123,16 +123,14 @@ public class Facade {
  * VP USER SECTION:
  */
     public boolean createUser(String userName, String password, String firstName, String lastName, String email) {
-      UserList userList = new UserList();
-      return userList.addUserToList(userName, password, firstName, lastName, email);
+      return UserList.addUserToList(userName, password, firstName, lastName, email);
     }
 
 
     // USER LIST NEEDS TO BE A SINGLETON SO NO CONSTRUCTOR
     // EVERY USER LIST NEEDS TO BE THE SAME
     public User loginUser(String userName, String password) {
-      UserList userList = new UserList();
-      return userList.loginUser(userName, password);
+      return UserList.loginUser(userName, password);
     }
 
 

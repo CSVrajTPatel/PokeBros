@@ -160,12 +160,11 @@ public class DataLoader {
 
     private static Trade parseTrade(JSONObject tradeObject) {
         // CardList masterList = new CardList();
-        UserList userList = new UserList();
         String recieverUserName = getStringValue(tradeObject, "recieverUserName");
-        User reciever = userList.searchByUserName(recieverUserName);
+        User reciever = UserList.searchByUserName(recieverUserName);
 
         String senderUserName = getStringValue(tradeObject, "senderUserName");
-        User sender = userList.searchByUserName(senderUserName); 
+        User sender = UserList.searchByUserName(senderUserName); 
 
         ArrayList<Integer> cardsIds = getIntegerList(tradeObject, "cardsOffered");
         ArrayList<Card> cardsOffered = new ArrayList<Card>();
