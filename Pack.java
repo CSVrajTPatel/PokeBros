@@ -10,18 +10,18 @@ public class Pack {
     public Pack(int num){
     packNumber = num;
       if (num == 1) {
-        CardList masterCardList = new CardList();
+        // CardList masterCardList = new CardList();
         name = "Bulbasaur Pack";
-        cards = masterCardList.searchByPack(packNumber);
+        cards = CardList.searchByPack(packNumber);
     }
       else if (num == 2) {
-        CardList masterCardList = new CardList();
+        // CardList masterCardList = new CardList();
         name = "Charmander Pack";
-        cards = masterCardList.searchByPack(packNumber);
+        cards = CardList.searchByPack(packNumber);
     }
       else if (num == 3) {
-        CardList masterCardList = new CardList();
-        cards = masterCardList.searchByPack(packNumber);
+        // CardList masterCardList = new CardList();
+        cards = CardList.searchByPack(packNumber);
         name = "Squirtle Pack";
     }
 

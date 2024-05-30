@@ -1,18 +1,22 @@
 import java.util.ArrayList;
 
 public class CardList {
-    public ArrayList<Card> cardList;
+    private static CardList masterList;
+    private static ArrayList<Card> cardList;
 
      
-    public CardList() {
+    private CardList() {
         cardList = (DataLoader.loadCards());
     }
     
-    public ArrayList<Card> getCardList() {
+    public static ArrayList<Card> getCardList() {
+        if (cardList == null) {
+            masterList = new CardList();
+        }
         return cardList;
     }
 
-    public Card searchByName(String name) {
+    public static Card searchByName(String name) {
         for (Card card : cardList) {
             if (card.getName().equalsIgnoreCase(name)) {
                 return card;
@@ -21,7 +25,7 @@ public class CardList {
         return null;
     }
 
-    public ArrayList<Card> searchByName(String name, ArrayList<Card> cards) {
+    public static ArrayList<Card> searchByName(String name, ArrayList<Card> cards) {
         ArrayList<Card> result = new ArrayList<>();
         for (Card card : cards) {
             if (card.getName().equalsIgnoreCase(name)) {
@@ -31,7 +35,7 @@ public class CardList {
         return result;
     }
 
-    public ArrayList<Card> searchByType(String type) {
+    public static ArrayList<Card> searchByType(String type) {
         ArrayList<Card> result = new ArrayList<>();
         for (Card card : cardList) {
             if (card.getType().equalsIgnoreCase(type)) {
@@ -41,7 +45,7 @@ public class CardList {
         return result;
     }
 
-    public ArrayList<Card> searchByType(String type, ArrayList<Card> cards) {
+    public static ArrayList<Card> searchByType(String type, ArrayList<Card> cards) {
         ArrayList<Card> result = new ArrayList<>();
         for (Card card : cards) {
             if (card.getType().equalsIgnoreCase(type)) {
@@ -51,7 +55,7 @@ public class CardList {
         return result;
     }
 
-    public ArrayList<Card> searchByRarity(String rarity) {
+    public static ArrayList<Card> searchByRarity(String rarity) {
         ArrayList<Card> result = new ArrayList<>();
         for (Card card : cardList) {
             if (card.getRarity().equalsIgnoreCase(rarity)) {
@@ -61,7 +65,7 @@ public class CardList {
         return result;
     }
 
-    public ArrayList<Card> searchByRarity(String type, ArrayList<Card> cards) {
+    public static ArrayList<Card> searchByRarity(String type, ArrayList<Card> cards) {
         ArrayList<Card> result = new ArrayList<>();
         for (Card card : cards) {
             if (card.getRarity().equalsIgnoreCase(type)) {
@@ -71,7 +75,7 @@ public class CardList {
         return result;
     }
 
-    public Card searchById(int id) {
+    public static Card searchById(int id) {
         for (Card card : cardList) {
             if (card.getId() == id) {
                 return card;
@@ -80,7 +84,7 @@ public class CardList {
         return null;
     }
 
-    public Card searchById(int id, ArrayList<Card> cards) {
+    public static Card searchById(int id, ArrayList<Card> cards) {
         for (Card card : cards) {
             if (card.getId() == id) {
                 return card;
@@ -89,7 +93,7 @@ public class CardList {
         return null; 
     }
 
-    public ArrayList<Card> searchByPack(int pack) {
+    public static ArrayList<Card> searchByPack(int pack) {
         ArrayList<Card> result = new ArrayList<>();
         for (Card card : cardList) {
             if (card.getPack() == pack) {
@@ -99,7 +103,7 @@ public class CardList {
         return result;
     }
 
-    public ArrayList<Card> searchByPack(int pack, ArrayList<Card> cards) {
+    public static ArrayList<Card> searchByPack(int pack, ArrayList<Card> cards) {
         ArrayList<Card> result = new ArrayList<>();
         for (Card card : cards) {
             if (card.getPack() == pack) {

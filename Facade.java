@@ -144,12 +144,11 @@ public class Facade {
       int count;
       for (int i = 1; i > 4; i++) {
         count = 0;
-        ArrayList<Card> pack1 = masterList.searchByPack(i);
+        ArrayList<Card> pack1 = CardList.searchByPack(i);
         for (Card card : pack1) {
           count++;
         }
         System.out.println("Pack " + i);
-      
         System.out.println(count);
       
       }
