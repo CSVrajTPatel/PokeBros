@@ -18,7 +18,7 @@ public class UserList {
     //public ArrayList<User> 
     
     // Adding a User
-    public static boolean addUserToList(String userName, String password, String firstName, String lastName, String email) {
+    public boolean addUserToList(String userName, String password, String firstName, String lastName, String email) {
 
         // ERROR CHECK LIKE DUPES OR VALID EMAIL HERE
         for (User user : userList) {
@@ -40,7 +40,7 @@ public class UserList {
 
     }
 
-    public static User loginUser(String userName, String password) {
+    public User loginUser(String userName, String password) {
     
         for (User user : userList) {
             if (user.getUserName().equalsIgnoreCase(userName) && user.getPassword().equals(password)) {
@@ -50,7 +50,7 @@ public class UserList {
         return null;  // Login failed
     }
 
-    public static boolean removeUserFromList(String username) {
+    public boolean removeUserFromList(String username) {
    
         for (User user : userList) {
             if (user.getUserName().equals(username)) {
@@ -62,7 +62,7 @@ public class UserList {
         return false;  // User not found
     }
 
-    public static User searchByUserName(String username){
+    public User searchByUserName(String username){
    
         for (User user : userList){
             if(user.getUserName().equalsIgnoreCase(username)){
@@ -72,7 +72,7 @@ public class UserList {
         return null;
     }
 
-    public static void logOffUser(String username){
+    public void logOffUser(String username){
     
         User user = searchByUserName(username);
         if (user != null) {
@@ -82,11 +82,12 @@ public class UserList {
         }
     }
     
-    public static void main(String[] args) {
+    public void main(String[] args) {
 
+        CardList masterList = CardList.getInstance();
         // Test searchByUserName method
         String testUsername = "VrajTPatel";
-        User foundUser = UserList.searchByUserName(testUsername);
+        User foundUser = searchByUserName(testUsername);
 
         if (foundUser != null) {
             System.out.println("User found: " + foundUser.getUserName());

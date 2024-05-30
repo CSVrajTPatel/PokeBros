@@ -66,7 +66,7 @@ public class Facade {
 
   public void acceptTrade(Trade trade) {
 
-  trade.acceptTrade();
+    trade.acceptTrade();
 
   }
 
@@ -100,11 +100,13 @@ public class Facade {
   }
 
     public boolean createUser(String userName, String password, String firstName, String lastName, String email) {
-      return UserList.addUserToList(userName, password, firstName, lastName, email);
+      UserList userList = UserList.getInstance();
+      return userList.addUserToList(userName, password, firstName, lastName, email);
     }
 
     public void logOffUser(String userName){
-      UserList.logOffUser(userName);
+      UserList userList = UserList.getInstance();
+      userList.logOffUser(userName);
     }
 
     public String getUserName() {
@@ -112,18 +114,20 @@ public class Facade {
     }
 
     public static void main(String[] args) {
-      CardList masterList = CardList.getInstance();
-      int count;
-      for (int i = 1; i < 4; i++) {
-        count = 0;
-        ArrayList<Card> pack1 = masterList.searchByPack(i);
-        for (int j = 0; j < pack1.size(); j++) {
-          count++;
-        }
-        System.out.println("Pack " + i);
-        System.out.println(count);
-      
-      }
+      UserList masterList = UserList.getInstance();
+      User user1 = masterList.searchByUserName("VrajTPatel");
+      ("VrajTPatel", "VrajIsStupid");
+      if (user1 != null) {
+          System.out.println("Logged in as: " + user1.getUserName());
+
+          // Display original cards
+          System.out.println("Cards owned by " + user1.getUserName() + ":");
+          for (Card card : user1.getOwnedCards()) {  // Directly use user1's method
+              System.out.println(card.getName());
+          }
+
+
+  }
 
     }
   
