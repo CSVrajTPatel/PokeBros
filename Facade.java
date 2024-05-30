@@ -107,8 +107,29 @@ public class Facade {
       return user.getUserName();
     }
 
-
     public static void main(String[] args) {
+      Facade facade = new Facade();
+
+      // Log in VrajTPatel
+      User user1 = facade.loginUser("VrajTPatel", "VrajIsStupid");
+      if (user1 != null) {
+          System.out.println("Logged in as: " + user1.getUserName());
+
+          // Display original cards
+          System.out.println("Cards owned by " + user1.getUserName() + ":");
+          for (Card card : user1.getOwnedCards()) {  // Directly use user1's method
+              System.out.println(card.getName());
+          }
+
+        
+  }
+}}
+  
+  
+  
+  
+  
+      /* PRINTING OUT AMOUNT OF POKEMON IN EACH PACK
       CardList masterList = CardList.getInstance();
       int count;
       for (int i = 1; i < 4; i++) {
@@ -121,6 +142,7 @@ public class Facade {
         System.out.println(count);
       
       }
+  */ 
       // Facade facade = new Facade();
   /*
       // Test creating a user
@@ -173,7 +195,5 @@ public class Facade {
     }
     */
 
-  }
-}
   
 
