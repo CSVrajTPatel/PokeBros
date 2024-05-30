@@ -9,19 +9,19 @@ public class Pack {
 
     public Pack(int num){
     packNumber = num;
+    CardList masterCardList = CardList.getInstance();
       if (num == 1) {
-        // CardList masterCardList = new CardList();
         name = "Bulbasaur Pack";
-        cards = CardList.searchByPack(packNumber);
+        cards = masterCardList.searchByPack(packNumber);
     }
       else if (num == 2) {
         // CardList masterCardList = new CardList();
         name = "Charmander Pack";
-        cards = CardList.searchByPack(packNumber);
+        cards = masterCardList.searchByPack(packNumber);
     }
       else if (num == 3) {
         // CardList masterCardList = new CardList();
-        cards = CardList.searchByPack(packNumber);
+        cards = masterCardList.searchByPack(packNumber);
         name = "Squirtle Pack";
     }
 

@@ -8,16 +8,17 @@ public class UserList {
         userList = DataLoader.loadUsers();
     }
 
-    public static ArrayList<User> getUserList() {
-        if (userList == null) {
+    public static UserList getInstance() {
+        if (masterList == null) {
             masterList = new UserList();
         }
-        return userList;
+        return masterList;
     }
 
+    //public ArrayList<User> 
+    
     // Adding a User
     public static boolean addUserToList(String userName, String password, String firstName, String lastName, String email) {
-        userList = getUserList();
 
         // ERROR CHECK LIKE DUPES OR VALID EMAIL HERE
         for (User user : userList) {
@@ -40,7 +41,7 @@ public class UserList {
     }
 
     public static User loginUser(String userName, String password) {
-        userList = getUserList();
+    
         for (User user : userList) {
             if (user.getUserName().equalsIgnoreCase(userName) && user.getPassword().equals(password)) {
                 return user;  // Login successful
@@ -50,7 +51,7 @@ public class UserList {
     }
 
     public static boolean removeUserFromList(String username) {
-        userList = getUserList();
+   
         for (User user : userList) {
             if (user.getUserName().equals(username)) {
                 userList.remove(user);
@@ -62,7 +63,7 @@ public class UserList {
     }
 
     public static User searchByUserName(String username){
-        userList = getUserList();
+   
         for (User user : userList){
             if(user.getUserName().equalsIgnoreCase(username)){
                 return user;
@@ -72,7 +73,7 @@ public class UserList {
     }
 
     public static void logOffUser(String username){
-        userList = getUserList();
+    
         User user = searchByUserName(username);
         if (user != null) {
             
@@ -82,7 +83,6 @@ public class UserList {
     }
     
     public static void main(String[] args) {
-        
 
         // Test searchByUserName method
         String testUsername = "VrajTPatel";

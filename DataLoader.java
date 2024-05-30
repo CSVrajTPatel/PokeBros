@@ -145,14 +145,14 @@ public class DataLoader {
         double currency = getDoubleValue(userObject, "currency");
         ArrayList<Integer> favoriteCardsTemp = getIntegerList(userObject, "favoriteCards");
         ArrayList<Card> favoriteCards = new ArrayList<Card>();
-        // CardList masterList = new CardList();
+        CardList masterList = CardList.getInstance();
             for (Integer temp : favoriteCardsTemp) {
-                favoriteCards.add(CardList.searchById(temp));
+                favoriteCards.add(masterList.searchById(temp));
             }
         ArrayList<Integer> ownedCardsTemp = getIntegerList(userObject, "ownedCards");
         ArrayList<Card> ownedCards = new ArrayList<Card>();
             for (Integer temp : ownedCardsTemp) {
-                ownedCards.add(CardList.searchById(temp));
+                ownedCards.add(masterList.searchById(temp));
             }
 
         Instant lastClaimedCurrencyTime = Instant.parse(getStringValue(userObject, "lastClaimedCurrencyTime"));
@@ -162,7 +162,7 @@ public class DataLoader {
     }
 
     private static Trade parseTrade(JSONObject tradeObject) {
-        // CardList masterList = new CardList();
+        CardList masterList = CardList.getInstance();
         String receiverUserName = getStringValue(tradeObject, "receiverUserName");
         User receiver = UserList.searchByUserName(receiverUserName);
 
@@ -172,12 +172,12 @@ public class DataLoader {
         ArrayList<Integer> cardsIds = getIntegerList(tradeObject, "cardsOffered");
         ArrayList<Card> cardsOffered = new ArrayList<Card>();
         for (int num : cardsIds) {
-            cardsOffered.add(CardList.searchById(num));
+            cardsOffered.add(masterList.searchById(num));
         }
         ArrayList<Card> cardRequested = new ArrayList<Card>();
         cardsIds = getIntegerList(tradeObject, "cardsRequested");
         for (int num : cardsIds) {
-            cardRequested.add(CardList.searchById(num));
+            cardRequested.add(masterList.searchById(num));
         }
         boolean isFairTrade = (Boolean) tradeObject.get("isFairTrade");
         boolean awaitingResponse = (Boolean) tradeObject.get("awaitingResponse");

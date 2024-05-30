@@ -7,19 +7,23 @@ public class Facade {
   private User user;
   
   public Card searchByName(String name) {
-    return CardList.searchByName(name);
+    CardList master = CardList.getInstance();
+    return master.searchByName(name);
   }
 
   public ArrayList<Card> searchByType(String filter) {
-    return CardList.searchByType(filter);
+    CardList master = CardList.getInstance();
+    return master.searchByType(filter);
   }
 
   public ArrayList<Card> searchByRarity(String filter) {
-    return CardList.searchByRarity(filter);
+    CardList master = CardList.getInstance();
+    return master.searchByRarity(filter);
   }
 
   public Card searchById(int filter) {
-    return CardList.searchById(filter);
+    CardList master = CardList.getInstance();
+    return master.searchById(filter);
   }
 
   public Card getCard(Card card) {
@@ -36,7 +40,8 @@ public class Facade {
   }
 
   public ArrayList<Card> getCardList() {
-    return CardList.getCardList();
+    CardList masterList = CardList.getInstance();
+    return masterList.getCardList();
   }
 
   public ArrayList<Integer> viewFamily(Card card) {
