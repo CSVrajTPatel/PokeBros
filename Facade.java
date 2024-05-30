@@ -43,7 +43,10 @@ public class Facade {
     return card.getFamily();
   }
 
-  public Boolean initiateTrade(ArrayList<Card> userCards, ArrayList<Card> traderCards, User user, double userCoin, double traderCoin) {
+  public Boolean initiateTrade(ArrayList<Card> senderCards, Card receiverCard, User receiver, double senderCoins) {
+    Trade trade = new Trade(user, receiver, senderCards, receiverCard,senderCoins);
+    user.addSendingTrade(trade);
+    receiver.addReceivingTrade(trade);
     return true;
   }
 
@@ -103,7 +106,6 @@ public class Facade {
     public String getUserName() {
       return user.getUserName();
     }
-
 
 
     public static void main(String[] args) {

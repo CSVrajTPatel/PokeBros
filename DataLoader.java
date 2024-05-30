@@ -183,10 +183,11 @@ public class DataLoader {
         boolean awaitingResponse = (Boolean) tradeObject.get("awaitingResponse");
         boolean wasAccepted = (Boolean) tradeObject.get("wasAccepted");
         String comment = getStringValue(tradeObject, "comment");
+        double senderCoin = getDoubleValue(tradeObject, "senderCoin");
 
-        Trade trade = new Trade(receiver, sender, cardsOffered, cardRequested.get(0), isFairTrade, awaitingResponse, wasAccepted, comment);
+        Trade trade = new Trade(receiver, sender, cardsOffered, cardRequested.get(0), isFairTrade, awaitingResponse, wasAccepted, comment, senderCoin);
         sender.addSendingTrade(trade);
-        sender.addRecivingTrade(trade);
+        sender.addReceivingTrade(trade);
         return trade;
     }
 
