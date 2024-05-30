@@ -9,6 +9,7 @@ public class Card {
     private int hp;
     private double value;
     private int evoStage;
+    
     private ArrayList<Card> family;
     private ArrayList<String> attacks;
 
