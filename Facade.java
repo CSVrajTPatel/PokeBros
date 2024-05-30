@@ -1,7 +1,6 @@
 import java.util.ArrayList;
 import java.time.Instant;
 import java.time.Duration;
-import java.util.Scanner;
 
 public class Facade {
 

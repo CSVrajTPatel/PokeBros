@@ -28,7 +28,17 @@ public class User {
         this.lastClaimedCurrencyTime = Instant.now();
     }
 
-    public User () {
+    public User(String userName, String password, String firstName, String lastName, String email) {
+        this.userName = userName;
+        uniqueIdentifier = UUID.randomUUID();
+        this.password = password;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        favoriteCards = new ArrayList<Card>();
+        currency = 50;
+        ownedCards = new ArrayList<Card>();
+        this.lastClaimedCurrencyTime = Instant.now();
         
     }
 

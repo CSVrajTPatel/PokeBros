@@ -18,14 +18,22 @@ public class UserList {
     // Adding a User
     public static boolean addUserToList(String userName, String password, String firstName, String lastName, String email) {
         userList = getUserList();
-        // MOVE TO USER CONSTRUCTOR
-        // ArrayList<Card> emptyFavoriteCards = new ArrayList<Card>();
-        // ArrayList<Card> emptyOwnedCards = new ArrayList<Card>();
-        // double initialCurrency = 1000.0;
 
         // ERROR CHECK LIKE DUPES OR VALID EMAIL HERE
-        // User newUser = new User(userName, password, firstName, lastName, email, emptyFavoriteCards, initialCurrency, emptyOwnedCards);
-        // userList.add(newUser);
+        for (User user : userList) {
+            if (user.getUserName() == userName) {
+                return false;
+            }
+            if (!email.contains("@")) {
+                return false;
+            }
+        }
+        User newUser = new User(userName, password, firstName, lastName, email);
+        userList.add(newUser);
+
+        // If we are writing all the time it will be expensive on memory
+        
+        // DataWriter.updateUsers(userList);
 
         return true;
 
