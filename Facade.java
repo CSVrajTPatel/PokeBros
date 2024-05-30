@@ -5,12 +5,7 @@ import java.time.Duration;
 public class Facade {
 
   private User user;
-  //masterCardList = new CardList();
-
-  //public Facade() {
-  //  user = new User();
-  //}
-
+  
   public Card searchByName(String name) {
     return CardList.searchByName(name);
   }
@@ -53,10 +48,14 @@ public class Facade {
   }
 
   public void rejectTrade(Trade trade) {
-  
+
+  trade.rejectTrade();
+
   }
 
   public void acceptTrade(Trade trade) {
+
+  trade.acceptTrade();
 
   }
 
@@ -85,22 +84,15 @@ public class Facade {
   public boolean claimDailyCurrency() {
     return user.claimDailyCurrency(); 
   }
-/*
- * VP USER SECTION:
- */
+
     public boolean createUser(String userName, String password, String firstName, String lastName, String email) {
       return UserList.addUserToList(userName, password, firstName, lastName, email);
     }
 
-
-    // USER LIST NEEDS TO BE A SINGLETON SO NO CONSTRUCTOR
-    // EVERY USER LIST NEEDS TO BE THE SAME
     public User loginUser(String userName, String password) {
       return UserList.loginUser(userName, password);
     }
 
-
-    // FACADE NEEDS TO BE SINGLETON AS WELL
     public static void main(String[] args) {
       int count;
       for (int i = 1; i < 4; i++) {
