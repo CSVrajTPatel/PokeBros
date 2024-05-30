@@ -74,11 +74,9 @@ public class DataLoader {
         ArrayList<Integer> familyCardsTemp = getIntegerList(cardObject, "family");
         ArrayList<Card> familyCards = new ArrayList<Card>();
         // CardList masterList = new CardList();
-            for (Integer temp : familyCardsTemp) {
+            for (int temp : familyCardsTemp) {
                 familyCards.add(CardList.searchById(temp));
             }
-
-        ArrayList<Integer> family = getIntegerList(cardObject, "family");
         ArrayList<String> attacks = getStringList(cardObject, "attacks");
 
         return new Card(id, name, type, rarity, pack, hp, value, evoStage, familyCards, attacks);
