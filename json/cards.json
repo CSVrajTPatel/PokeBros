@@ -78,7 +78,7 @@
         "rarity": "Ultra Rare",
         "pack": 2,
         "hp": 330,
-        "value": 32.00,
+        "value": 32.40,
         "evoStage": 3,
         "family": [1,2],
         "attacks": ["Brave Wing", "Explosive Vortex"]
@@ -349,7 +349,7 @@
     },
     {
         "id": 29,
-        "name": "Nidoran♀",
+        "name": "Nidoran-f",
         "type": "Darkness",
         "rarity": "Common",
         "pack": "",
@@ -385,7 +385,7 @@
     },
     {
         "id": 32,
-        "name": "Nidoran♂",
+        "name": "Nidoran-m",
         "type": "Darkness",
         "rarity": "Common",
         "pack": 1,
