@@ -68,7 +68,9 @@ public class Trade {
         for(Card card : sendersCards){
             receiver.addCardToList(card);
             sender.removeCardFromList(card);
+            //  DataWriter.updateUsers(UserList.getUserList());
         }
+        
     }
 
     public void rejectTrade(){

@@ -93,6 +93,10 @@ public class Facade {
       return UserList.loginUser(userName, password);
     }
 
+    public void logOffUser(String userName){
+      UserList.logOffUser(userName);
+    }
+
     public static void main(String[] args) {
       int count;
       for (int i = 1; i < 4; i++) {
