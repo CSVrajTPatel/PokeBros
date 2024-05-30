@@ -11,7 +11,8 @@ public class Facade {
   }
   
   public User loginUser(String userName, String password) {
-    return UserList.loginUser(userName, password);
+    UserList userList = UserList.getInstance();
+    return userList.loginUser(userName, password);
   }
   
   public Card searchByName(String name) {
@@ -116,7 +117,7 @@ public class Facade {
     public static void main(String[] args) {
       UserList masterList = UserList.getInstance();
       User user1 = masterList.searchByUserName("VrajTPatel");
-      ("VrajTPatel", "VrajIsStupid");
+     // ("VrajTPatel", "VrajIsStupid");
       if (user1 != null) {
           System.out.println("Logged in as: " + user1.getUserName());
 
