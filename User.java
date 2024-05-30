@@ -1,3 +1,4 @@
+import java.time.Duration;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.UUID;
@@ -109,7 +110,7 @@ public class User {
         return currency;
     }
 
-    public void setCurrency(double currency) {
+    public void addCurrency(double currency) {
         this.currency += currency;
     }
 
@@ -134,16 +135,16 @@ public class User {
         ownedCards.remove(card);
     }
 
-    public ArrayList<Card> openPack(int pack) {
+    public boolean openPack(int pack) {
         if (currency >= 10) {
             Pack newPack = new Pack(pack);
             ArrayList<Card> packList = newPack.openPack();
             for (Card card : packList) {
                 ownedCards.add(card);
             }
-            return packList;
+            return true;
         }
-        return null;
+        return false;
     }
     
     public ArrayList<Trade> getPendingTrades() {
@@ -152,5 +153,17 @@ public class User {
     
     public ArrayList<Trade> getTradeHistory() {
         return new ArrayList<Trade>();
+    }
+
+    public boolean claimDailyCurrency() {
+        Instant currentTime = Instant.now();
+    Duration timeBetween = Duration.between(getLastClaimedCurrencyTime(), currentTime);
+    if(timeBetween.toDays() >= 1){
+      addCurrency(25);
+      setLastClaimedCurrencyTime(currentTime);
+      return true;
+    }
+    // need to add reading and writing from JSON file
+    return false;
     }
 }
