@@ -21,7 +21,8 @@ public class User {
     public User(String userName, String password, String firstName, String lastName, String email, ArrayList<Card> favoriteCards, double currency, ArrayList<Card> ownedCards) {
         // VP Constructor to initialize User object
         this.userName = userName;
-        uniqueIdentifier = UUID.randomUUID(); 
+        this.uniqueIdentifier = UUID.randomUUID();
+//        uniqueIdentifier = UUID.randomUUID(); 
         this.password = password;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -33,17 +34,7 @@ public class User {
     }
 
     public User(String userName, String password, String firstName, String lastName, String email) {
-        this.userName = userName;
-        uniqueIdentifier = UUID.randomUUID();
-        this.password = password;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-        favoriteCards = new ArrayList<Card>();
-        currency = 50;
-        ownedCards = new ArrayList<Card>();
-        this.lastClaimedCurrencyTime = Instant.now();
-        
+        this(userName, password, firstName, lastName, email, new ArrayList<>(), 50, new ArrayList<>());
     }
 
     // VP Getters and setters for User attributes
@@ -125,9 +116,8 @@ public class User {
       return lastClaimedCurrencyTime;
     }
 
-    public void setLastClaimedCurrencyTime(Instant inst){
-      // need to write to the user file
-      lastClaimedCurrencyTime = inst;
+    public void setLastClaimedCurrencyTime(Instant lastClaimedCurrencyTime) {
+        this.lastClaimedCurrencyTime = lastClaimedCurrencyTime;
     }
 
     public void addCardToList(Card card) {
@@ -160,14 +150,15 @@ public class User {
 
     public boolean claimDailyCurrency() {
         Instant currentTime = Instant.now();
-    Duration timeBetween = Duration.between(getLastClaimedCurrencyTime(), currentTime);
-    if(timeBetween.toDays() >= 1){
-      addCurrency(25);
-      setLastClaimedCurrencyTime(currentTime);
-      return true;
-    }
-    // need to add reading and writing from JSON file
-    return false;
+        Duration timeBetween = Duration.between(lastClaimedCurrencyTime, currentTime);
+    
+        if (timeBetween.toDays() >= 1) {
+            addCurrency(25);
+            setLastClaimedCurrencyTime(currentTime);
+            UserList.getInstance().saveUsers(); // Save the updated user data
+            return true;
+        }
+        return false;
     }
 
     public void addSendingTrade(Trade trade) {

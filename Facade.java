@@ -7,6 +7,8 @@ import java.time.Duration;
 public class Facade {
 
   private User user;
+  public Facade() {
+  }
 
   public Facade(String userName, String password) {
     user = loginUser(userName, password);
@@ -117,18 +119,59 @@ public class Facade {
     }
 
     public static void main(String[] args) {
-      UserList masterList = UserList.getInstance();
-      User user1 = masterList.searchByUserName("VrajTPatel");  // Assuming this is the correct login credential
-  
+        String userName = "VrajTPatel";
+        String password = "VrajIsStupid";
+
+        Facade facade = new Facade(userName, password);
+        User user = facade.loginUser(userName, password);
+
+        if (user != null) {
+            facade.user = user;
+            System.out.println("User successfully logged in.");
+            System.out.println("Current Currency: " + facade.user.getCurrency());
+
+            // Claim daily currency
+            if (facade.claimDailyCurrency()) {
+                System.out.println("Daily currency claimed.");
+                System.out.println("Updated Currency: " + facade.user.getCurrency());
+            } else {
+                System.out.println("Failed to claim daily currency.");
+            }
+
+            // Logging off the user
+            facade.logOffUser(userName);
+            System.out.println("User logged off.");
+        } else {
+            System.out.println("Login failed. (User not found or incorrect password)");
+        }
+    }
+}
+/*
+ * TESTS FOR:
+ *  USER LOGIN
+ *  PACK OPENING( ADDING CARDS TO OWNED CARDS)
+ *  USER LOG OFF
+ * 
+ *  UserList masterList = UserList.getInstance();
+      Scanner scanner = new Scanner(System.in);
+
+      System.out.print("Enter username: ");
+      String username = scanner.nextLine();
+
+      System.out.print("Enter password: ");
+      String password = scanner.nextLine();
+
+      User user1 = masterList.loginUser(username, password);
+
       if (user1 != null) {
           System.out.println("Logged in as: " + user1.getUserName());
-  
+
           // Display original cards
           System.out.println("Original Cards Owned by " + user1.getUserName() + ":");
           for (Card card : user1.getOwnedCards()) {
               System.out.println(card.getName());
           }
-  
+
           // Opening a pack
           System.out.println("Opening Pack 1:");
           if (user1.openPack(1)) {  // Make sure openPack updates the user's card list and returns true if successful
@@ -139,61 +182,148 @@ public class Facade {
           } else {
               System.out.println("Failed to open pack.");
           }
-  
+
           // Display updated cards right before logging off
           System.out.println("Final check of cards owned by " + user1.getUserName() + " before logging off:");
           for (Card card : user1.getOwnedCards()) {
               System.out.println(card.getName());
           }
-  
+
           // Log off the user
           masterList.logOffUser(user1.getUserName());
           System.out.println("User logged off.");
       } else {
-          System.out.println("Login failed, user not found.");
+          System.out.println("Login failed, user not found or incorrect password.");
       }
+
+      scanner.close();
   }
-}  
-      
-
+}
+ * 
+ */
   
+/*
+ * TESTS FOR:
+ *  Creating a new User
+ *  Ensuring the basic new userformat is working correctly
+ *  Logging off the user and recording to users.json
+ * 
 
-  
+      // Hardcoded user details
+      String userName = "newUser123";
+      String password = "SecurePassword!123";
+      String firstName = "John";
+      String lastName = "Doe";
+      String email = "john.doe@example.com";
 
+    
+      Facade facade = new Facade();
 
-  /*
-      // Test creating a user
-      boolean userCreated = facade.createUser("testUser", "password123", "John", "Doe", "john.doe@example.com");
+      // Attempt to create a new user and automatically log them in
+      boolean userCreated = facade.createUser(userName, password, firstName, lastName, email);
+
       if (userCreated) {
-          System.out.println("User created successfully.");
-      } else {
-          System.out.println("User creation failed.");
-      }
-  */
-      // Test logging in
-      /* User loggedInUser = facade.loginUser("VrajTPatel", "VrajIsStupid");
-      if (loggedInUser != null) {
-          System.out.println("Login successful for user: " + loggedInUser.getUserName());
-          System.out.println("User Information:");
-          System.out.println("Username: " + loggedInUser.getUserName());
-          System.out.println("First Name: " + loggedInUser.getFirstName());
-          System.out.println("Last Name: " + loggedInUser.getLastName());
-          System.out.println("Email: " + loggedInUser.getEmail());
-          System.out.println("Currency: " + loggedInUser.getCurrency());
-          System.out.println("Favorite Cards:");
-          for (Card card : loggedInUser.getFavoriteCards()) {
-              System.out.println(card.getName());
-          }
-// To ensure Functionality with Cards.
-          System.out.println("Owned Cards:");
-          for (Card card : loggedInUser.getOwnedCards()) {
-            System.out.println(card.getName());
+          User user = facade.loginUser(userName, password);
+          if (user != null) {
+              facade.user = user;
+              System.out.println("User successfully created and logged in.");
+              // Display the user's details
+              System.out.println("Username: " + facade.user.getUserName());
+              System.out.println("First Name: " + facade.user.getFirstName());
+              System.out.println("Last Name: " + facade.user.getLastName());
+              System.out.println("Email: " + facade.user.getEmail());
+              System.out.println("Currency: " + facade.user.getCurrency());
+              System.out.println("Owned Cards: " + (facade.user.getOwnedCards().isEmpty() ? "No cards owned." : facade.user.getOwnedCards()));
+
+              // Logging off the user
+              facade.logOffUser(userName);
+              System.out.println("User logged off.");
+          } else {
+              System.out.println("User creation failed. (User may already exist or email is invalid)");
           }
       } else {
-          System.out.println("Something is broken Fix it");
+          System.out.println("User creation failed. (User may already exist or email is invalid)");
       }
   }
-   */
+ * 
+ * 
+ */
+    
+/*
+ *    TESTS FOR :
+ *    LOGGING IN
+ *    CLAIM DAILY CURRENCY
+ *   // Hardcoded user details for login
+        String userName = "VrajTPatel";
+        String password = "VrajIsStupid";
+  
+        Facade facade = new Facade(userName, password);
+        User user = facade.loginUser(userName, password);
+  
+        if (user != null) {
+            facade.user = user;
+            System.out.println("User successfully logged in.");
+            System.out.println("Current Currency: " + facade.user.getCurrency());
+  
+            // Claim daily currency
+            if (facade.claimDailyCurrency()) {
+                System.out.println("Daily currency claimed.");
+                System.out.println("Updated Currency: " + facade.user.getCurrency());
+            } else {
+                System.out.println("Failed to claim daily currency.");
+            }
+  
+            // Logging off the user
+            facade.logOffUser(userName);
+            System.out.println("User logged off.");
+        } else {
+            System.out.println("Login failed. (User not found or incorrect password)");
+        }
+    }
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     /* TEST FOR PACK OPENING

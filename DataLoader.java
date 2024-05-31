@@ -143,22 +143,26 @@ public class DataLoader {
         String lastName = getStringValue(userObject, "lastName");
         String email = getStringValue(userObject, "email");
         double currency = getDoubleValue(userObject, "currency");
+
         ArrayList<Integer> favoriteCardsTemp = getIntegerList(userObject, "favoriteCards");
-        ArrayList<Card> favoriteCards = new ArrayList<Card>();
+        ArrayList<Card> favoriteCards = new ArrayList<>();
         CardList masterList = CardList.getInstance();
-            for (Integer temp : favoriteCardsTemp) {
-                favoriteCards.add(masterList.searchById(temp));
-            }
+        for (Integer temp : favoriteCardsTemp) {
+            favoriteCards.add(masterList.searchById(temp));
+        }
+
         ArrayList<Integer> ownedCardsTemp = getIntegerList(userObject, "ownedCards");
-        ArrayList<Card> ownedCards = new ArrayList<Card>();
-            for (Integer temp : ownedCardsTemp) {
-                ownedCards.add(masterList.searchById(temp));
-            }
+        ArrayList<Card> ownedCards = new ArrayList<>();
+        for (Integer temp : ownedCardsTemp) {
+            ownedCards.add(masterList.searchById(temp));
+        }
 
         Instant lastClaimedCurrencyTime = Instant.parse(getStringValue(userObject, "lastClaimedCurrencyTime"));
 
+        User user = new User(userName, password, firstName, lastName, email, favoriteCards, currency, ownedCards);
+        user.setLastClaimedCurrencyTime(lastClaimedCurrencyTime);
 
-        return new User(userName, password, firstName, lastName, email, favoriteCards, currency, ownedCards);
+        return user;
     }
 
     private static Trade parseTrade(JSONObject tradeObject) {
