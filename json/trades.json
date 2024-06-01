@@ -9,5 +9,16 @@
     "awaitingResponse": true,
     "wasAccepted": false,
     "comment": "Looking forward to this trade!"
+    },
+    {
+        "recieverUserName": "Removeme",
+        "senderUserName": "senderUserName",
+        "cardsOffered": [1, 2, 3],
+        "cardsRequested": [4, 5, 6],
+        "senderCoin" : 25,
+        "isFairTrade": true,
+        "awaitingResponse": false,
+        "wasAccepted": false,
+        "comment": "Looking forward to this trade!"
     }
 ]

@@ -132,6 +132,7 @@ public class DataWriter {
         return tradeObject;
     }
 
+    
     private static JSONArray readJsonArrayFromFile(String filePath) {
         JSONParser jsonParser = new JSONParser();
 
@@ -143,6 +144,29 @@ public class DataWriter {
         }
 
         return null;
+    }
+//Removes NonPendingTrades
+    public static void removeNonPendingTrades() {
+        JSONArray tradesArray = readJsonArrayFromFile(TRADES_FILE_PATH);
+        if (tradesArray == null) {
+            return;
+        }
+
+        Iterator<JSONObject> iterator = tradesArray.iterator();
+        while (iterator.hasNext()) {
+            JSONObject tradeJson = iterator.next();
+            Boolean awaitingResponse = (Boolean) tradeJson.get("awaitingResponse");
+            if (awaitingResponse != null && !awaitingResponse) {
+                iterator.remove();
+            }
+        }
+
+        try (FileWriter file = new FileWriter(TRADES_FILE_PATH)) {
+            file.write(gson.toJson(tradesArray));
+            file.flush();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public static void main(String[] args) {

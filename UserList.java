@@ -94,7 +94,7 @@ public class UserList {
         User user = searchByUserName(username);
         if (user != null) {
             DataWriter.updateUsers(userList);
-
+            DataWriter.removeNonPendingTrades();
         }
     }
 
