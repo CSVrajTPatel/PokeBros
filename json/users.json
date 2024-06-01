@@ -20,7 +20,19 @@
   "email": "VrajLOL.doe@example.com",
   "favoriteCards": [1, 4, 7],
   "currency": 1000.0,
-  "ownedCards": [1, 2, 3],
+  "ownedCards": [6, 25, 2, 3],
+  "lastClaimedCurrencyTime":"2023-05-25T10:00:00Z"
+},
+{
+  "userName": "ThaneTiff",
+  "uniqueIdentifier": "123e4567-e89b-12d3-a456-426614174000",
+  "password": "ThaneIsSmart",
+  "firstName": "Thane",
+  "lastName": "Tiffany",
+  "email": "ThaneLMAO.doe@example.com",
+  "favoriteCards": [150, 100, 25],
+  "currency": 1000.0,
+  "ownedCards": [25, 101, 147],
   "lastClaimedCurrencyTime":"2023-05-25T10:00:00Z"
 }
 ]

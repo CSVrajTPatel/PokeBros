@@ -8,6 +8,7 @@ import java.time.Duration;
 public class Facade {
 
   private User user;
+  
   public Facade() {
   }
 
@@ -49,8 +50,8 @@ public class Facade {
   }
 
   public ArrayList<Card> getCardList() {
-    CardList masterList = CardList.getInstance();
-    return masterList.getCardList();
+    CardList master = CardList.getInstance();
+    return master.getCardList();
   }
 
   public ArrayList<Integer> viewFamily(Card card) {
