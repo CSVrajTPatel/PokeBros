@@ -80,12 +80,8 @@ public class Facade {
     return trade.isFairTrade();
   }
 
-  public ArrayList<Trade> getTradeHistory() {
-    return user.getTradeHistory();
-  }
-
-  public ArrayList<Trade> getPendingTrades() {
-    return user.getPendingTrades();
+  public ArrayList<Trade> getSendingTrades() {
+    return user.getSendingTrades();
   }
 
   public boolean addFavoriteCard(Card card) {
@@ -110,26 +106,107 @@ public class Facade {
       return userList.addUserToList(userName, password, firstName, lastName, email);
     }
 
-    public void logOffUser(String userName){
+    public void logOffUser(){
       UserList userList = UserList.getInstance();
-      userList.logOffUser(userName);
+      userList.logOffUser(user.getUserName());
     }
 
     public String getUserName() {
       return user.getUserName();
     }
 
-    public static void main(String[] args) {
+  public static void main(String[] args) {
+
+    Scanner scanner = new Scanner(System.in);
+  
+    System.out.print("Enter username: ");
+    String userName = scanner.nextLine();
+  
+    System.out.print("Enter password: ");
+    String password = scanner.nextLine();
+  
+    Facade facade = new Facade(userName, password);
+  
+    if (facade.user != null) {
+      System.out.println("Logged in as: " + facade.getUserName());
+  
+      // Display original cards
+      System.out.println("Original Cards Owned by " + facade.getUserName() + ":");
+      for (Card card : facade.getOwnedCards()) {
+        System.out.println(card.getName());
+       }
+    }
+    else {
+        System.out.println("Login failed. (User not found or incorrect password)");
+        scanner.close();
+        System.exit(0);
+    }
+  
+    System.out.println("Enter the name of the pokemon you want to trade for");
+    Card card = facade.searchByName(scanner.nextLine());
+
+    System.out.println("Would you like to trade for this card?");
+    String answer = scanner.nextLine();
+
+    if (answer.equalsIgnoreCase("yes")) {
+      System.out.println("Please enter your comment");
+      String comment = scanner.nextLine();
+
+      ArrayList<Card> tradeOffer = new ArrayList<Card>();
+
+      while (answer.equalsIgnoreCase("yes")) {
+        System.out.println("Please enter the name of 1 pokemon you would like to trade");
+        String pokemon = scanner.nextLine();
+      
+        tradeOffer.add(facade.searchByName(pokemon));
+      
+        System.out.println("Would you like to add another pokemon?");
+        answer = scanner.nextLine();
+      }
+      System.out.println("Would you like to add any currency to this trade?");
+      double coin = scanner.nextDouble();
+
+      
+      if (!facade.initiateTrade(tradeOffer, card, coin, comment)) {
+        System.out.println("Trade Failed");
+        scanner.close();
+        System.exit(0);
+      }
+    } 
+    else {
+      scanner.close();
+      System.exit(0);
+    }
+    ArrayList<Trade> sendingTrades = facade.getSendingTrades();
+    for (Trade trade : sendingTrades) { 
+      System.out.println(trade.getSender().getUserName());
+      System.out.println(trade.getReceiver().getUserName());
+    }
+
+    facade.logOffUser();
+
+
+    Facade facade = new Facade("VrajTPatel", "VrajIsStupid");
+    System.out.println(facade.user.getReceivingTrades());
+
+
+
+  }
+
+}
+
+  
+
+
+      /* 
         String userName = "VrajTPatel";
         String password = "VrajIsStupid";
 
         Facade facade = new Facade(userName, password);
-        User user = facade.loginUser(userName, password);
 
-        if (user != null) {
-            facade.user = user;
+        if (facade.user != null) {
             System.out.println("User successfully logged in.");
-            System.out.println("Current Currency: " + facade.user.getCurrency());
+            System.out.println("Current Currency: " + facade.getCurrency());
 
             // Claim daily currency
             if (facade.claimDailyCurrency()) {
@@ -146,14 +223,15 @@ public class Facade {
             System.out.println("Login failed. (User not found or incorrect password)");
         }
     }
-}
+*/
+
 /*
  * TESTS FOR:
  *  USER LOGIN
  *  PACK OPENING( ADDING CARDS TO OWNED CARDS)
  *  USER LOG OFF
  * 
- *  UserList masterList = UserList.getInstance();
+ *    UserList masterList = UserList.getInstance();
       Scanner scanner = new Scanner(System.in);
 
       System.out.print("Enter username: ");
@@ -202,6 +280,7 @@ public class Facade {
 }
  * 
  */
+
   
 /*
  * TESTS FOR:
@@ -282,49 +361,6 @@ public class Facade {
         }
     }
  */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     /* TEST FOR PACK OPENING

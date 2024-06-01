@@ -18,6 +18,7 @@ public class User {
     private Instant lastClaimedCurrencyTime;
     private ArrayList<Trade> sendingTrades = new ArrayList<Trade>();
     private ArrayList<Trade> receivingTrades = new ArrayList<Trade>();
+    private ArrayList<Trade> newTrades = new ArrayList<Trade>();
 
     public User(String userName, String password, String firstName, String lastName, String email, ArrayList<Card> favoriteCards, double currency, ArrayList<Card> ownedCards) {
         // VP Constructor to initialize User object
@@ -140,14 +141,6 @@ public class User {
         }
         return false;
     }
-    
-    public ArrayList<Trade> getPendingTrades() {
-        return new ArrayList<Trade>();
-    }
-    
-    public ArrayList<Trade> getTradeHistory() {
-        return new ArrayList<Trade>();
-    }
 
     public boolean claimDailyCurrency() {
         Instant currentTime = Instant.now();
@@ -188,6 +181,28 @@ public class User {
     
     public boolean initiateTrade(ArrayList<Card> senderCards, Card receiverCard, double senderCoins, String comment) {
         UserList userList = UserList.getInstance();
+        if (senderCoins > currency) {
+            return false;
+        } 
+        for (Card card : ownedCards) {
+            int count = 1;
+            for (Card card2 : ownedCards) {
+                if (card == card2)
+                    count++;
+            }
+
+            int count2 = 1;
+            for (Card card3 : senderCards) {
+                for (Card card4 : senderCards) {
+                    if (card3 == card4)
+                        count2++;
+
+                    if (card3 == card && count2 > count)
+                        return false;
+                }
+            }
+
+        }
         ArrayList<User> receivers = new ArrayList<User>();
         Random rand = new Random();
         receivers = userList.searchByCards(receiverCard);
@@ -196,9 +211,22 @@ public class User {
         }
         User receiver = receivers.get(rand.nextInt(0,receivers.size()));
         Trade trade = new Trade(userList.searchByUserName(userName), receiver, senderCards, receiverCard, senderCoins, comment);
+        addNewTrade(trade);
         addSendingTrade(trade);
         receiver.addReceivingTrade(trade);
 
         return true;
+        }
+
+        public void addNewTrade(Trade trade) {
+            newTrades.add(trade);
+        }
+    
+        public void clearNewTrades() {
+            newTrades.clear();
+        }
+
+        public ArrayList<Trade> getNewTrades() {
+            return newTrades;
         }
 }

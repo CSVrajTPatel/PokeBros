@@ -1,38 +1,63 @@
 [
   {
-  "userName": "exampleUserName",
-  "uniqueIdentifier": "123e4567-e89b-12d3-a456-426614174000",
-  "password": "examplePassword",
-  "firstName": "John",
-  "lastName": "Doe",
-  "email": "john.doe@example.com",
-  "favoriteCards": [1, 4, 7],
-  "currency": 1000.0,
-  "ownedCards": [1, 2, 3],
-  "lastClaimedCurrencyTime":"2023-05-25T10:00:00Z"
-},
-{
-  "userName": "VrajTPatel",
-  "uniqueIdentifier": "123e4567-e89b-12d3-a456-426614174000",
-  "password": "VrajIsStupid",
-  "firstName": "Vraj",
-  "lastName": "Patel",
-  "email": "VrajLOL.doe@example.com",
-  "favoriteCards": [1, 4, 7],
-  "currency": 1000.0,
-  "ownedCards": [6, 25, 2, 3],
-  "lastClaimedCurrencyTime":"2023-05-25T10:00:00Z"
-},
-{
-  "userName": "ThaneTiff",
-  "uniqueIdentifier": "123e4567-e89b-12d3-a456-426614174000",
-  "password": "ThaneIsSmart",
-  "firstName": "Thane",
-  "lastName": "Tiffany",
-  "email": "ThaneLMAO.doe@example.com",
-  "favoriteCards": [150, 100, 25],
-  "currency": 1000.0,
-  "ownedCards": [25, 101, 147],
-  "lastClaimedCurrencyTime":"2023-05-25T10:00:00Z"
-}
+    "firstName": "John",
+    "lastName": "Doe",
+    "password": "examplePassword",
+    "favoriteCards": [
+      1,
+      4,
+      7
+    ],
+    "currency": 1000.0,
+    "lastClaimedCurrencyTime": "2023-05-25T10:00:00Z",
+    "userName": "exampleUserName",
+    "email": "john.doe@example.com",
+    "ownedCards": [
+      1,
+      2,
+      3
+    ],
+    "uniqueIdentifier": "89f178b7-8204-400b-ae5d-c46a64cb8f57"
+  },
+  {
+    "firstName": "Vraj",
+    "lastName": "Patel",
+    "password": "VrajIsStupid",
+    "favoriteCards": [
+      1,
+      4,
+      7
+    ],
+    "currency": 50.0,
+    "lastClaimedCurrencyTime": "2024-06-01T01:15:52.718592400Z",
+    "userName": "VrajTPatel",
+    "email": "VrajLOL.doe@example.com",
+    "ownedCards": [
+      6,
+      25,
+      2,
+      3
+    ],
+    "uniqueIdentifier": "237c0cad-4b53-49e1-936c-3e1b8d6fade0"
+  },
+  {
+    "firstName": "Thane",
+    "lastName": "Tiffany",
+    "password": "ThaneIsSmart",
+    "favoriteCards": [
+      150,
+      100,
+      25
+    ],
+    "currency": 1000.0,
+    "lastClaimedCurrencyTime": "2023-05-25T10:00:00Z",
+    "userName": "ThaneTiff",
+    "email": "ThaneLMAO.doe@example.com",
+    "ownedCards": [
+      25,
+      101,
+      147
+    ],
+    "uniqueIdentifier": "3d3d5c52-79d6-471e-a6ee-20386c0e9438"
+  }
 ]
