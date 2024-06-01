@@ -115,11 +115,6 @@ public class Facade {
       return user.getUserName();
     }
 
-    public void getTradeInfo(String senderUserName, String receiverUserName) {
-      UserList userList = UserList.getInstance();
-      userList.getTradeInfo(senderUserName, receiverUserName);
-  }
-
 
   public static void main(String[] args) {
 
