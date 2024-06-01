@@ -117,6 +117,8 @@ public class Facade {
 
   public static void main(String[] args) {
 
+/* 
+
     Scanner scanner = new Scanner(System.in);
   
     System.out.print("Enter username: ");
@@ -184,12 +186,15 @@ public class Facade {
     }
 
     facade.logOffUser();
-
+*/
 
     Facade facade2 = new Facade("VrajTPatel", "VrajIsStupid");
-    System.out.println(facade2.user.getReceivingTrades());
-
-
+    ArrayList<Trade> tradeList = facade2.user.getReceivingTrades();
+    for (Trade trade : tradeList) {
+        System.out.println(trade.getSender().getUserName());
+        System.out.println(trade.getReceiver().getUserName());
+        System.out.println(trade.getComment());
+    }
 
   }
 

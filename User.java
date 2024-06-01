@@ -162,7 +162,7 @@ public class User {
     }
 
     public void addReceivingTrade(Trade trade) {
-        sendingTrades.add(trade);
+        receivingTrades.add(trade);
     }
 
     public boolean acceptTrade (Trade trade) {

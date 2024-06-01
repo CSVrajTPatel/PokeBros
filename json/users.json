@@ -14,10 +14,9 @@
     "email": "john.doe@example.com",
     "ownedCards": [
       1,
-      2,
-      3
+      2
     ],
-    "uniqueIdentifier": "7478ca95-1bd6-4d64-af59-afdab17c2d2f"
+    "uniqueIdentifier": "c757b8f2-46e1-440b-a003-92269d33bef4"
   },
   {
     "firstName": "Vraj",
@@ -38,7 +37,7 @@
       2,
       3
     ],
-    "uniqueIdentifier": "3fccb1b9-a831-4a75-a782-2960780a91fa"
+    "uniqueIdentifier": "7b961b50-2bfe-4f67-8667-a3e25ce8bcfe"
   },
   {
     "firstName": "Thane",
@@ -58,6 +57,6 @@
       101,
       147
     ],
-    "uniqueIdentifier": "3c8df691-891f-47f6-a041-489da3dd0c48"
+    "uniqueIdentifier": "bf771883-b567-4d16-bb42-64d20b1d3879"
   }
 ]

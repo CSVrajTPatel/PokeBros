@@ -181,20 +181,20 @@ public class DataLoader {
         for (int num : cardsIds) {
             cardsOffered.add(masterList.searchById(num));
         }
-        ArrayList<Card> cardRequested = new ArrayList<Card>();
-        cardsIds = getIntegerList(tradeObject, "cardsRequested");
-        for (int num : cardsIds) {
-            cardRequested.add(masterList.searchById(num));
-        }
+        int cardRequested = getIntValue(tradeObject, "cardsRequested");
+        Card realCard = masterList.searchById(cardRequested);
         boolean isFairTrade = (Boolean) tradeObject.get("isFairTrade");
         boolean awaitingResponse = (Boolean) tradeObject.get("awaitingResponse");
         boolean wasAccepted = (Boolean) tradeObject.get("wasAccepted");
         String comment = getStringValue(tradeObject, "comment");
         double senderCoin = getDoubleValue(tradeObject, "senderCoin");
 
-        Trade trade = new Trade(sender, receiver, cardsOffered, cardRequested.get(0), isFairTrade, awaitingResponse, wasAccepted, comment, senderCoin);
-        sender.addSendingTrade(trade);
-        receiver.addReceivingTrade(trade);
+        Trade trade = new Trade(sender, receiver, cardsOffered, realCard, isFairTrade, awaitingResponse, wasAccepted, comment, senderCoin);
+        if ((sender != null))
+            sender.addReceivingTrade(trade);
+
+        if ((receiver != null))
+            receiver.addReceivingTrade(trade);
 
         return trade;
     }

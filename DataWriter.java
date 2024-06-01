@@ -120,9 +120,7 @@ public class DataWriter {
         }
         tradeObject.put("cardsOffered", cardsOfferedArray);
 
-        JSONArray cardsRequestedArray = new JSONArray();
-        cardsRequestedArray.add(trade.getreceiverCard());
-        tradeObject.put("cardsRequested", cardsRequestedArray);
+        tradeObject.put("cardsRequested", trade.getReceiverCard().getId());
 
         tradeObject.put("isFairTrade", trade.isFairTrade());
         tradeObject.put("awaitingResponse", trade.isAwaitingResponse());

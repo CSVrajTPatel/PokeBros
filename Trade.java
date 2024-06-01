@@ -115,7 +115,7 @@ public class Trade {
         return sendersCards;
     }
    
-    public Card getreceiverCard() {
+    public Card getReceiverCard() {
         return receiverCard;
     }
    

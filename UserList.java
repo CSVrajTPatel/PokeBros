@@ -44,6 +44,7 @@ public class UserList {
     
         for (User user : userList) {
             if (user.getUserName().equalsIgnoreCase(userName) && user.getPassword().equals(password)) {
+                getInstance();
                 DataLoader.loadTrades();
                 return user;  // Login successful
             }
@@ -95,6 +96,7 @@ public class UserList {
         User user = searchByUserName(username);
         if (user != null) {
             DataWriter.updateUsers(userList);
+            DataWriter.updateTrades(user.getNewTrades());
             DataWriter.removeNonPendingTrades();
         }
     }
