@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.Scanner;
 import java.time.Instant;
 import java.time.Duration;
@@ -56,11 +57,8 @@ public class Facade {
     return card.getFamily();
   }
 
-  public Boolean initiateTrade(ArrayList<Card> senderCards, Card receiverCard, User receiver, double senderCoins, String comment) {
-    Trade trade = new Trade(user, receiver, senderCards, receiverCard,senderCoins, comment);
-    user.addSendingTrade(trade);
-    receiver.addReceivingTrade(trade);
-    return true;
+  public boolean initiateTrade(ArrayList<Card> senderCards, Card receiverCard, double senderCoins, String comment) {
+    return user.initiateTrade(senderCards, receiverCard, senderCoins, comment);
   }
 
   public void rejectTrade(Trade trade) {

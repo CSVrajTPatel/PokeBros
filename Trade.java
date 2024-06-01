@@ -34,6 +34,7 @@ public class Trade {
         isFairTrade = isFairTrade();
         awaitingResponse = true;
 
+        // WRITES TO LOADER HERE
     }
  
     public User getSender() {
@@ -73,6 +74,8 @@ public class Trade {
     public void setAwaitingResponse(boolean awaitingResponse) {
         this.awaitingResponse = awaitingResponse;
     }
+
+    
    
     public boolean acceptTrade() {
         if (awaitingResponse = false) {

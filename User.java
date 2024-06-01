@@ -2,6 +2,7 @@ import java.time.Duration;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.UUID;
 
 public class User {
@@ -184,4 +185,20 @@ public class User {
     public ArrayList<Trade> getReceivingTrades() {
         return receivingTrades;
     }
+    
+    public boolean initiateTrade(ArrayList<Card> senderCards, Card receiverCard, double senderCoins, String comment) {
+        UserList userList = UserList.getInstance();
+        ArrayList<User> receivers = new ArrayList<User>();
+        Random rand = new Random();
+        receivers = userList.searchByCards(receiverCard);
+        if (receivers.size() == 0) {
+            return false;
+        }
+        User receiver = receivers.get(rand.nextInt(0,receivers.size()));
+        Trade trade = new Trade(userList.searchByUserName(userName), receiver, senderCards, receiverCard, senderCoins, comment);
+        addSendingTrade(trade);
+        receiver.addReceivingTrade(trade);
+
+        return true;
+        }
 }

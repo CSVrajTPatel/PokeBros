@@ -72,6 +72,23 @@ public class UserList {
         return null;
     }
 
+    public ArrayList<User> searchByCards(Card card){
+        ArrayList<User> returnList = new ArrayList<User>();
+        for (User user : userList){
+
+            ArrayList<Card> userCards = user.getOwnedCards();
+            for (Card userCard : userCards) {
+
+                if (userCard == card) {
+
+                    returnList.add(user);
+                    break;
+                }
+            }
+        }
+        return returnList;
+    }
+
     public void logOffUser(String username){
     
         User user = searchByUserName(username);
