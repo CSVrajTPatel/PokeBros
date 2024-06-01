@@ -104,10 +104,7 @@ public class UserList {
     public void saveUsers(){
         DataWriter.updateUsers(userList);
     }
-    
-    public void getTradeInfo(String senderUserName, String receiverUserName) {
-        DataLoader.getTradeInfo(senderUserName, receiverUserName);
-    }
+
 	
     
     public void main(String[] args) {
