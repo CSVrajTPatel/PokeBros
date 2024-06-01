@@ -105,6 +105,11 @@ public class UserList {
         DataWriter.updateUsers(userList);
     }
     
+    public void getTradeInfo(String senderUserName, String receiverUserName) {
+        DataLoader.getTradeInfo(senderUserName, receiverUserName);
+    }
+	
+    
     public void main(String[] args) {
 
         CardList masterList = CardList.getInstance();
