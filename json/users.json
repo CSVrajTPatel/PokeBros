@@ -20,6 +20,7 @@
   },
   {
     "firstName": "Vraj",
+
     "lastName": "Patel",
     "password": "VrajIsStupid",
     "favoriteCards": [
@@ -40,7 +41,7 @@
     "uniqueIdentifier": "7b961b50-2bfe-4f67-8667-a3e25ce8bcfe"
   },
   {
-    "firstName": "Thane",
+    "firstName": "Thane",  
     "lastName": "Tiffany",
     "password": "ThaneIsSmart",
     "favoriteCards": [

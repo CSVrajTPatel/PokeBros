@@ -75,22 +75,24 @@ public class Trade {
         this.awaitingResponse = awaitingResponse;
     }
 
-    
-   
-    public boolean acceptTrade() {
-        if (awaitingResponse = false) {
+    public static boolean acceptTrade(User receiver, int tradeIndex) {
+        ArrayList<Trade> receivingTrades = receiver.getReceivingTrades();
+        if (tradeIndex < 0 || tradeIndex >= receivingTrades.size()) {
             return false;
         }
-        this.wasAccepted = true;
-        sender.addCardToList(receiverCard);
-        receiver.removeCardFromList(receiverCard);
-
-        for(Card card : sendersCards){
-            receiver.addCardToList(card);
-            sender.removeCardFromList(card);
-            //  DataWriter.updateUsers(UserList.getUserList());
+        Trade tradeToAccept = receivingTrades.get(tradeIndex);
+        if (!tradeToAccept.awaitingResponse) {
+            return false;
         }
-        awaitingResponse = false;
+        tradeToAccept.wasAccepted = true;
+        tradeToAccept.sender.addCardToList(tradeToAccept.receiverCard);
+        tradeToAccept.receiver.removeCardFromList(tradeToAccept.receiverCard);
+
+        for (Card card : tradeToAccept.sendersCards) {
+            tradeToAccept.receiver.addCardToList(card);
+            tradeToAccept.sender.removeCardFromList(card);
+        }
+        tradeToAccept.awaitingResponse = false;
         return true;
     }
 

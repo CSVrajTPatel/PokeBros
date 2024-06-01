@@ -190,12 +190,13 @@ public class DataLoader {
         double senderCoin = getDoubleValue(tradeObject, "senderCoin");
 
         Trade trade = new Trade(sender, receiver, cardsOffered, realCard, isFairTrade, awaitingResponse, wasAccepted, comment, senderCoin);
-        if ((sender != null))
+        if (sender != null)
             sender.addReceivingTrade(trade);
 
-        if ((receiver != null))
+        if (receiver != null)
             receiver.addReceivingTrade(trade);
 
         return trade;
     }
+    
 }

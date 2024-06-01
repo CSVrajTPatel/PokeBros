@@ -72,9 +72,9 @@ public class Facade {
 
   }
 
-  public void acceptTrade(Trade trade) {
-    trade.acceptTrade();
-  }
+  public void acceptTrade(int tradeIndex) {
+    Trade.acceptTrade(user, tradeIndex);
+}
 
   public boolean evaluateTrade(Trade trade) {
     return trade.isFairTrade();
@@ -114,16 +114,48 @@ public class Facade {
     public String getUserName() {
       return user.getUserName();
     }
-
+    public static void printTrades(ArrayList<Trade> trades) {
+      for (Trade trade : trades) {
+          System.out.println("Sender: " + trade.getSender().getUserName());
+          System.out.println("Receiver: " + trade.getReceiver().getUserName());
+          System.out.println("Comment: " + trade.getComment());
+          System.out.print("Cards Offered: ");
+          for (Card card : trade.getCardsOffered()) {
+              System.out.print("[" + card.getId() + " - " + card.getName() + "] ");
+          }
+          System.out.println();
+          Card requestedCard = trade.getReceiverCard();
+          System.out.println("Card Requested: [" + requestedCard.getId() + " - " + requestedCard.getName() + "]");
+          System.out.println("Is Fair Trade: " + trade.isFairTrade());
+          System.out.println("Awaiting Response: " + trade.isAwaitingResponse());
+          System.out.println("Was Accepted: " + trade.wasAccepted());
+          System.out.println("Sender Coin: " + trade.getSenderCoin());
+          System.out.println("-------------------------");
+      }
+  }
 
   public static void main(String[] args) {
+      Facade facade = new Facade("VrajTPatel", "VrajIsStupid");
 
-    Facade facade = new Facade("VrajTPatel", "VrajIsStupid");
-    facade.loginUser("VrajTPatel" , "VrajIsStupid");
-    ArrayList<Trade> tradeList = facade.user.getReceivingTrades();
+      // Print receiving trades
+      ArrayList<Trade> receivingTrades = facade.user.getReceivingTrades();
+      printTrades(receivingTrades);
+    
+       // Prompt user to select a trade to accept
+       Scanner scanner = new Scanner(System.in);
+       System.out.println("Enter the number of the trade you want to accept:");
+       int tradeNumber = scanner.nextInt();
+       int tradeIndex = tradeNumber - 1;
+            facade.acceptTrade(tradeIndex);
+            System.out.println("Accepted Trade " + tradeNumber + ":");
+            printTrades(facade.user.getReceivingTrades());
+    scanner.close();
+
+    facade.logOffUser();
+          
     }
-
   }
+
 
 /* 
 
