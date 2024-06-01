@@ -168,4 +168,20 @@ public class User {
     public void addReceivingTrade(Trade trade) {
         sendingTrades.add(trade);
     }
+
+    public boolean acceptTrade (Trade trade) {
+        return trade.acceptTrade();
+    }
+
+    public boolean rejectTrade (Trade trade) {
+        return trade.rejectTrade();
+    }
+
+    public ArrayList<Trade> getSendingTrades() {
+        return sendingTrades;
+    }
+
+    public ArrayList<Trade> getReceivingTrades() {
+        return receivingTrades;
+    }
 }

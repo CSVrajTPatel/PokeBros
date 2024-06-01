@@ -56,8 +56,8 @@ public class Facade {
     return card.getFamily();
   }
 
-  public Boolean initiateTrade(ArrayList<Card> senderCards, Card receiverCard, User receiver, double senderCoins) {
-    Trade trade = new Trade(user, receiver, senderCards, receiverCard,senderCoins);
+  public Boolean initiateTrade(ArrayList<Card> senderCards, Card receiverCard, User receiver, double senderCoins, String comment) {
+    Trade trade = new Trade(user, receiver, senderCards, receiverCard,senderCoins, comment);
     user.addSendingTrade(trade);
     receiver.addReceivingTrade(trade);
     return true;

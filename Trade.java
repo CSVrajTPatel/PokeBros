@@ -24,7 +24,15 @@ public class Trade {
         this.senderCoin = senderCoin;
     }
 
-    public Trade(User sender, User receiver, ArrayList<Card> sendersCards, Card receiverCard, double senderCoin) {
+    public Trade(User sender, User receiver, ArrayList<Card> sendersCards, Card receiverCard, double senderCoin, String comment) {
+        this.sender = sender;
+        this.receiver = receiver;
+        this.sendersCards = sendersCards;
+        this.receiverCard = receiverCard;
+        this.senderCoin = senderCoin;
+        this.comment = comment;
+        isFairTrade = isFairTrade();
+        awaitingResponse = true;
 
     }
  
@@ -47,7 +55,7 @@ public class Trade {
         }
         // if the cumulative value of the cards is within `0%
         // otherwise the trade is false
-        if (receiverCard.getValue() / senderCardValue >= 0.9 && receiverCard.getValue() / senderCardValue <= 1.1){
+        if (receiverCard.getValue() / senderCardValue >= 0.9 && receiverCard.getValue() / senderCardValue <= 1.1) {
             isFairTrade = true;
             return isFairTrade;
         }
@@ -66,7 +74,10 @@ public class Trade {
         this.awaitingResponse = awaitingResponse;
     }
    
-    public void acceptTrade() {
+    public boolean acceptTrade() {
+        if (awaitingResponse = false) {
+            return false;
+        }
         this.wasAccepted = true;
         sender.addCardToList(receiverCard);
         receiver.removeCardFromList(receiverCard);
@@ -76,11 +87,16 @@ public class Trade {
             sender.removeCardFromList(card);
             //  DataWriter.updateUsers(UserList.getUserList());
         }
-        
+        awaitingResponse = false;
+        return true;
     }
 
-    public void rejectTrade(){
-        this.wasAccepted = false;
+    public boolean rejectTrade(){
+        if (awaitingResponse = true) {
+            awaitingResponse = false;
+            return true;
+        }
+        return false;
     }
 
     public String getComment() {
