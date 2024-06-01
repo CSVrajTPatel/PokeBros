@@ -17,7 +17,7 @@
       2,
       3
     ],
-    "uniqueIdentifier": "89f178b7-8204-400b-ae5d-c46a64cb8f57"
+    "uniqueIdentifier": "84454fec-eddf-429c-8a6c-957d0b168dec"
   },
   {
     "firstName": "Vraj",
@@ -28,8 +28,8 @@
       4,
       7
     ],
-    "currency": 50.0,
-    "lastClaimedCurrencyTime": "2024-06-01T01:15:52.718592400Z",
+    "currency": 1025.0,
+    "lastClaimedCurrencyTime": "2024-06-01T01:46:41.533Z",
     "userName": "VrajTPatel",
     "email": "VrajLOL.doe@example.com",
     "ownedCards": [
@@ -38,7 +38,7 @@
       2,
       3
     ],
-    "uniqueIdentifier": "237c0cad-4b53-49e1-936c-3e1b8d6fade0"
+    "uniqueIdentifier": "cf6e6ffc-070d-4f23-848b-3f96ec59a13a"
   },
   {
     "firstName": "Thane",
@@ -58,6 +58,6 @@
       101,
       147
     ],
-    "uniqueIdentifier": "3d3d5c52-79d6-471e-a6ee-20386c0e9438"
+    "uniqueIdentifier": "c28150d1-e522-464f-bdef-23515b01db4d"
   }
 ]
