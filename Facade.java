@@ -8,7 +8,7 @@ import java.time.Duration;
 public class Facade {
 
   private User user;
-  
+
   public Facade() {
   }
 
@@ -58,20 +58,22 @@ public class Facade {
     return card.getFamily();
   }
 
+  public int getCardId(Card card) {
+    return card.getId();
+  }
+
+
   public boolean initiateTrade(ArrayList<Card> senderCards, Card receiverCard, double senderCoins, String comment) {
     return user.initiateTrade(senderCards, receiverCard, senderCoins, comment);
   }
 
   public void rejectTrade(Trade trade) {
-
-  trade.rejectTrade();
+    trade.rejectTrade();
 
   }
 
   public void acceptTrade(Trade trade) {
-
     trade.acceptTrade();
-
   }
 
   public boolean evaluateTrade(Trade trade) {
