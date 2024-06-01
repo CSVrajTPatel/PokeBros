@@ -151,6 +151,8 @@ public class DataLoader {
             favoriteCards.add(masterList.searchById(temp));
         }
 
+
+
         ArrayList<Integer> ownedCardsTemp = getIntegerList(userObject, "ownedCards");
         ArrayList<Card> ownedCards = new ArrayList<>();
         for (Integer temp : ownedCardsTemp) {
@@ -190,9 +192,10 @@ public class DataLoader {
         String comment = getStringValue(tradeObject, "comment");
         double senderCoin = getDoubleValue(tradeObject, "senderCoin");
 
-        Trade trade = new Trade(receiver, sender, cardsOffered, cardRequested.get(0), isFairTrade, awaitingResponse, wasAccepted, comment, senderCoin);
+        Trade trade = new Trade(sender, receiver, cardsOffered, cardRequested.get(0), isFairTrade, awaitingResponse, wasAccepted, comment, senderCoin);
         sender.addSendingTrade(trade);
-        sender.addReceivingTrade(trade);
+        receiver.addReceivingTrade(trade);
+
         return trade;
     }
 

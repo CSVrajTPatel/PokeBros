@@ -186,8 +186,8 @@ public class Facade {
     facade.logOffUser();
 
 
-    Facade facade = new Facade("VrajTPatel", "VrajIsStupid");
-    System.out.println(facade.user.getReceivingTrades());
+    Facade facade2 = new Facade("VrajTPatel", "VrajIsStupid");
+    System.out.println(facade2.user.getReceivingTrades());
 
 
 

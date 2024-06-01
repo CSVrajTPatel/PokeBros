@@ -1,41 +1,21 @@
 [
   {
     "cardsOffered": [
+      5,
+      6,
+      7
+    ],
+    "awaitingResponse": true,
+    "cardsRequested": [
       1,
       2,
       3
     ],
-    "awaitingResponse": true,
-    "cardsRequested": [
-      4,
-      5,
-      6
-    ],
     "senderCoin": 25,
     "isFairTrade": true,
     "wasAccepted": false,
-    "comment": "Looking forward to this trade!"
-    },
-    {
-    "recieverUserName": "recieverUserName",
-    "senderUserName": "senderUserName",
-    "cardsOffered": [1, 2, 3],
-    "cardsRequested": [4, 5, 6],
-    "senderCoin" : 25,
-    "isFairTrade": true,
-    "awaitingResponse": true,
-    "wasAccepted": false,
-    "comment": "Looking forward to this trade!"
-    },
-    {
-        "recieverUserName": "Removeme",
-        "senderUserName": "senderUserName",
-        "cardsOffered": [1, 2, 3],
-        "cardsRequested": [4, 5, 6],
-        "senderCoin" : 25,
-        "isFairTrade": true,
-        "awaitingResponse": false,
-        "wasAccepted": false,
-        "comment": "Looking forward to this trade!"
-    }
+    "comment": "Looking forward to this trade!",
+    "recieverUserName": "ThaneTiff",
+    "senderUserName": "VrajTPatel"
+  }
 ]

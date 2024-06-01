@@ -44,6 +44,7 @@ public class UserList {
     
         for (User user : userList) {
             if (user.getUserName().equalsIgnoreCase(userName) && user.getPassword().equals(password)) {
+                DataLoader.loadTrades();
                 return user;  // Login successful
             }
         }

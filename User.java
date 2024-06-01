@@ -33,6 +33,8 @@ public class User {
         this.currency = currency;
         this.ownedCards = ownedCards;
         this.lastClaimedCurrencyTime = Instant.now();
+        this.sendingTrades = sendingTrades;
+        this.receivingTrades = receivingTrades;
     }
 
     public User(String userName, String password, String firstName, String lastName, String email) {
