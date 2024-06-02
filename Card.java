@@ -59,7 +59,6 @@ public class Card {
      * Gets the ID of the card.
      * 
      * @return The ID of the card.
-     * issue #79
      * 
      */
     public int getId() {
@@ -70,7 +69,6 @@ public class Card {
      * Sets the ID of the card.
      * 
      * @param id The new ID of the card.
-     * issue #79
      */
     public void setId(int id) {
         this.id = id;
@@ -80,7 +78,6 @@ public class Card {
      * Gets the name of the card.
      * 
      * @return The name of the card.
-     * issue #73
      */
     public String getName() {
         return name;
@@ -90,7 +87,6 @@ public class Card {
      * Sets the name of the card.
      * 
      * @param name The new name of the card.
-     * issue #73
      */
     public void setName(String name) {
         this.name = name;
@@ -100,7 +96,6 @@ public class Card {
      * Gets the type of the card.
      * 
      * @return The type of the card.
-     * issue #83
      */
     public String getType() {
         return type;
@@ -110,7 +105,6 @@ public class Card {
      * Sets the type of the card.
      * 
      * @param type The new type of the card.
-     * issue #83
      */
     public void setType(String type) {
         this.type = type;
@@ -120,7 +114,6 @@ public class Card {
      * Gets the rarity of the card.
      * 
      * @return The rarity of the card.
-     * issue #84
      */
     public String getRarity() {
         return rarity;
@@ -130,7 +123,6 @@ public class Card {
      * Sets the rarity of the card.
      * 
      * @param rarity The new rarity of the card.
-     * issue #84
      */
     public void setRarity(String rarity) {
         this.rarity = rarity;
@@ -140,7 +132,6 @@ public class Card {
      * Gets the pack number of the card.
      * 
      * @return The pack number of the card.
-     * issue #69
      */
     public int getPack() {
         return pack;
@@ -150,7 +141,6 @@ public class Card {
      * Sets the pack number of the card.
      * 
      * @param pack The new pack number of the card.
-     * issue #69
      */
     public void setPack(int pack) {
         this.pack = pack;
@@ -160,7 +150,6 @@ public class Card {
      * Gets the health points of the card.
      * 
      * @return The health points of the card.
-     * issue #80
      */
     public int getHp() {
         return hp;
@@ -170,7 +159,6 @@ public class Card {
      * Sets the health points of the card.
      * 
      * @param hp The new health points of the card.
-     * issue #80
      */
     public void setHp(int hp) {
         this.hp = hp;
@@ -180,7 +168,6 @@ public class Card {
      * Gets the value of the card.
      * 
      * @return The value of the card.
-     * issue #81
      */
     public double getValue() {
         return value;
@@ -190,7 +177,6 @@ public class Card {
      * Sets the value of the card.
      * 
      * @param value The new value of the card.
-     * issue #81
      */
     public void setValue(double value) {
         this.value = value;
@@ -200,7 +186,6 @@ public class Card {
      * Gets the evolution stage of the card.
      * 
      * @return The evolution stage of the card.
-     * issue #86
      */
     public int getEvoStage() {
         return evoStage;
@@ -210,7 +195,6 @@ public class Card {
      * Sets the evolution stage of the card.
      * 
      * @param evoStage The new evolution stage of the card.
-     * issue #86
      */
     public void setEvoStage(int evoStage) {
         this.evoStage = evoStage;
