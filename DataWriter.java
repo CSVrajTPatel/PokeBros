@@ -143,6 +143,39 @@ public class DataWriter {
 
         return null;
     }
+    
+// Updates accepted trade
+public static void updateAcceptedTrade(Trade acceptedTrade) {
+    JSONArray tradesArray = readJsonArrayFromFile(TRADES_FILE_PATH);
+    if (tradesArray == null) {
+        tradesArray = new JSONArray();
+    }
+
+    for (int i = 0; i < tradesArray.size(); i++) {
+        JSONObject tradeJson = (JSONObject) tradesArray.get(i);
+        String senderUserName = (String) tradeJson.get("senderUserName");
+        String receiverUserName = (String) tradeJson.get("receiverUserName");
+
+        if (senderUserName.equals(acceptedTrade.getSender().getUserName()) && 
+            receiverUserName.equals(acceptedTrade.getReceiver().getUserName())) {
+            
+            // Update the fields directly
+            tradeJson.put("awaitingResponse", false);
+            tradeJson.put("wasAccepted", true);
+            tradesArray.set(i, tradeJson);
+            break;
+        }
+    }
+
+    // Write the updated trades array back to the file
+    try (FileWriter file = new FileWriter(TRADES_FILE_PATH)) {
+        file.write(gson.toJson(tradesArray));
+        file.flush();
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+}
+
 //Removes NonPendingTrades
     public static void removeNonPendingTrades() {
         JSONArray tradesArray = readJsonArrayFromFile(TRADES_FILE_PATH);

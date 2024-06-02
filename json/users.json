@@ -16,7 +16,7 @@
       1,
       2
     ],
-    "uniqueIdentifier": "9942bec8-221e-4aea-b0c3-9cebdc90ee08"
+    "uniqueIdentifier": "963a4582-f712-49bf-981a-3ada939a683d"
   },
   {
     "firstName": "Vraj",
@@ -34,10 +34,9 @@
     "ownedCards": [
       6,
       25,
-      2,
-      3
+      150
     ],
-    "uniqueIdentifier": "4f8060ea-7d38-4083-ae42-1b764cc0c8c0"
+    "uniqueIdentifier": "ca602041-0317-4fd4-81be-31868ffc4920"
   },
   {
     "firstName": "Thane",
@@ -55,29 +54,8 @@
     "ownedCards": [
       25,
       101,
-      147,
-      132,
-      52,
-      10,
-      126,
-      126,
-      47,
-      53,
-      61,
-      21,
-      127,
-      104,
-      13,
-      14,
-      55,
-      110,
-      119,
-      133,
-      109,
-      37,
-      17,
-      16
+      3
     ],
-    "uniqueIdentifier": "dd172416-2b1b-473a-8ccc-8eead8a9029b"
+    "uniqueIdentifier": "b3d0d33c-0369-4fd7-8797-1cd0353e06d5"
   }
 ]

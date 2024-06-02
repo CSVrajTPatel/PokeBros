@@ -45,8 +45,6 @@ public class Trade {
         return receiver;
     }
 
-
-    // THIS NEEDS TO BE REDONE
      
     public boolean isFairTrade() {
        
@@ -85,6 +83,8 @@ public class Trade {
             return false;
         }
         tradeToAccept.wasAccepted = true;
+        tradeToAccept.awaitingResponse = false;
+        
         tradeToAccept.sender.addCardToList(tradeToAccept.receiverCard);
         tradeToAccept.receiver.removeCardFromList(tradeToAccept.receiverCard);
 
@@ -92,7 +92,8 @@ public class Trade {
             tradeToAccept.receiver.addCardToList(card);
             tradeToAccept.sender.removeCardFromList(card);
         }
-        tradeToAccept.awaitingResponse = false;
+        
+        DataWriter.updateAcceptedTrade(tradeToAccept);
         return true;
     }
 
@@ -108,7 +109,6 @@ public class Trade {
         return comment;
     }
 
-    // Not Needed I think
     public boolean wasAccepted() {
         return wasAccepted;
     }

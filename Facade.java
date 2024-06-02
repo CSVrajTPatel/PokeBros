@@ -148,9 +148,8 @@ public class Facade {
        System.out.println("Enter the number of the trade you want to accept:");
        int tradeNumber = scanner.nextInt();
        int tradeIndex = tradeNumber - 1;
-            facade.acceptTrade(tradeIndex);
-            System.out.println("Accepted Trade " + tradeNumber + ":");
-            printTrades(facade.user.getReceivingTrades());
+          facade.acceptTrade(tradeIndex);
+          System.out.println("Accepted Trade " + tradeNumber + ":");
     scanner.close();
 
     facade.logOffUser();
