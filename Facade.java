@@ -386,6 +386,7 @@ public class Facade {
             while (fail == 0) {
               System.out.println("Which Pack would you like to open?");
               int choice = scanner.nextInt();
+              decision = scanner.nextLine();
               int count = facade.getOwnedCards().size();
 
               if (facade.openPack(choice)) {  // Make sure openPack updates the user's card list and returns true if successful
@@ -396,9 +397,9 @@ public class Facade {
                   System.out.println(facade.getOwnedCards().get(i).getName());
                 }
                 System.out.println("Would you like to open another?");
-                String bet = scanner.nextLine();
+                decision = scanner.nextLine();
 
-                if (bet.equalsIgnoreCase("no")) {
+                if (!decision.equalsIgnoreCase("yes")) {
                   fail = 1;
                 }
                     
