@@ -135,7 +135,7 @@ public class Facade {
   }
 
   public static void main(String[] args) {
-    /*
+/*
  * TESTS FOR:
  *  Creating a new User
  *  Ensuring the basic new userformat is working correctly
@@ -278,70 +278,59 @@ public class Facade {
       else {
           System.out.println("User creation failed. (User may already exist or email is invalid)");
       }
-
+    }
+}
 
 /* 
 
 TEST 2
 DO THIS AFTER 
+  Scanner scanner = new Scanner(System.in);
+    System.out.println("Enter username:");
+    String username = scanner.nextLine();
+    System.out.println("Enter password:");
+    String password = scanner.nextLine();
 
+    Facade facade = new Facade(username, password);
+    
+    if (facade.user != null) {
+        System.out.println("Logged in successfully.");
+        System.out.println("Current Currency: " + facade.getCurrency());
 
-      Facade facade2 = new Facade("VrajTPatel", "VrajIsStupid");
+        System.out.println("Do you want to claim your daily currency? (yes/no)");
+        String claimDecision = scanner.nextLine();
 
-      // Print receiving trades
-      ArrayList<Trade> receivingTrades = facade2.user.getReceivingTrades();
-      printTrades(receivingTrades);
-
-      System.out.println("Enter the number of the trade you want to accept:");
-      int tradeNumber = scanner.nextInt();
-      int tradeIndex = tradeNumber - 1;
-          facade.acceptTrade(tradeIndex);
-          System.out.println("Accepted Trade " + tradeNumber + ":");
-
-          if (facade.claimDailyCurrency()) {
-            System.out.println("Daily currency claimed.");
-            System.out.println("Updated Currency: " + facade.getCurrency());
+        if (claimDecision.equalsIgnoreCase("yes")) {
+            if (facade.claimDailyCurrency()) {
+                System.out.println("Daily currency claimed.");
+            } else {
+                System.out.println("Failed to claim daily currency.");
+            }
         } else {
-            System.out.println("Failed to claim daily currency.");
+            System.out.println("Skipped claiming daily currency.");
         }
 
-      scanner.close();
+        System.out.println("Updated Currency: " + facade.getCurrency());
 
+        // Display receiving trades
+        ArrayList<Trade> receivingTrades = facade.user.getReceivingTrades();
+        printTrades(receivingTrades);
 
-    facade2.logOffUser();
-  }
-}
+        if (receivingTrades.size() > 0) {
+            System.out.println("Enter the number of the trade you want to accept:");
+            int tradeNumber = scanner.nextInt();
+            int tradeIndex = tradeNumber - 1;
+            facade.acceptTrade(tradeIndex);
+            System.out.println("Accepted Trade " + tradeNumber + ":");
+        } else {
+            System.out.println("No trades to accept.");
+        }
 
-*/
-
-
-    /* 
-      Facade facade = new Facade("VrajTPatel", "VrajIsStupid");
-
-      // Print receiving trades
-      ArrayList<Trade> receivingTrades = facade.user.getReceivingTrades();
-      printTrades(receivingTrades);
-    
-       // Prompt user to select a trade to accept
-       Scanner scanner = new Scanner(System.in);
-       System.out.println("Enter the number of the trade you want to accept:");
-       int tradeNumber = scanner.nextInt();
-       int tradeIndex = tradeNumber - 1;
-          facade.acceptTrade(tradeIndex);
-          System.out.println("Accepted Trade " + tradeNumber + ":");
-    scanner.close();
+    } else {
+        System.out.println("Login failed. Please check your username and password.");
+    }
 
     facade.logOffUser();
-          
-    }
+    scanner.close();
   }
-
-  */
-
-  }
-}
-
-
-
- 
-
+*/
