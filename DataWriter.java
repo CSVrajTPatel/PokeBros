@@ -11,7 +11,9 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
-
+/**
+ * The DataWriter class provides methods to update JSON files with user and trade data.
+ */
 public class DataWriter {
     private static final String USERS_FILE_PATH = "./json/users.json";
     private static final String TRADES_FILE_PATH = "./json/trades.json";
@@ -35,6 +37,12 @@ public class DataWriter {
             e.printStackTrace();
         }
     }
+    /**
+     * Updates the trades JSON file with the given list of trades.
+     * 
+     * @param trades the list of trades to update.
+     */
+
     public static void updateTrades(ArrayList<Trade> trades) {
         JSONArray existingTradesArray = readJsonArrayFromFile(TRADES_FILE_PATH);
         if (existingTradesArray == null) {
@@ -53,7 +61,12 @@ public class DataWriter {
             e.printStackTrace();
         }
     }
-
+    /**
+     * Converts a User object to a JSONObject.
+     * 
+     * @param user the User object to convert.
+     * @return the JSONObject user.
+     */
     private static JSONObject userToJson(User user) {
         JSONObject userObject = new JSONObject();
         userObject.put("userName", user.getUserName());
@@ -80,11 +93,24 @@ public class DataWriter {
         return userObject;
     }
 
+    /**
+     * Gets a string value from a JSONObject.
+     * 
+     * @param jsonObject the JSONObject.
+     * @param key the key of the value.
+     * @return the string value.
+     */
+
     private static String getStringValue(JSONObject jsonObject, String key) {
       Object value = jsonObject.get(key);
       return value != null ? value.toString() : "";
   }
-    
+    /**
+     * Removes a user from the JSON file based on the userName.
+     * 
+     * @param targetUserName the userName of the user to remove.
+     */
+
     private static void removeUser(String targetUserName) {
       JSONArray existingUsersArray = readJsonArrayFromFile(USERS_FILE_PATH);
       Iterator<JSONObject> iterator = existingUsersArray.iterator();
@@ -104,11 +130,14 @@ public class DataWriter {
       }
     }
 
+
     /**
-     * Convert a Trade object to a JSONObject.
+     * Converts a Trade object to a JSONObject.
+     * 
      * @param trade Trade object to convert.
-     * @return JSONObject representation of the trade.
+     * @return JSONObject trade.
      */
+
     private static JSONObject tradeToJson(Trade trade) {
         JSONObject tradeObject = new JSONObject();
         tradeObject.put("receiverUserName", trade.getReceiver().getUserName());
@@ -144,7 +173,12 @@ public class DataWriter {
         return null;
     }
     
-// Updates accepted trade
+    /**
+     * Updates the JSON file with the accepted trade.
+     * 
+     * @param acceptedTrade the trade that was accepted.
+     */
+
 public static void updateAcceptedTrade(Trade acceptedTrade) {
     JSONArray tradesArray = readJsonArrayFromFile(TRADES_FILE_PATH);
     if (tradesArray == null) {
@@ -159,7 +193,6 @@ public static void updateAcceptedTrade(Trade acceptedTrade) {
         if (senderUserName.equals(acceptedTrade.getSender().getUserName()) && 
             receiverUserName.equals(acceptedTrade.getReceiver().getUserName())) {
             
-            // Update the fields directly
             tradeJson.put("awaitingResponse", false);
             tradeJson.put("wasAccepted", true);
             tradesArray.set(i, tradeJson);
@@ -167,7 +200,6 @@ public static void updateAcceptedTrade(Trade acceptedTrade) {
         }
     }
 
-    // Write the updated trades array back to the file
     try (FileWriter file = new FileWriter(TRADES_FILE_PATH)) {
         file.write(gson.toJson(tradesArray));
         file.flush();
@@ -175,8 +207,9 @@ public static void updateAcceptedTrade(Trade acceptedTrade) {
         e.printStackTrace();
     }
 }
-
-//Removes NonPendingTrades
+    /**
+     * Removes non-pending trades from the JSON file.
+     */
     public static void removeNonPendingTrades() {
         JSONArray tradesArray = readJsonArrayFromFile(TRADES_FILE_PATH);
         if (tradesArray == null) {
@@ -198,9 +231,5 @@ public static void updateAcceptedTrade(Trade acceptedTrade) {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-
-    public static void main(String[] args) {
-
     }
 }
