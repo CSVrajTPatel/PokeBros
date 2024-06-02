@@ -8,11 +8,19 @@ import java.io.IOException;
 import java.time.Instant;
 import java.util.ArrayList;
 
+/**
+ * The DataLoader class provides methods to load the data from the Cards,Users, and trades JSON files.
+ */
 public class DataLoader {
     private static final String CARDS_FILE_PATH = "json/cards.json";
     private static final String USERS_FILE_PATH = "json/users.json";
     private static final String TRADES_FILE_PATH = "json/trades.json";
 
+    /**
+     * Loads cards from the Card.JSON file.
+     * 
+     * @return an ArrayList of Card objects.
+     */
     public static ArrayList<Card> loadCards() {
         ArrayList<Card> cards = new ArrayList<>();
         JSONParser parser = new JSONParser();
@@ -29,6 +37,11 @@ public class DataLoader {
         return cards;
     }
 
+    /**
+     * Loads users from the Users.JSON file.
+     * 
+     * @return an ArrayList of User objects.
+     */
     public static ArrayList<User> loadUsers() {
         ArrayList<User> users = new ArrayList<>();
         JSONParser parser = new JSONParser();
@@ -45,6 +58,11 @@ public class DataLoader {
         return users;
     }
 
+    /**
+     * Loads trades from the trades.JSON file.
+     * 
+     * @return an ArrayList of Trade objects.
+     */
     public static ArrayList<Trade> loadTrades() {
         ArrayList<Trade> trades = new ArrayList<>();
         JSONParser parser = new JSONParser();
@@ -61,6 +79,12 @@ public class DataLoader {
         return trades;
     }
 
+    /**
+     * Parses a JSONObject into a Card object.
+     * 
+     * @param cardObject the JSONObject to parse.
+     * @return a Card object.
+     */
     private static Card parseCard(JSONObject cardObject) {
         int id = getIntValue(cardObject, "id");
         String name = getStringValue(cardObject, "name");
@@ -72,14 +96,18 @@ public class DataLoader {
         int evoStage = getIntValue(cardObject, "evoStage");
 
         ArrayList<Integer> familyCards = getIntegerList(cardObject, "family");
-        
-        // CardList masterList = new CardList();
-            
         ArrayList<String> attacks = getStringList(cardObject, "attacks");
 
         return new Card(id, name, type, rarity, pack, hp, value, evoStage, familyCards, attacks);
     }
 
+    /**
+     * Gets an integer value from a JSONObject.
+     * 
+     * @param jsonObject the JSONObject.
+     * @param key the key of the value.
+     * @return the integer value.
+     */
     private static int getIntValue(JSONObject jsonObject, String key) {
         Object value = jsonObject.get(key);
         if (value instanceof Long) {
@@ -88,6 +116,13 @@ public class DataLoader {
         return 0;
     }
 
+    /**
+     * Gets a double value from a JSONObject.
+     * 
+     * @param jsonObject the JSONObject.
+     * @param key value of the double.
+     * @return the double value.
+     */
     private static double getDoubleValue(JSONObject jsonObject, String key) {
         Object value = jsonObject.get(key);
         if (value instanceof Long) {
@@ -98,11 +133,25 @@ public class DataLoader {
         return 0.0;
     }
 
+    /**
+     * Gets a string value from a JSONObject.
+     * 
+     * @param jsonObject the JSONObject.
+     * @param key the key of the value.
+     * @return the string value.
+     */
     private static String getStringValue(JSONObject jsonObject, String key) {
         Object value = jsonObject.get(key);
         return value != null ? value.toString() : "";
     }
 
+    /**
+     * Gets an ArrayList of integers from a JSONObject.
+     * 
+     * @param jsonObject the JSONObject.
+     * @param key the key of the value.
+     * @return an ArrayList of integers.
+     */
     private static ArrayList<Integer> getIntegerList(JSONObject jsonObject, String key) {
         ArrayList<Integer> list = new ArrayList<>();
         Object value = jsonObject.get(key);
@@ -119,6 +168,13 @@ public class DataLoader {
         return list;
     }
 
+    /**
+     * Gets an ArrayList of strings from a JSONObject.
+     * 
+     * @param jsonObject the JSONObject.
+     * @param key the key of the value.
+     * @return an ArrayList of strings.
+     */
     private static ArrayList<String> getStringList(JSONObject jsonObject, String key) {
         ArrayList<String> list = new ArrayList<>();
         Object value = jsonObject.get(key);
@@ -135,6 +191,12 @@ public class DataLoader {
         return list;
     }
 
+    /**
+     * Parses a JSONObject into a User object.
+     * 
+     * @param userObject the JSONObject to parse.
+     * @return a User object.
+     */
     private static User parseUser(JSONObject userObject) {
         String userName = getStringValue(userObject, "userName");
         String uniqueIdentifier = getStringValue(userObject, "uniqueIdentifier");
@@ -151,8 +213,6 @@ public class DataLoader {
             favoriteCards.add(masterList.searchById(temp));
         }
 
-
-
         ArrayList<Integer> ownedCardsTemp = getIntegerList(userObject, "ownedCards");
         ArrayList<Card> ownedCards = new ArrayList<>();
         for (Integer temp : ownedCardsTemp) {
@@ -167,6 +227,12 @@ public class DataLoader {
         return user;
     }
 
+    /**
+     * Parses a JSONObject into a Trade object.
+     * 
+     * @param tradeObject the JSONObject to parse.
+     * @return a Trade object.
+     */
     private static Trade parseTrade(JSONObject tradeObject) {
         UserList userList = UserList.getInstance();
         CardList masterList = CardList.getInstance();
@@ -197,5 +263,4 @@ public class DataLoader {
 
         return trade;
     }
-    
 }
