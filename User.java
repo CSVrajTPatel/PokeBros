@@ -182,11 +182,8 @@ public class User {
         return receivingTrades;
     }
     
-    public boolean initiateTrade(ArrayList<Card> senderCards, Card receiverCard, double senderCoins, String comment) {
+    public boolean initiateTrade(ArrayList<Card> senderCards, Card receiverCard, String comment) {
         UserList userList = UserList.getInstance();
-        if (senderCoins > currency) {
-            return false;
-        } 
         for (Card card : ownedCards) {
             int count = 1;
             for (Card card2 : ownedCards) {

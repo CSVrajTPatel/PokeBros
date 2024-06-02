@@ -12,7 +12,7 @@ public class Trade {
     private String comment;
     private double senderCoin;
 
-    public Trade(User sender, User receiver, ArrayList <Card> sendersCards, Card receiverCard, boolean isFairTrade, boolean awaitingResponse, boolean wasAccepted, String comment, double senderCoin){
+    public Trade(User sender, User receiver, ArrayList <Card> sendersCards, Card receiverCard, boolean isFairTrade, boolean awaitingResponse, boolean wasAccepted, String comment) {
         this.sender = sender;
         this.receiver = receiver;
         this.sendersCards = sendersCards;
@@ -21,15 +21,13 @@ public class Trade {
         this.awaitingResponse = awaitingResponse;
         this.wasAccepted = wasAccepted;
         this.comment = comment;
-        this.senderCoin = senderCoin;
     }
 
-    public Trade(User sender, User receiver, ArrayList<Card> sendersCards, Card receiverCard, double senderCoin, String comment) {
+    public Trade(User sender, User receiver, ArrayList<Card> sendersCards, Card receiverCard, String comment) {
         this.sender = sender;
         this.receiver = receiver;
         this.sendersCards = sendersCards;
         this.receiverCard = receiverCard;
-        this.senderCoin = senderCoin;
         this.comment = comment;
         isFairTrade = isFairTrade();
         awaitingResponse = true;
@@ -48,7 +46,7 @@ public class Trade {
      
     public boolean isFairTrade() {
        
-        double senderCardValue = senderCoin;
+        double senderCardValue = 0;
         for(int i = 0; i < sendersCards.size(); i++){
             senderCardValue += sendersCards.get(i).getValue();
         }
