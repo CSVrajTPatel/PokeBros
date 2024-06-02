@@ -5,6 +5,9 @@ import java.util.List;
 import java.util.Random;
 import java.util.UUID;
 
+/**
+ * The User class represents a user with attributes and methods related to their activities.
+ */
 public class User {
     private String userName;
     private UUID uniqueIdentifier;
@@ -20,11 +23,21 @@ public class User {
     private ArrayList<Trade> receivingTrades = new ArrayList<Trade>();
     private ArrayList<Trade> newTrades = new ArrayList<Trade>();
 
+    /**
+     * Constructs a User object with specified attributes.
+     * 
+     * @param userName the username of the user.
+     * @param password the password of the user.
+     * @param firstName the first name of the user.
+     * @param lastName the last name of the user.
+     * @param email the email of the user.
+     * @param favoriteCards the favorite cards of the user.
+     * @param currency the currency of the user.
+     * @param ownedCards the owned cards of the user.
+     */
     public User(String userName, String password, String firstName, String lastName, String email, ArrayList<Card> favoriteCards, double currency, ArrayList<Card> ownedCards) {
-        // VP Constructor to initialize User object
         this.userName = userName;
         this.uniqueIdentifier = UUID.randomUUID();
-//        uniqueIdentifier = UUID.randomUUID(); 
         this.password = password;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -37,63 +50,136 @@ public class User {
         this.receivingTrades = receivingTrades;
     }
 
+    /**
+     * Constructs a User object with specified attributes and default favorite cards and currency.
+     */
     public User(String userName, String password, String firstName, String lastName, String email) {
         this(userName, password, firstName, lastName, email, new ArrayList<>(), 30, new ArrayList<>());
     }
 
-    // VP Getters and setters for User attributes
+    /**
+     * Gets the username of the user.
+     * 
+     * @return the username.
+     */
     public String getUserName() {
         return userName;
     }
 
+    /**
+     * Sets the username of the user.
+     * 
+     * @param userName the new username.
+     */
     public void setUserName(String userName) {
         this.userName = userName;
     }
 
+    /**
+     * Gets the unique identifier of the user.
+     * 
+     * @return the unique identifier.
+     */
     public UUID getUniqueIdentifier() {
         return uniqueIdentifier;
     }
 
+    /**
+     * Gets the password of the user.
+     * 
+     * @return the password.
+     */
     public String getPassword() {
         return password;
     }
 
+    /**
+     * Sets the password of the user.
+     * 
+     * @param password the new password.
+     */
     public void setPassword(String password) {
         this.password = password;
     }
 
+    /**
+     * Gets the first name of the user.
+     * 
+     * @return the first name.
+     */
     public String getFirstName() {
         return firstName;
     }
 
+    /**
+     * Sets the first name of the user.
+     * 
+     * @param firstName the new first name.
+     */
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
 
+    /**
+     * Gets the last name of the user.
+     * 
+     * @return the last name.
+     */
     public String getLastName() {
         return lastName;
     }
 
+    /**
+     * Sets the last name of the user.
+     * 
+     * @param lastName the new last name.
+     */
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
 
+    /**
+     * Gets the email of the user.
+     * 
+     * @return the email.
+     */
     public String getEmail() {
         return email;
     }
 
+    /**
+     * Sets the email of the user.
+     * 
+     * @param email the new email.
+     */
     public void setEmail(String email) {
         this.email = email;
     }
 
+    /**
+     * Gets the favorite cards of the user.
+     * 
+     * @return the favorite cards.
+     */
     public ArrayList<Card> getFavoriteCards() {
         return favoriteCards;
     }
 
+    /**
+     * Sets the favorite cards of the user.
+     * 
+     * @param favoriteCards the new favorite cards.
+     */
     public void setFavoriteCards(ArrayList<Card> favoriteCards) {
         this.favoriteCards = favoriteCards;
     }
 
+    /**
+     * Adds a card to the user's favorite cards.
+     * 
+     * @param card the card to add.
+     * @return true if the card was added, false if it was already in the list.
+     */
     public boolean addFavoriteCard(Card card) {
         for (Card favCard : favoriteCards) {
             if (card == favCard) {
@@ -104,34 +190,74 @@ public class User {
         return true;
     }
 
+    /**
+     * Gets the currency of the user.
+     * 
+     * @return the currency.
+     */
     public double getCurrency() {
         return currency;
     }
 
+    /**
+     * Adds currency to the user's balance.
+     * 
+     * @param currency the amount to add.
+     */
     public void addCurrency(double currency) {
         this.currency += currency;
     }
 
+    /**
+     * Gets the owned cards of the user.
+     * 
+     * @return the owned cards.
+     */
     public ArrayList<Card> getOwnedCards() {
         return ownedCards;
     }
 
-    public Instant getLastClaimedCurrencyTime(){
-      return lastClaimedCurrencyTime;
+    /**
+     * Gets the last time the user claimed daily currency.
+     * 
+     * @return the last claimed currency time.
+     */
+    public Instant getLastClaimedCurrencyTime() {
+        return lastClaimedCurrencyTime;
     }
 
+    /**
+     * Sets the last claimed currency time for the user.
+     * @param lastClaimedCurrencyTime the new last claimed currency time.
+     */
     public void setLastClaimedCurrencyTime(Instant lastClaimedCurrencyTime) {
         this.lastClaimedCurrencyTime = lastClaimedCurrencyTime;
     }
 
+    /**
+     * Adds a card to the user's owned cards.
+     * 
+     * @param card the card to add.
+     */
     public void addCardToList(Card card) {
         ownedCards.add(card);
     }
 
-    public void removeCardFromList(Card card){
+    /**
+     * Removes a card from the user's owned cards.
+     * 
+     * @param card the card to remove.
+     */
+    public void removeCardFromList(Card card) {
         ownedCards.remove(card);
     }
 
+    /**
+     * Opens a pack of cards if the user has enough currency.
+     * 
+     * @param pack the pack number.
+     * @return true if the pack was successfully opened, false otherwise.
+     */
     public boolean openPack(int pack) {
         if (currency >= 10) {
             currency -= 10;
@@ -145,6 +271,11 @@ public class User {
         return false;
     }
 
+    /**
+     * Claims daily currency if a day has passed since the last claim.
+     * 
+     * @return true if the currency was successfully claimed, false otherwise.
+     */
     public boolean claimDailyCurrency() {
         Instant currentTime = Instant.now();
         Duration timeBetween = Duration.between(lastClaimedCurrencyTime, currentTime);
@@ -158,30 +289,71 @@ public class User {
         return false;
     }
 
+    /**
+     * Adds a trade to the list of trades the user is sending.
+     * 
+     * @param trade the trade to add.
+     */
     public void addSendingTrade(Trade trade) {
         sendingTrades.add(trade);
     }
 
+    /**
+     * Adds a trade to the list of trades the user is receiving.
+     * 
+     * @param trade the trade to add.
+     */
     public void addReceivingTrade(Trade trade) {
         receivingTrades.add(trade);
     }
 
-    public boolean acceptTrade (User receiver, int tradeIndex) {
+    /**
+     * Accepts a trade for the user.
+     * 
+     * @param receiver the user receiving the trade.
+     * @param tradeIndex which trade to accept
+     * @return true if the trade was successfully accepted, false otherwise.
+     */
+    public boolean acceptTrade(User receiver, int tradeIndex) {
         return Trade.acceptTrade(receiver, tradeIndex);
     }
 
-    public boolean rejectTrade (Trade trade) {
+    /**
+     * Rejects a trade for the user.
+     * 
+     * @param trade the trade to reject.
+     * @return true if the trade was successfully rejected, false otherwise.
+     */
+    public boolean rejectTrade(Trade trade) {
         return trade.rejectTrade();
     }
 
+    /**
+     * Gets the list of trades the user is sending.
+     * 
+     * @return the list of sending trades.
+     */
     public ArrayList<Trade> getSendingTrades() {
         return sendingTrades;
     }
 
+    /**
+     * Gets the list of trades the user is receiving.
+     * 
+     * @return the list of receiving trades.
+     */
     public ArrayList<Trade> getReceivingTrades() {
         return receivingTrades;
     }
-    
+
+    /**
+     * Initiates a trade with another user.
+     * 
+     * @param senderCards the cards offered by the sender.
+     * @param receiverCard the card requested from the receiver.
+     * @param comment any comment on the trade.
+     * @return true if the trade was successfully initiated, false otherwise.
+     */
     public boolean initiateTrade(ArrayList<Card> senderCards, Card receiverCard, String comment) {
         UserList userList = UserList.getInstance();
         for (Card card : ownedCards) {
@@ -191,7 +363,6 @@ public class User {
                     count++;
             }
 
-            
             for (Card card3 : senderCards) {
                 int count2 = 0;
                 for (Card card4 : senderCards) {
@@ -202,7 +373,6 @@ public class User {
                         return false;
                 }
             }
-
         }
         ArrayList<User> receivers = new ArrayList<User>();
         Random rand = new Random();
@@ -210,7 +380,6 @@ public class User {
         if (receivers.size() == 0) {
             return false;
         }
-    // User receiver = receivers.get(rand.nextInt(0,receivers.size())); 
         User receiver = receivers.get(rand.nextInt(receivers.size()));
         Trade trade = new Trade(userList.searchByUserName(userName), receiver, senderCards, receiverCard, comment);
         addNewTrade(trade);
@@ -218,17 +387,30 @@ public class User {
         receiver.addReceivingTrade(trade);
 
         return true;
-        }
+    }
 
-        public void addNewTrade(Trade trade) {
-            newTrades.add(trade);
-        }
-    
-        public void clearNewTrades() {
-            newTrades.clear();
-        }
+    /**
+     * Adds a new trade to the user's list of new trades.
+     * 
+     * @param trade the trade to add.
+     */
+    public void addNewTrade(Trade trade) {
+        newTrades.add(trade);
+    }
 
-        public ArrayList<Trade> getNewTrades() {
-            return newTrades;
-        }
+    /**
+     * Clears the user's list of new trades.
+     */
+    public void clearNewTrades() {
+        newTrades.clear();
+    }
+
+    /**
+     * Gets the list of new trades for the user.
+     * 
+     * @return the list of new trades.
+     */
+    public ArrayList<Trade> getNewTrades() {
+        return newTrades;
+    }
 }
