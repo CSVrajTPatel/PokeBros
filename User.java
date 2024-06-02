@@ -38,7 +38,7 @@ public class User {
     }
 
     public User(String userName, String password, String firstName, String lastName, String email) {
-        this(userName, password, firstName, lastName, email, new ArrayList<>(), 50, new ArrayList<>());
+        this(userName, password, firstName, lastName, email, new ArrayList<>(), 30, new ArrayList<>());
     }
 
     // VP Getters and setters for User attributes
@@ -134,6 +134,7 @@ public class User {
 
     public boolean openPack(int pack) {
         if (currency >= 10) {
+            currency -= 10;
             Pack newPack = new Pack(pack);
             ArrayList<Card> packList = newPack.openPack();
             for (Card card : packList) {
@@ -165,8 +166,8 @@ public class User {
         receivingTrades.add(trade);
     }
 
-    public boolean acceptTrade (Trade trade) {
-        return trade.acceptTrade();
+    public boolean acceptTrade (Trade trade, int index) {
+        return true;
     }
 
     public boolean rejectTrade (Trade trade) {

@@ -16,11 +16,10 @@
       1,
       2
     ],
-    "uniqueIdentifier": "c757b8f2-46e1-440b-a003-92269d33bef4"
+    "uniqueIdentifier": "9942bec8-221e-4aea-b0c3-9cebdc90ee08"
   },
   {
     "firstName": "Vraj",
-
     "lastName": "Patel",
     "password": "VrajIsStupid",
     "favoriteCards": [
@@ -38,10 +37,10 @@
       2,
       3
     ],
-    "uniqueIdentifier": "7b961b50-2bfe-4f67-8667-a3e25ce8bcfe"
+    "uniqueIdentifier": "4f8060ea-7d38-4083-ae42-1b764cc0c8c0"
   },
   {
-    "firstName": "Thane",  
+    "firstName": "Thane",
     "lastName": "Tiffany",
     "password": "ThaneIsSmart",
     "favoriteCards": [
@@ -56,8 +55,29 @@
     "ownedCards": [
       25,
       101,
-      147
+      147,
+      132,
+      52,
+      10,
+      126,
+      126,
+      47,
+      53,
+      61,
+      21,
+      127,
+      104,
+      13,
+      14,
+      55,
+      110,
+      119,
+      133,
+      109,
+      37,
+      17,
+      16
     ],
-    "uniqueIdentifier": "bf771883-b567-4d16-bb42-64d20b1d3879"
+    "uniqueIdentifier": "dd172416-2b1b-473a-8ccc-8eead8a9029b"
   }
 ]
