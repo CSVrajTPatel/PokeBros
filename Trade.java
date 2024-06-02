@@ -1,9 +1,11 @@
 import java.util.*;
 
-
+/**
+ * The Trade class represents a trade between two users involving cards.
+ */
 public class Trade {
     private User sender;
-    private User receiver ;
+    private User receiver;
     private ArrayList<Card> sendersCards;
     private Card receiverCard;
     private boolean isFairTrade;
@@ -12,7 +14,19 @@ public class Trade {
     private String comment;
     private double senderCoin;
 
-    public Trade(User sender, User receiver, ArrayList <Card> sendersCards, Card receiverCard, boolean isFairTrade, boolean awaitingResponse, boolean wasAccepted, String comment) {
+    /**
+     * Constructs a Trade object with all fields specified.
+     * 
+     * @param sender the user sending the trade.
+     * @param receiver the user receiving the trade.
+     * @param sendersCards the cards being offered by the sender.
+     * @param receiverCard the card requested from the receiver.
+     * @param isFairTrade whether the trade is fair.
+     * @param awaitingResponse whether the trade is awaiting response.
+     * @param wasAccepted whether the trade was accepted.
+     * @param comment any comment on the trade.
+     */
+    public Trade(User sender, User receiver, ArrayList<Card> sendersCards, Card receiverCard, boolean isFairTrade, boolean awaitingResponse, boolean wasAccepted, String comment) {
         this.sender = sender;
         this.receiver = receiver;
         this.sendersCards = sendersCards;
@@ -23,54 +37,86 @@ public class Trade {
         this.comment = comment;
     }
 
+    /**
+     * Constructs a Trade object with default values for fairness and response status.
+     * 
+     * @param sender the user sending the trade.
+     * @param receiver the user receiving the trade.
+     * @param sendersCards the cards being offered by the sender.
+     * @param receiverCard the card requested from the receiver.
+     * @param comment any comment on the trade.
+     */
     public Trade(User sender, User receiver, ArrayList<Card> sendersCards, Card receiverCard, String comment) {
         this.sender = sender;
         this.receiver = receiver;
         this.sendersCards = sendersCards;
         this.receiverCard = receiverCard;
         this.comment = comment;
-        isFairTrade = isFairTrade();
-        awaitingResponse = true;
-
-        // WRITES TO LOADER HERE
+        this.isFairTrade = isFairTrade();
+        this.awaitingResponse = true;
     }
- 
+
+    /**
+     * Gets the sender of the trade.
+     * 
+     * @return the sender user.
+     */
     public User getSender() {
         return sender;
     }
-    
+
+    /**
+     * Gets the receiver of the trade.
+     * 
+     * @return the receiver user.
+     */
     public User getReceiver() {
         return receiver;
     }
 
-     
+    /**
+     * Determines if the trade is fair based on card values.
+     * 
+     * @return true if the trade is fair, false otherwise.
+     */
     public boolean isFairTrade() {
-       
         double senderCardValue = 0;
-        for(int i = 0; i < sendersCards.size(); i++){
+        for (int i = 0; i < sendersCards.size(); i++) {
             senderCardValue += sendersCards.get(i).getValue();
         }
-        // if the cumulative value of the cards is within `0%
-        // otherwise the trade is false
         if (receiverCard.getValue() / senderCardValue >= 0.9 && receiverCard.getValue() / senderCardValue <= 1.1) {
             isFairTrade = true;
             return isFairTrade;
         }
         isFairTrade = false;
         return isFairTrade;
-            
-        
-        
-      }
+    }
 
+    /**
+     * Checks if the trade is awaiting a response.
+     * 
+     * @return true if awaiting response, false otherwise.
+     */
     public boolean isAwaitingResponse() {
         return awaitingResponse;
     }
-   
+
+    /**
+     * Sets the awaiting response status of the trade.
+     * 
+     * @param awaitingResponse the response status to set.
+     */
     public void setAwaitingResponse(boolean awaitingResponse) {
         this.awaitingResponse = awaitingResponse;
     }
 
+    /**
+     * Accepts a trade for the specified receiver and trade index.
+     * 
+     * @param receiver the user receiving the trade.
+     * @param tradeIndex the index of the trade to accept as given in the ArrayList.
+     * @return true if the trade was successfully accepted, false otherwise.
+     */
     public static boolean acceptTrade(User receiver, int tradeIndex) {
         ArrayList<Trade> receivingTrades = receiver.getReceivingTrades();
         if (tradeIndex < 0 || tradeIndex >= receivingTrades.size()) {
@@ -95,30 +141,60 @@ public class Trade {
         return true;
     }
 
-    public boolean rejectTrade(){
-        if (awaitingResponse = true) {
+    /**
+     * Rejects the trade.
+     * 
+     * @return true if the trade was successfully rejected, false otherwise.
+     */
+    public boolean rejectTrade() {
+        if (awaitingResponse) {
             awaitingResponse = false;
             return true;
         }
         return false;
     }
 
+    /**
+     * Gets the comment on the trade.
+     * 
+     * @return the trade comment.
+     */
     public String getComment() {
         return comment;
     }
 
+    /**
+     * Checks if the trade was accepted.
+     * 
+     * @return true if the trade was accepted, false otherwise.
+     */
     public boolean wasAccepted() {
         return wasAccepted;
     }
 
+    /**
+     * Gets the cards offered by the sender.
+     * 
+     * @return an ArrayList of cards offered.
+     */
     public ArrayList<Card> getCardsOffered() {
         return sendersCards;
     }
-   
+
+    /**
+     * Gets the card requested by the receiver.
+     * 
+     * @return the card requested by the receiver.
+     */
     public Card getReceiverCard() {
         return receiverCard;
     }
-   
+
+    /**
+     * Gets the sender's coin value.
+     * 
+     * @return the sender's coin value.
+     */
     public double getSenderCoin() {
         return senderCoin;
     }
