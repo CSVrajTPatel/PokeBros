@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 /*
- * Represents a Card.
+ * Represents a Pokemon Card.
  */
 public class Card {
     private int id;
