@@ -165,8 +165,8 @@ public class User {
         receivingTrades.add(trade);
     }
 
-    public boolean acceptTrade (Trade trade) {
-        return trade.acceptTrade();
+    public boolean acceptTrade (User receiver, int tradeIndex) {
+        return Trade.acceptTrade(receiver, tradeIndex);
     }
 
     public boolean rejectTrade (Trade trade) {
@@ -211,7 +211,8 @@ public class User {
         if (receivers.size() == 0) {
             return false;
         }
-        User receiver = receivers.get(rand.nextInt(0,receivers.size()));
+    // User receiver = receivers.get(rand.nextInt(0,receivers.size())); 
+        User receiver = receivers.get(rand.nextInt(receivers.size()));
         Trade trade = new Trade(userList.searchByUserName(userName), receiver, senderCards, receiverCard, senderCoins, comment);
         addNewTrade(trade);
         addSendingTrade(trade);
