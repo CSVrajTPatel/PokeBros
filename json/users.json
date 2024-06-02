@@ -1,24 +1,5 @@
 [
   {
-    "firstName": "John",
-    "lastName": "Doe",
-    "password": "examplePassword",
-    "favoriteCards": [
-      1,
-      4,
-      7
-    ],
-    "currency": 1000.0,
-    "lastClaimedCurrencyTime": "2023-05-25T10:00:00Z",
-    "userName": "exampleUserName",
-    "email": "john.doe@example.com",
-    "ownedCards": [
-      1,
-      2
-    ],
-    "uniqueIdentifier": "0e41da7d-fb7c-4f4b-a70a-a85ce5891882"
-  },
-  {
     "firstName": "Vraj",
     "lastName": "Patel",
     "password": "VrajIsStupid",
@@ -28,7 +9,7 @@
       7
     ],
     "currency": 1025.0,
-    "lastClaimedCurrencyTime": "2024-06-01T01:46:41.533Z",
+    "lastClaimedCurrencyTime": "2024-05-01T01:46:41.533Z",
     "userName": "VrajTPatel",
     "email": "VrajLOL.doe@example.com",
     "ownedCards": [
@@ -36,7 +17,7 @@
       25,
       150
     ],
-    "uniqueIdentifier": "f24943c8-9244-41b4-9c3c-06e1d5b8b35a"
+    "uniqueIdentifier": "ff69d3a6-8354-4dcb-b13e-f05febaad29f"
   },
   {
     "firstName": "Thane",
@@ -56,6 +37,6 @@
       101,
       3
     ],
-    "uniqueIdentifier": "2b6c1968-e9b5-47af-b8de-7d3c8f10e73c"
+    "uniqueIdentifier": "86f74e08-8f71-4a31-be0a-b54beda7f290"
   }
 ]

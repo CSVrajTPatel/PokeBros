@@ -185,14 +185,15 @@ public class User {
     public boolean initiateTrade(ArrayList<Card> senderCards, Card receiverCard, String comment) {
         UserList userList = UserList.getInstance();
         for (Card card : ownedCards) {
-            int count = 1;
+            int count = 0;
             for (Card card2 : ownedCards) {
                 if (card == card2)
                     count++;
             }
 
-            int count2 = 1;
+            
             for (Card card3 : senderCards) {
+                int count2 = 0;
                 for (Card card4 : senderCards) {
                     if (card3 == card4)
                         count2++;
@@ -211,7 +212,7 @@ public class User {
         }
     // User receiver = receivers.get(rand.nextInt(0,receivers.size())); 
         User receiver = receivers.get(rand.nextInt(receivers.size()));
-        Trade trade = new Trade(userList.searchByUserName(userName), receiver, senderCards, receiverCard, senderCoins, comment);
+        Trade trade = new Trade(userList.searchByUserName(userName), receiver, senderCards, receiverCard, comment);
         addNewTrade(trade);
         addSendingTrade(trade);
         receiver.addReceivingTrade(trade);

@@ -4,22 +4,10 @@
       25
     ],
     "awaitingResponse": true,
-    "cardsRequested": 3,
+    "cardsRequested": 6,
     "isFairTrade": false,
     "wasAccepted": false,
     "comment": "god i love you",
-    "senderUserName": "ThaneTiff",
-    "receiverUserName": "VrajTPatel"
-  },
-  {
-    "cardsOffered": [
-      150
-    ],
-    "awaitingResponse": true,
-    "cardsRequested": 3,
-    "isFairTrade": false,
-    "wasAccepted": false,
-    "comment": "wowowowow",
     "senderUserName": "ThaneTiff",
     "receiverUserName": "VrajTPatel"
   }
