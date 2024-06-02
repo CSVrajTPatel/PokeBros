@@ -1,13 +1,24 @@
 import java.util.ArrayList;
 
+/**
+ * The UserList class manages the list of users.
+ */
 public class UserList {
     private static UserList masterList;
     private static ArrayList<User> userList;
 
+    /**
+     * Private constructor to load users.
+     */
     private UserList() {
         userList = DataLoader.loadUsers();
     }
 
+    /**
+     * Gets the single instance of UserList.
+     * 
+     * @return the instance of UserList.
+     */
     public static UserList getInstance() {
         if (masterList == null) {
             masterList = new UserList();
@@ -15,12 +26,12 @@ public class UserList {
         return masterList;
     }
 
-    //public ArrayList<User> 
-    
-    // Adding a User
+    /**
+     * Adds a user to the list, if it passes all the current tests
+     * 
+     * @return true if user added, false otherwise.
+     */
     public boolean addUserToList(String userName, String password, String firstName, String lastName, String email) {
-
-        // ERROR CHECK LIKE DUPES OR VALID EMAIL HERE
         for (User user : userList) {
             if (user.getUserName() == userName) {
                 return false;
@@ -31,29 +42,34 @@ public class UserList {
         }
         User newUser = new User(userName, password, firstName, lastName, email);
         userList.add(newUser);
-
-        // If we are writing all the time it will be expensive on memory
-        
-        // DataWriter.updateUsers(userList);
-
         return true;
-
     }
 
+    /**
+     * Logs in a user.
+     * 
+     * @param userName the username.
+     * @param password the password.
+     * @return the User object if login successful, null otherwise.
+     */
     public User loginUser(String userName, String password) {
-    
         for (User user : userList) {
             if (user.getUserName().equalsIgnoreCase(userName) && user.getPassword().equals(password)) {
                 getInstance();
                 DataLoader.loadTrades();
-                return user;  // Login successful
+                return user;
             }
         }
-        return null;  // Login failed
+        return null;
     }
 
+    /**
+     * Removes a user from the list.
+     * 
+     * @param username the username.
+     * @return true if user removed, false otherwise.
+     */
     public boolean removeUserFromList(String username) {
-   
         for (User user : userList) {
             if (user.getUserName().equals(username)) {
                 userList.remove(user);
@@ -61,28 +77,36 @@ public class UserList {
                 return true;
             }
         }
-        return false;  // User not found
+        return false;
     }
 
-    public User searchByUserName(String username){
-   
-        for (User user : userList){
-            if(user.getUserName().equalsIgnoreCase(username)){
+    /**
+     * Searches for a user by username.
+     * 
+     * @param username the username.
+     * @return the User object if found, null otherwise.
+     */
+    public User searchByUserName(String username) {
+        for (User user : userList) {
+            if (user.getUserName().equalsIgnoreCase(username)) {
                 return user;
             }
         }
         return null;
     }
 
-    public ArrayList<User> searchByCards(Card card){
+    /**
+     * Searches for users by card.
+     * 
+     * @param card the card.
+     * @return a list of users who own the card.
+     */
+    public ArrayList<User> searchByCards(Card card) {
         ArrayList<User> returnList = new ArrayList<User>();
-        for (User user : userList){
-
+        for (User user : userList) {
             ArrayList<Card> userCards = user.getOwnedCards();
             for (Card userCard : userCards) {
-
                 if (userCard == card) {
-
                     returnList.add(user);
                     break;
                 }
@@ -91,8 +115,12 @@ public class UserList {
         return returnList;
     }
 
-    public void logOffUser(String username){
-    
+    /**
+     * Logs off a user, updates trades, updates users, and removes all the nonpendingtrades.
+     * 
+     * @param username the username.
+     */
+    public void logOffUser(String username) {
         User user = searchByUserName(username);
         if (user != null) {
             DataWriter.updateUsers(userList);
@@ -101,24 +129,10 @@ public class UserList {
         }
     }
 
-    public void saveUsers(){
+    /**
+     * Saves the list of users.
+     */
+    public void saveUsers() {
         DataWriter.updateUsers(userList);
-    }
-
-	
-    
-    public void main(String[] args) {
-
-        CardList masterList = CardList.getInstance();
-        // Test searchByUserName method
-        String testUsername = "VrajTPatel";
-        User foundUser = searchByUserName(testUsername);
-
-        if (foundUser != null) {
-            System.out.println("User found: " + foundUser.getUserName());
-            System.out.println("Email: " + foundUser.getEmail());
-        } else {
-            System.out.println("User not found.");
-        }
     }
 }
