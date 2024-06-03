@@ -152,10 +152,11 @@ public class Facade {
       String password = scanner.nextLine();
       System.out.print("First Name: ");
       String firstName = scanner.nextLine();
-      System.out.print("User Name: ");
+      System.out.print("Last Name: ");
       String lastName = scanner.nextLine();
       System.out.print("Email: ");
       String email = scanner.nextLine();
+      System.out.println(" ");
 
       Facade facade = new Facade();
       
@@ -214,7 +215,7 @@ public class Facade {
                     
               } 
               else {
-                System.out.println("Failed to open pack, not enough currency");
+                System.out.println("Failed to open pack, not enough currency or invalid pack number");
                 break;
               }
             }

@@ -259,7 +259,7 @@ public class User {
      * @return true if the pack was successfully opened, false otherwise.
      */
     public boolean openPack(int pack) {
-        if (currency >= 10) {
+        if (currency >= 10 && pack > 0 && pack < 4) {
             currency -= 10;
             Pack newPack = new Pack(pack);
             ArrayList<Card> packList = newPack.openPack();
