@@ -33,7 +33,7 @@ public class UserList {
      */
     public boolean addUserToList(String userName, String password, String firstName, String lastName, String email) {
         for (User user : userList) {
-            if (user.getUserName().equals(userName) || userName.equalsIgnoreCase("") || userName.contains(" ") || userName == null) {
+            if (user.getUserName().equalsIgnoreCase(userName) || userName.equalsIgnoreCase("") || userName.contains(" ") || userName == null) {
                 return false;
             }
             if (!(email.contains("@") && email.contains("."))) {
