@@ -36,7 +36,7 @@ public class UserList {
             if (user.getUserName().equals(userName) || userName.equalsIgnoreCase("") || userName.contains(" ") || userName == null) {
                 return false;
             }
-            if (!email.contains("@")) {
+            if (!(email.contains("@") && email.contains("."))) {
                 return false;
             }
         }
