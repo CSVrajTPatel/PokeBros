@@ -4,11 +4,16 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.Assert.assertNull;
+import static org.junit.Assert.*;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class UserTester {
 
+    /*
+     * We need to add a way to input the favorite cards and the currency and owned cards
+     * 
+     */
     private UserList userList;
 
     @BeforeEach
@@ -18,48 +23,53 @@ public class UserTester {
         userList.addUserToList("logan142", "password321", "logan", "John", "johnM@gmail.com");
     }
 
+    // test for the first user 
     @Test
     void testUserValidUserName() {
         User hasJoshUser = userList.searchByUserName("josh1515");
-        boolean hasJosh = (hasJoshUser != null);
-        assertTrue(hasJosh);
-    }
-    
-    @Test
-    public void testValidLastUserUserName(){
-        User hasLoganUser = userList.searchByUserName("logan142");
-        boolean hasLogan = (hasLoganUser != null);
-        assertTrue(hasLogan);
-    }
-    @Test 
-    public void testHaveUserInValid() {
-        assertFalse(userList.searchByUserName("jsmith") != null);
-    }
-
-    @Test
-    public void testHaveUserEmpty() {
-        User hasEmpty = userList.searchByUserName(" ");
-        assertNull(hasEmpty);
-    }
-
-    @Test
-    public void testHaveUserNull() {
-        User hasNull = userList.searchByUserName(null);
-        assertNull(hasNull);
-    }
-
-    @Test
-    public void testUserValidPassword() {
-        User joshUser = userList.searchByUserName("josh1515");
-        boolean passwordMatches = joshUser.getPassword().equals("password123");
-        assertTrue(passwordMatches);
+        assertNotNull(hasJoshUser);
     }
 
     @Test
     public void testUserValidFirstName(){
         User joshUser = userList.searchByUserName("josh1515");
-        boolean validFirstName =  joshUser.getFirstName().equals("josh");
-        assertTrue(validFirstName);
+        assertEquals(joshUser.getFirstName(), "josh");
+    }
+
+      // checking if the password is valid 
+      @Test
+      public void testUserValidPassword() {
+          User joshUser = userList.searchByUserName("josh1515");
+          boolean passwordMatches = joshUser.getPassword().equals("password123");
+          assertTrue(passwordMatches);
+      }
+
+    // 
+    // test for the second user
+        @Test
+    public void testValidLastUserUserName(){
+        User hasLoganUser = userList.searchByUserName("logan142");
+        boolean hasLogan = (hasLoganUser != null);
+        assertTrue(hasLogan);
+    }
+
+    // testing for if a user is not valid within the list of users 
+    @Test 
+    public void testHaveUserInValid() {
+        assertFalse(userList.searchByUserName("jsmith") != null);
+    }
+
+    // test for checking if the username is empty 
+    @Test
+    public void testHaveUserEmpty() {
+        User hasEmpty = userList.searchByUserName(" ");
+        assertNull(hasEmpty);
+    }
+    // test for checking if the username is null 
+    @Test
+    public void testHaveUserNull() {
+        User hasNull = userList.searchByUserName(null);
+        assertNull(hasNull);
     }
 
     @Test 
