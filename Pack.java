@@ -9,6 +9,7 @@ public class Pack {
     private String name;
     private ArrayList<Card> cards;
     private int packNumber;
+    private static final int CardsInPack = 7;
 
     /**
      * Constructs a Pack object with the specified pack number.
@@ -19,14 +20,14 @@ public class Pack {
         packNumber = num;
         CardList masterCardList = CardList.getInstance();
         if (num == 1) {
-            name = "Bulbasaur Pack";
+            name = PackName.BULBASAUR_PACK.toString();
             cards = masterCardList.searchByPack(packNumber);
         } else if (num == 2) {
-            name = "Charmander Pack";
+            name = PackName.CHARMANDER_PACK.toString();
             cards = masterCardList.searchByPack(packNumber);
         } else if (num == 3) {
             cards = masterCardList.searchByPack(packNumber);
-            name = "Squirtle Pack";
+            name = PackName.SQUIRTILE_PACK.toString();
         }
     }
 
@@ -37,7 +38,7 @@ public class Pack {
      */
     public ArrayList<Card> openPack() {
         ArrayList<Card> newPack = new ArrayList<Card>();
-        int listNum = 7; // number of cards in the pack
+        int listNum = CardsInPack;
         Random rand = new Random();
         int numRares = rand.nextInt(10); // random number between 0-9
 

@@ -64,15 +64,6 @@ public class Card {
     public int getId() {
         return id;
     }
-    
-    /**
-     * Sets the ID of the card.
-     * 
-     * @param id The new ID of the card.
-     */
-    public void setId(int id) {
-        this.id = id;
-    }
 
     /**
      * Gets the name of the card.
@@ -81,15 +72,6 @@ public class Card {
      */
     public String getName() {
         return name;
-    }
-
-    /**
-     * Sets the name of the card.
-     * 
-     * @param name The new name of the card.
-     */
-    public void setName(String name) {
-        this.name = name;
     }
 
     /**
@@ -102,30 +84,12 @@ public class Card {
     }
 
     /**
-     * Sets the type of the card.
-     * 
-     * @param type The new type of the card.
-     */
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    /**
      * Gets the rarity of the card.
      * 
      * @return The rarity of the card.
      */
     public String getRarity() {
         return rarity;
-    }
-
-    /**
-     * Sets the rarity of the card.
-     * 
-     * @param rarity The new rarity of the card.
-     */
-    public void setRarity(String rarity) {
-        this.rarity = rarity;
     }
 
     /**
@@ -137,14 +101,6 @@ public class Card {
         return pack;
     }
 
-    /**
-     * Sets the pack number of the card.
-     * 
-     * @param pack The new pack number of the card.
-     */
-    public void setPack(int pack) {
-        this.pack = pack;
-    }
 
     /**
      * Gets the health points of the card.
@@ -156,15 +112,6 @@ public class Card {
     }
 
     /**
-     * Sets the health points of the card.
-     * 
-     * @param hp The new health points of the card.
-     */
-    public void setHp(int hp) {
-        this.hp = hp;
-    }
-
-    /**
      * Gets the value of the card.
      * 
      * @return The value of the card.
@@ -173,14 +120,6 @@ public class Card {
         return value;
     }
 
-    /**
-     * Sets the value of the card.
-     * 
-     * @param value The new value of the card.
-     */
-    public void setValue(double value) {
-        this.value = value;
-    }
 
     /**
      * Gets the evolution stage of the card.
@@ -189,15 +128,6 @@ public class Card {
      */
     public int getEvoStage() {
         return evoStage;
-    }
-
-    /**
-     * Sets the evolution stage of the card.
-     * 
-     * @param evoStage The new evolution stage of the card.
-     */
-    public void setEvoStage(int evoStage) {
-        this.evoStage = evoStage;
     }
 
     /**
@@ -210,29 +140,11 @@ public class Card {
     }
 
     /**
-     * Sets the family of the card.
-     * 
-     * @param family The new family of the card.
-     */
-    public void setFamily(ArrayList<Integer> family) {
-        this.family = family;
-    }
-
-    /**
      * Gets the attacks of the card.
      * 
      * @return The attacks of the card.
      */
     public ArrayList<String> getAttacks() {
         return attacks;
-    }
-
-    /**
-     * Sets the attacks of the card.
-     * 
-     * @param attacks The new attacks of the card.
-     */
-    public void setAttacks(ArrayList<String> attacks) {
-        this.attacks = attacks;
     }
 }
