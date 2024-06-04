@@ -52,5 +52,34 @@ public class CardListTesting {
 		assertEquals(3, masterList.get(7).getPack());
 	}
 
-	
+	@Test
+	public void testGetCardByHP() {
+		assertEquals(100, masterList.get(8).getHp());
+	}
+
+	@Test
+	public void testGetCardByValue() {
+		assertEquals(45.00, masterList.get(9).getValue());
+	}
+
+	@Test
+	public void testGetCardByEvoStage() {
+		assertEquals(1, masterList.get(10).getEvoStage());
+	}
+
+	@Test
+	public void testGetCardByFamily() {
+		ArrayList<Integer> fam = new ArrayList<>();
+		fam.add(10);
+		fam.add(12);
+		assertEquals(fam, masterList.get(11).getFamily());
+	}
+
+	@Test
+	public void testGetCardByAttack() {
+		ArrayList<String> atk = new ArrayList<>();
+		atk.add("Whirlwind");
+		atk.add("Bye-Bye Flight");
+		assertEquals(atk, masterList.get(12).getAttacks());
+	}
 }
