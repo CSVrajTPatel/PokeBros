@@ -37,7 +37,7 @@ public class CardListTesting {
 		assertEquals("Venusaur", masterList.get(3).getName());
     }
 
-	/*@Test
+	@Test
 	public void testGetCardByType() {
 		assertEquals("Fire", masterList.get(4).getType());
 	}
@@ -81,7 +81,7 @@ public class CardListTesting {
 		atk.add("Whirlwind");
 		atk.add("Bye-Bye Flight");
 		assertEquals(atk, masterList.get(12).getAttacks());
-	}*/
+	}
 
 	@Test
 	public void testSearchCardByID() {
