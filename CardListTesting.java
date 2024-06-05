@@ -88,9 +88,11 @@ public class CardListTesting {
 		assertEquals("Bulbasaur", cardList.searchById(1, masterList).getName());
 	}
 
+
+	// This is wrong now
 	@Test
 	public void testSearchCardByName() {
-		assertEquals("Ivysaur", cardList.searchByName("Ivysaur").getName());
+		assertEquals("Ivysaur", cardList.searchByName("Ivysaur").get(0).getName());
 	}
 
 	@Test

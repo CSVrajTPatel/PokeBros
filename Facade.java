@@ -21,7 +21,7 @@ public class Facade {
     return userList.loginUser(userName, password);
   }
   
-  public Card searchByName(String name) {
+  public ArrayList<Card> searchByName(String name) {
     CardList master = CardList.getInstance();
     return master.searchByName(name);
   }
@@ -227,9 +227,19 @@ public class Facade {
           for (Card card : facade.getOwnedCards()) {
             System.out.println(card.getName());
           }
+          ArrayList<Card> cards = new ArrayList<>();
+          int stopper = 0;
+          while (stopper == 0) {
+            System.out.println("Enter the name of the pokemon you want to search for");
+            cards = facade.searchByName(scanner.nextLine());
+            if (cards.size() == 1) {
+              stopper = 1;
+            } else {
+              System.out.println("Invalid name or too vauge");
+            }
+          }
+          
 
-          System.out.println("Enter the name of the pokemon you want to search for");
-    Card card = facade.searchByName(scanner.nextLine());
 
     System.out.println("Would you like to trade for this card?");
     String answer = scanner.nextLine();
@@ -243,15 +253,21 @@ public class Facade {
       while (answer.equalsIgnoreCase("yes")) {
         System.out.println("Please enter the name of 1 pokemon you would like to offer");
         String pokemon = scanner.nextLine();
+        if (facade.searchByName(pokemon).size() == 1) { 
+          tradeOffer.add(facade.searchByName(pokemon).get(0));
+          
+          System.out.println("Would you like to add another pokemon?");
+          answer = scanner.nextLine();
+        } else {
+          System.out.println(pokemon + " is either too vauge or an invalid name");
+        }
+          
       
-        tradeOffer.add(facade.searchByName(pokemon));
-      
-        System.out.println("Would you like to add another pokemon?");
-        answer = scanner.nextLine();
+        
       }
 
       
-      if (!facade.initiateTrade(tradeOffer, card, comment)) {
+      if (!facade.initiateTrade(tradeOffer, cards.get(0), comment)) {
         System.out.println("Trade Failed");
         scanner.close();
         System.exit(0);
