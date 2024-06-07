@@ -107,6 +107,8 @@ public class Pack {
      * @param packType which pack they want to buy.
      * @return true if the pack was successfully bought.
      */
+
+     //Why do we have this
     public boolean buyPack(int packType) {
         return true;
     }

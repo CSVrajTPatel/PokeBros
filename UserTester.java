@@ -86,5 +86,25 @@ public class UserTester {
         assertTrue(validEmail);
     }
 
-   
+    public void testUserForOwnedCards(){
+        User joshUser = userList.searchByUserName("josh1515");
+        ArrayList<Card> ownedCards =  joshUser.getOwnedCards();
+        assertNotNull(ownedCards);
+    }
+
+    @Test
+    public void testUserForFavoriteCards(){
+        User joshUser = userList.searchByUserName("josh1515");
+        ArrayList<Card> favCards =  joshUser.getFavoriteCards();
+        assertNotNull(favCards);
+    }
+
+    @Test
+    public void testUserForCurrency(){
+        User joshUser = userList.searchByUserName("josh1515");
+        double currency =  joshUser.getCurrency();
+        assertNotNull(currency);
+    }
+
+
 }

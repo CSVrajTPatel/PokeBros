@@ -43,7 +43,7 @@ public class CardList {
      */
     public Card searchByName(String name) {
         for (Card card : cardList) {
-            if (card.getName().equalsIgnoreCase(name)) {
+            if (card.getName().contains(name)) {
                 return card;
             }
         }
@@ -60,7 +60,7 @@ public class CardList {
     public ArrayList<Card> searchByName(String name, ArrayList<Card> cards) {
         ArrayList<Card> result = new ArrayList<>();
         for (Card card : cards) {
-            if (card.getName().equalsIgnoreCase(name)) {
+            if (card.getName().contains(name)) {
                 result.add(card);
             }
         }
