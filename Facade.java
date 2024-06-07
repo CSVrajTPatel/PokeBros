@@ -28,7 +28,7 @@ public class Facade {
     return user;
   }
   
-  public Card searchByName(String name) {
+  public ArrayList<Card> searchByName(String name) {
     CardList master = CardList.getInstance();
     return master.searchByName(name);
   }
@@ -142,13 +142,13 @@ public class Facade {
   }
 
   public static void main(String[] args) {
-    /*
+/*
  * TESTS FOR:
  *  Creating a new User
  *  Ensuring the basic new userformat is working correctly
  *  Logging off the user and recording to users.json
  * 
-*/
+
       // Hardcoded user details
 
       Scanner scanner = new Scanner(System.in);
@@ -236,29 +236,35 @@ public class Facade {
           }
 
           System.out.println("Enter the name of the pokemon you want to search for");
-          Card card = facade.searchByName(scanner.nextLine());
+          ArrayList<Card> searchMons = new ArrayList<>();
+          searchMons = facade.searchByName(scanner.nextLine());
 
+          if (searchMons.size() != 1) {
+            System.out.println("Invalid Name");
+            scanner.close();
+            System.exit(0);
+          }
           System.out.println("Would you like to trade for this card?");
           String answer = scanner.nextLine();
-
+          
           if (answer.equalsIgnoreCase("yes")) {
             System.out.println("Please enter your comment");
             String comment = scanner.nextLine();
 
             ArrayList<Card> tradeOffer = new ArrayList<Card>();
 
-            while (answer.equalsIgnoreCase("yes")) {
-              System.out.println("Please enter the name of 1 pokemon you would like to offer");
-              String pokemon = scanner.nextLine();
+      while (answer.equalsIgnoreCase("yes")) {
+        System.out.println("Please enter the name of 1 pokemon you would like to offer");
+        String pokemon = scanner.nextLine();
       
-              tradeOffer.add(facade.searchByName(pokemon));
+        tradeOffer.add(facade.searchByName(pokemon));
       
-              System.out.println("Would you like to add another pokemon?");
-              answer = scanner.nextLine();
+        System.out.println("Would you like to add another pokemon?");
+        answer = scanner.nextLine();
       }
 
       
-      if (!facade.initiateTrade(tradeOffer, card, comment)) {
+      if (!facade.initiateTrade(tradeOffer, cards.get(0), comment)) {
         System.out.println("Trade Failed");
         scanner.close();
         System.exit(0);
@@ -286,6 +292,7 @@ public class Facade {
       else {
           System.out.println("User creation failed. (User may already exist or email is invalid)");
       }
+
 
 
 /* 

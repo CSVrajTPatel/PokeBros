@@ -41,13 +41,14 @@ public class CardList {
      * @param name The name of the card.
      * @return The card with the specified name, or null if not found.
      */
-    public Card searchByName(String name) {
+    public ArrayList<Card> searchByName(String filter) {
+        ArrayList<Card> result = new ArrayList<>();
         for (Card card : cardList) {
-            if (card.getName().contains(name)) {
-                return card;
+            if (card.getName().contains(filter)) {
+                result.add(card);
             }
         }
-        return null;
+        return result;
     }
 
     /**

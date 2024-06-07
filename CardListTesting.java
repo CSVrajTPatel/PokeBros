@@ -82,4 +82,28 @@ public class CardListTesting {
 		atk.add("Bye-Bye Flight");
 		assertEquals(atk, masterList.get(12).getAttacks());
 	}
+
+	@Test
+	public void testSearchCardByID() {
+		assertEquals("Bulbasaur", cardList.searchById(1, masterList).getName());
+	}
+
+
+	// This is wrong now
+	@Test
+	public void testSearchCardByName() {
+		assertEquals("Ivysaur", cardList.searchByName("Ivysaur").get(0).getName());
+	}
+
+	@Test
+	public void testSearchCardsByName() {
+		ArrayList<String> pkms = new ArrayList<>();
+		ArrayList<String> searchedPkms = new ArrayList<>();
+		pkms.add("Bulbasaur");
+		pkms.add("Ivysaur");
+		pkms.add("Venusaur");
+		for (Card c : cardList.searchByName("saur", masterList))
+			searchedPkms.add(c.getName());
+		assertEquals(pkms, searchedPkms);
+	}
 }
