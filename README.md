@@ -1,5 +1,5 @@
 # PokeBros
-Welcome to the PokeBros Proejct!
+Welcome to the PokeBros Project!
 
 ## Prototype
 Checkout the [PokeBros Prototype](https://csvrajtpatel.github.io/PokeBros/) 
